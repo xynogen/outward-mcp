@@ -1,0 +1,292 @@
+{
+"Ableroot (Gatherable)": {
+"items": "Ableroot; Ochre Spice Beetle; Funnel Beetle",
+"regions": "Caldera",
+"summary": "Ableroot (Gatherable) is a type of Gathering resource in the Caldera region in Outward."
+},
+"Ambraine (Gatherable)": {
+"items": "Ambraine; Ochre Spice Beetle; Funnel Beetle",
+"regions": "Caldera",
+"summary": "Ambraine (Gatherable) is a type of Gathering resource in the Caldera region in Outward."
+},
+"Ammolite Vein": {
+"items": "Ammolite; Gravel Beetle",
+"regions": "Chersonese; Abrassar",
+"requires": "Mining Pick",
+"summary": "Ammolite Vein is a type of mining resource in Outward, requiring a Mining Pick to gather. It is typically found in Chersonese and Abrassar."
+},
+"Blood Mushroom (Gatherable)": {
+"items": "Blood Mushroom; Ochre Spice Beetle",
+"regions": "All",
+"summary": "Blood Mushroom (Gatherable) is a type of gathering resource in Outward, typically found in Dungeons."
+},
+"Blue Sand (Gatherable)": {
+"items": "Blue Sand; Tiny Aquamarine; Azure Shrimp; Salt",
+"regions": "Chersonese",
+"summary": "Blue Sand can be gathered along beaches in Chersonese. It is easy to miss in the daylight, but glows brightly which makes it stand out at night."
+},
+"Cactus": {
+"items": "Cactus Fruit; Ochre Spice Beetle",
+"regions": "Abrassar",
+"summary": "Cactus is a type of gathering resource in Outward. The large plants can only be found in the Abrassar Desert."
+},
+"Chalcedony Vein": {
+"items": "Chalcedony; Gravel Beetle; Medium Ruby; Small Sapphire; Crystal Powder",
+"regions": "Caldera",
+"requires": "Mining Pick",
+"summary": "Chalcedony Vein is a type of Mining resource in the Caldera region in Outward, requiring a Mining Pick or equivalent item."
+},
+"Cold Mana Stone Vein": {
+"items": "Cold Stone; Gravel Beetle; Hackmanite; Mana Stone",
+"regions": "Antique Plateau",
+"requires": "Mining Pick",
+"summary": "Cold Mana Stone Veins are a type of mining resource in the Wendigo Lair in the Antique Plateau region in Outward."
+},
+"Crabeye": {
+"items": "Crabeye Seed; Ochre Spice Beetle",
+"regions": "All",
+"summary": "Crabeye is a type of gathering resource in Outward."
+},
+"Crawlberry (Gatherable)": {
+"items": "Crawlberry; Ochre Spice Beetle",
+"regions": "Antique Plateau",
+"summary": "Crawlberries is a type of gathering resource in Outward. They can be found in the Antique Plateau region."
+},
+"Dreamer's Root (Gatherable)": {
+"items": "Dreamer's Root; Ochre Spice Beetle",
+"regions": "All",
+"summary": "Dreamer's Roots are a type of Gathering resource in Outward."
+},
+"Firefly Plant": {
+"items": "Firefly Powder",
+"regions": "Hallowed Marsh",
+"summary": "Firefly Plant is a type of gathering resource in Outward, found in the Hallowed Marsh."
+},
+"Fishing": {
+"items": "Fish; Varies",
+"regions": "All",
+"requires": "Fishing Harpoon",
+"summary": "Fishing is a type of Gathering activity, requiring a Fishing Harpoon in the player's inventory. Often found at natural water sources, fishing spots are marked by bubbles and fish under the surface of the water. They are in fixed locations and respawn once every 24 in-game hours."
+},
+"Gaberries (Gatherable)": {
+"items": "Gaberries; Ochre Spice Beetle",
+"regions": "All",
+"summary": "Gaberries is a type of gathering resource in Outward. It can be found outdoors in all regions."
+},
+"Ghost Plant": {
+"items": "Ghost's Eye; Ochre Spice Beetle; Crystal Powder; Mana Stone",
+"regions": "Chersonese; Enmerkar Forest",
+"summary": "Ghost Plant is a type of gathering resource in Outward. It can be found in Chersonese (beyond Ghost Pass), and in Enmerkar Forest."
+},
+"Golden Crescent (Gatherable)": {
+"items": "Golden Crescent; Ochre Spice Beetle; Funnel Beetle",
+"regions": "Caldera",
+"summary": "Golden Crescent (Gatherable) is a type of Gathering resource in the Caldera region in Outward."
+},
+"Greasy Fern (Gatherable)": {
+"items": "Greasy Fern; Ochre Spice Beetle",
+"regions": "All",
+"summary": "Greasy Fern is a rare type of gathering resource in Outward."
+},
+"Green Mushroom": {
+"items": "Common Mushroom; Ochre Spice Beetle",
+"regions": "All",
+"summary": "Green Mushroom is a type of gathering resource in Outward. It is commonly found in Dungeons, though it can be found outdoors in some places as well."
+},
+"Hexa Stone Vein": {
+"items": "Hexa Stone; Gravel Beetle; Medium Ruby; Small Sapphire; Crysocolla Beetle",
+"regions": "Caldera",
+"summary": "Hexa Stone Vein is a type of Mining resource in the Caldera region in Outward, requiring a Mining Pick or equivalent item."
+},
+"Iron Vein": {
+"items": "Iron Scrap; Gravel Beetle; Thick Oil; Medium Ruby; Small Sapphire",
+"regions": "All",
+"requires": "Mining Pick",
+"summary": "Iron Vein is a type of mining resource in Outward, requiring a Mining Pick to gather. For Iron Veins in the Antique Plateau region, see Iron Vein (Tourmaline)."
+},
+"Iron Vein (Tourmaline)": {
+"items": "Iron Scrap; Gravel Beetle; Thick Oil; Tourmaline",
+"regions": "Antique Plateau",
+"requires": "Mining Pick",
+"summary": "Iron Vein (Tourmaline) is a type of mining resource in Outward, requiring a Mining Pick to gather, found exclusively in the Antique Plateau region."
+},
+"Iron Vein (Vendavel)": {
+"items": "Iron Scrap; Gravel Beetle; Thick Oil",
+"regions": "All",
+"requires": "Mining Pick",
+"summary": "Iron Vein (Vendavel) is a type of mining resource in Outward, requiring a Mining Pick to gather. This vein is found only in the Vendavel Fortress prison."
+},
+"Krimp": {
+"items": "Krimp Nut; Ochre Spice Beetle",
+"regions": "Abrassar; Hallowed Marsh",
+"summary": "Krimp is a type of gathering resource in Outward."
+},
+"Livweedi (Gatherable)": {
+"items": "Livweedi; Ochre Spice Beetle",
+"regions": "Hallowed Marsh",
+"summary": "Livweedi (Gatherable) is a type of gathering resource in Outward, found in the Hallowed Marsh."
+},
+"Maize (Gatherable)": {
+"items": "Maize; Ochre Spice Beetle; Funnel Beetle",
+"regions": "Caldera",
+"summary": "Maize (Gatherable) is a type of Gathering resource in the Caldera region in Outward."
+},
+"Mana Stone Vein": {
+"items": "Mana Stone; Gravel Beetle; Hackmanite",
+"regions": "All",
+"requires": "Mining Pick",
+"summary": "Mana Stone Veins are a type of mining resource in Outward, requiring a Mining Pick to gather. They are typically found in locations associated with Magic or Mana, though they are not necessarily limited to these."
+},
+"Marshmelon (Gatherable)": {
+"items": "Marshmelon; Ochre Spice Beetle",
+"regions": "Hallowed Marsh",
+"summary": "Marshmelon (Gatherable) is a type of gathering resource in Outward, found in the Hallowed Marsh."
+},
+"Mining": {
+"items": "Varies",
+"regions": "All",
+"requires": "Mining Pick",
+"summary": "Mining is a kind of gathering activity, requiring a Mining Pick or equivalent item."
+},
+"Nightmare Mushrooms (Gatherable)": {
+"items": "Nightmare Mushroom; Ochre Spice Beetle",
+"regions": "Antique Plateau; Chersonese; Hallowed Marsh; Abrassar",
+"summary": "Nightmare Mushrooms (Gatherable) are a type of Gathering resource in Outward."
+},
+"Oil Node": {
+"items": "Thick Oil; Gravel Beetle",
+"regions": "Chersonese; Hallowed Marsh; Abrassar",
+"summary": "Oil Node is a type of gathering resource in Outward. The oil is most commonly used for refilling Lanterns, though it has other uses (see Thick Oil)."
+},
+"Oil Node (Caldera)": {
+"items": "Thick Oil; Crysocolla Beetle; Gravel Beetle",
+"regions": "Caldera",
+"summary": "Oil Node (Caldera) is a type of Gathering resource in the Caldera region in Outward."
+},
+"Palladium Vein": {
+"items": "Palladium Scrap; Gravel Beetle; Large Emerald; Small Sapphire; Medium Ruby",
+"regions": "All",
+"requires": "Mining Pick",
+"summary": "Palladium Vein is a type of mining resource in Outward, requiring a Mining Pick to gather."
+},
+"Palladium Vein (Tourmaline)": {
+"items": "Palladium Scrap; Medium Ruby; Large Emerald; Gravel Beetle; Thick Oil; Tourmaline",
+"regions": "Antique Plateau",
+"requires": "Mining Pick",
+"summary": "Palladium Vein (Tourmaline) is a type of mining resource in Outward, requiring a Mining Pick to gather, found exclusively in the Antique Plateau region."
+},
+"Pearlbird Nest": {
+"items": "Bird Egg; Ochre Spice Beetle",
+"regions": "Chersonese; Giants' Village",
+"summary": "Pearlbird Nest is a type of gathering resource, found in Chersonese, and also at Giants' Village."
+},
+"Petrified Wood Vein": {
+"items": "Petrified Wood; Gravel Beetle",
+"regions": "Enmerkar Forest",
+"requires": "Mining Pick",
+"summary": "Petrified Wood Vein is a type of mining resource in Outward, requiring a Mining Pick to gather. They can be found growing on trees in the Enmerkar Forest near the Burnt Outpost, as well as in Caldera."
+},
+"Purpkin (Gatherable)": {
+"items": "Purpkin",
+"regions": "Antique Plateau",
+"summary": "Purpkin (Gatherable) are a type of Gathering resource in the Antique Plateau region in Outward."
+},
+"Rainbow Peach (Gatherable)": {
+"items": "Rainbow Peach; Ochre Spice Beetle; Funnel Beetle",
+"regions": "Caldera",
+"summary": "Rainbow Peach (Gatherable) is a type of Gathering resource in the Caldera region in Outward."
+},
+"Rich Iron Vein": {
+"items": "Iron Scrap; Gravel Beetle; Thick Oil; Medium Ruby; Small Sapphire; Large Emerald",
+"regions": "All",
+"requires": "Mining Pick",
+"summary": "Rich Iron Vein is a type of mining resource in Outward, requiring a Mining Pick to gather. It can be found outdoors in all regions, typically on or near mountains. For players without the Definitive Edition, see Rich Iron Vein (Tourmaline) for veins found in the Antique Plateau region."
+},
+"Rich Iron Vein (Tourmaline)": {
+"items": "Iron Scrap; Gravel Beetle; Thick Oil; Tourmaline",
+"regions": "Antique Plateau",
+"requires": "Mining Pick",
+"summary": "Rich Iron Vein (Tourmaline) is a type of mining resource in Outward, requiring a Mining Pick to gather, found exclusively in the Antique Plateau region. Note: This article only applies to players without the Definitive Edition. In the Definitive Edition, all Rich Iron Veins can drop a Tourmaline."
+},
+"Salt Crystal": {
+"items": "Salt; Gravel Beetle",
+"regions": "All",
+"requires": "Mining Pick",
+"summary": "Salt Crystal is a type of mining resource in Outward, requiring a Mining Pick to gather."
+},
+"Seaweed (Gatherable)": {
+"items": "Seaweed",
+"regions": "Chersonese",
+"summary": "Seaweed (Gatherable) is a type of gathering resource in Outward, found on beaches in Chersonese."
+},
+"Smoke Root (Gatherable)": {
+"items": "Smoke Root; Ochre Spice Beetle",
+"regions": "Enmerkar Forest; Abrassar",
+"summary": "Smoke Root (Gatherable) is a type of gathering resource in Outward."
+},
+"Star Mushroom (Gatherable)": {
+"items": "Star Mushroom; Ochre Spice Beetle",
+"regions": "All",
+"summary": "Star Mushroom (Gatherable) is a type of gathering resource in Outward, typically found in Dungeons."
+},
+"Sulphuric Mushroom (Gatherable)": {
+"items": "Sulphuric Mushroom; Ochre Spice Beetle",
+"regions": "Caldera; Abrassar; Enmerkar Forest",
+"summary": "Sulphuric Mushroom (Gatherable) is a type of Gathering resource in Outward."
+},
+"Torcrab Nest": {
+"items": "Torcrab Egg; Salt; Seaweed",
+"regions": "Caldera",
+"summary": "Torcrab Nest is a type of Gathering resource in the Caldera region in Outward."
+},
+"Turmmip (Gatherable)": {
+"items": "Turmmip; Ochre Spice Beetle",
+"regions": "Chersonese",
+"summary": "Turmmip (Gatherable) is a type of gathering resource in Outward, found on Conflux Mountain in Chersonese."
+},
+"Unidentified Molepig den": {
+"items": "Molepig Specimen",
+"regions": "Caldera",
+"requires": "Fishing Harpoon",
+"summary": "Unidentified Molepig den is one of the Unidentified Samples nodes, and a type of resource in the Caldera region in Outward. This node requires a Fishing Harpoon or equivalent item to gather from."
+},
+"Unidentified Ore Vein": {
+"items": "Ore Sample",
+"regions": "Caldera",
+"requires": "Mining Pick",
+"summary": "Unidentified Ore Vein is one of the Unidentified Samples nodes, and a type of Gathering resource in the Caldera region in Outward. This node requires a Mining Pick or equivalent item to gather from."
+},
+"Unidentified Roots": {
+"items": "Plant Sample",
+"regions": "Caldera",
+"requires": "Mining Pick",
+"summary": "Unidentified Roots is one of the Unidentified Samples nodes, and a type of Gathering resource in the Caldera region in Outward. This node requires a Mining Pick or equivalent item to gather from."
+},
+"Veaber Eggs": {
+"items": "Veaber's Egg; Ochre Spice Beetle",
+"regions": "Antique Plateau",
+"summary": "Veaber Eggs are a type of Gathering resource in the Antique Plateau region in Outward."
+},
+"Water (Gatherable)": {
+"items": "Water",
+"regions": "All",
+"requires": "Waterskin",
+"summary": "Water (Gatherable) is a type of gathering resource, found in all regions. It can be stored in a waterskin, or the player can drink from it directly."
+},
+"Wheat (Gatherable)": {
+"items": "Wheat; Ochre Spice Beetle",
+"regions": "Antique Plateau",
+"summary": "Wheat (Gatherable) are a type of Gathering resource in the Antique Plateau region in Outward."
+},
+"Woolshroom (Gatherable)": {
+"items": "Woolshroom; Ochre Spice Beetle",
+"regions": "Enmerkar Forest",
+"summary": "Woolshroom (Gatherable) is a type of gathering resource in Outward, found on trees in the Enmerkar Forest."
+},
+"Yellow Copal": {
+"items": "Copal; Gravel Beetle",
+"regions": "Enmerkar Forest",
+"requires": "Mining Pick",
+"summary": "Yellow Copal is a type of mining resource in Outward, requiring a Mining Pick to gather. It can be found on 9 specific trees in the Enmerkar Forest (see locations below)."
+}
+}

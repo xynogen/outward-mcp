@@ -1,0 +1,1405 @@
+{
+"\"Platypus\" Pete": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"summary": "\"Platypus\" Pete is an NPC in the city of Harmattan, in Outward.",
+"type": "General"
+},
+"Adalbert the Hermit": {
+"faction": "The Cabal of Wind",
+"locations": "Hermit's House",
+"object_name": "HumanSNPC_TrainerHermit",
+"summary": "Adalbert the Hermit is a teacher of Cabal Hermit skills, found in the Hermit's House (marked as Cabal of Wind Tower), beyond Ghost Pass in Chersonese.",
+"teaches": "Cabal Hermit",
+"type": "Teacher"
+},
+"Agatha, Maiden of the Winds": {
+"faction": "The Cabal of Wind",
+"locations": "Hermit's House",
+"object_name": "HumanSNPC",
+"summary": "Agatha, Maiden of the Winds is a Merchant in Hermit's House, location in Chersonese.",
+"type": "Merchant (Alchemy)"
+},
+"Alda": {
+"faction": "The Sand Corsairs",
+"locations": "Berg",
+"object_name": "UNPC_LevantOldPetitioner",
+"summary": "Alda is an NPC in Outward.",
+"type": "General"
+},
+"Alemmon": {
+"faction": "The Holy Mission of Elatt",
+"locations": "Monsoon",
+"object_name": "UNPC_AlemmonA",
+"summary": "Alemmon is a teacher of Philosopher skills in Monsoon, city in Hallowed Marsh.",
+"teaches": "Philosopher",
+"type": "Teacher"
+},
+"Anthony Berthelot, Krypteia Scholar": {
+"faction": "The Blue Chamber Collective; The Krypteia",
+"locations": "Old Sirocco; New Sirocco",
+"summary": "Anthony Berthelot, Krypteia Scholar is an NPC in New Sirocco, accessible after building the Krypteia Hideout upgrade for the City Hall.",
+"teaches": "Infuse Blood (Blue Chamber exclusive)",
+"type": "General; Trainer"
+},
+"Apprentice Ritualist": {
+"faction": "Sirocco",
+"locations": "Ritualist's hut",
+"summary": "Apprentice Ritualist is an merchant in Ritualist's hut, in the Caldera region.",
+"type": "Merchant (Alchemy)"
+},
+"Artois Sutherland": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"summary": "Artois Sutherland is an NPC in the city of Harmattan, in Outward.",
+"type": "General"
+},
+"Balira": {
+"class": "Bandit",
+"combat": "show",
+"damagetypes": "22",
+"faction": "The Vendavel; Cabal of Wind (Former)",
+"health": "100",
+"impactresistance": "40",
+"locations": "Vendavel Fortress; Cierzo (Destroyed)",
+"object_name": "VendavelWitch",
+"resistances": "20 -40 40 -40",
+"summary": "Balira is an NPC and potential enemy, involved in the Vendavel Quest.",
+"type": "General; Quest Enemy (potential)"
+},
+"Balthazar Berthelot": {
+"faction": "The Blue Chamber Collective",
+"locations": "Berg",
+"object_name": "UNPC_Balthazar",
+"summary": "Balthazar Berthelot is an NPC in Outward.",
+"type": "General"
+},
+"Baron Montgomery": {
+"combat": "yes",
+"damagetypes": "25 Physical",
+"faction": "The Heroic Kingdom of Levant",
+"health": "90",
+"impactdamage": "24",
+"impactresistance": "44",
+"locations": "Levant; Undercity Passage",
+"object_name": "BossBaron",
+"resistances": "43 &nbsp; 10 &nbsp; 45 &nbsp; 20",
+"summary": "Baron Montgomery is an NPC in Outward.",
+"type": "Quest Enemy (potential)"
+},
+"Barrel Man": {
+"faction": "The Heroic Kingdom of Levant",
+"locations": "Slums",
+"object_name": "UNPC_BarrelManA; BarrelManTriggerArea",
+"summary": "Barrel Man is a unique NPC in the Slums of Levant who lives in a barrel and wears a fish on his head. He claims to be a master weapon smith, and tasks the player with gathering an assortment of miscellaneous objects for him. He can be found in the far north-western corner of the Slums.",
+"type": "General"
+},
+"Bea Battleborn, Weapons Master": {
+"faction": "Sirocco",
+"locations": "New Sirocco",
+"summary": "Bea Battleborn, Weapons Master is a teacher of Weapon Master skills. This teacher is accessible to those who have purchased the appropriate upgrade for their Gladiator's Arena in New Sirocco.",
+"teaches": "Weapons Master",
+"type": "Teacher"
+},
+"Berg Guard": {
+"faction": "Blue Chamber",
+"locations": "Berg",
+"summary": "Berg Guards are an NPC found in the town of Berg in the Enmerkar Forest region. They serve the purpose of providing some general information to the player about the region of Enmerkar Forest, and will occasionally convey messages from other characters.",
+"type": "General"
+},
+"Blue Chamber Scout": {
+"class": "Human",
+"faction": "Blue Chamber",
+"locations": "Ruined Outpost",
+"summary": "Blue Chamber Scout is a NPC in Outward, found at the Ruined Outpost in Abrassar during the quest Sand Corsairs.",
+"type": "General"
+},
+"Brad Aberdeen, Chef": {
+"faction": "Sirocco",
+"locations": "New Sirocco",
+"summary": "Brad Aberdeen, Chef is an merchant in New Sirocco, in the Caldera region. Accessible after building the Food Store Building.",
+"type": "Merchant (Food)"
+},
+"Bradley Auteil, Armory": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"point": "31,39",
+"quests": "Need: Fire Elemental Particles",
+"summary": "Bradley Auteil, Armory is an merchant in Harmattan, city in the Antique Plateau.",
+"type": "Merchant (Equipment)"
+},
+"Bruce, Arena Master": {
+"faction": "Sirocco",
+"locations": "Old Sirocco; New Sirocco",
+"summary": "Bruce, Arena Master is an NPC in New Sirocco, accessible after building the Gladiator's Arena.",
+"type": "General"
+},
+"Burac Carillon": {
+"faction": "The Blue Chamber Collective",
+"locations": "Cierzo",
+"object_name": "UNPC_BuracCarillonA",
+"quests": "Vendavel",
+"summary": "Burac Carillon is an NPC in Outward. He is the warden of Cierzo, and guards the gate to Chersonese.",
+"teaches": "Pommel Counter; Choice of one Weapon-specific Weapon Skill or Enrage (once)",
+"type": "Trainer"
+},
+"Butcher of Men": {
+"class": "Scourge",
+"combat": "y",
+"damagetypes": "30.6 8.5",
+"health": "900",
+"healthregen": "1.5",
+"impactdamage": "75",
+"impactresistance": "70",
+"locations": "Monsoon; Abandoned Storage",
+"resistances": "5 20 -50",
+"summary": "Butcher of Men is a Quest Enemy, and a type of Immaculate in Outward. In The Soroboreans DLC, the Butcher of Men is encountered as an NPC with dialogue.",
+"type": "General; Quest Enemy"
+},
+"Cardinal Bourlamaque": {
+"faction": "The Holy Mission of Elatt",
+"locations": "Monsoon",
+"object_name": "UNPC_CardinalBourlamaqueA",
+"quests": "Hallowed Peacemaker",
+"summary": "Cardinal Bourlamaque is an NPC in Outward. He can be found in the temple of Monsoon.",
+"type": "General"
+},
+"Cera Carillion, Weaponsmith": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"point": "28,39",
+"quests": "Need: Shield Golem Scrap",
+"summary": "Cera Carillion, Weaponsmith is an merchant in Harmattan, city in the Antique Plateau.",
+"type": "Merchant (Equipment)"
+},
+"Chef Iasu": {
+"faction": "The Blue Chamber Collective",
+"locations": "Berg",
+"object_name": "HumanSNPC_CounterFoodStore",
+"point": "45,62",
+"quests": "Need: Manticore Tail",
+"summary": "Chef Iasu is a Merchant in Berg, city in Enmerkar Forest.",
+"type": "Merchant (Food)"
+},
+"Chef Tenno": {
+"faction": "The Blue Chamber Collective",
+"locations": "Levant",
+"object_name": "HumanSNPC_CounterFoodStore",
+"point": "48,42",
+"quests": "Need: Shark Cartilage",
+"summary": "Chef Tenno is a Merchant in Levant, city in Abrassar Desert. He is also the source of the quest Need: Shark Cartilage.",
+"type": "Merchant (Food)"
+},
+"Chimer": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"summary": "Chimer is an NPC in the city of Harmattan, in Outward.",
+"type": "General"
+},
+"Cierzo Guard": {
+"faction": "Blue Chamber",
+"locations": "Cierzo",
+"summary": "Cierzo Guards are an NPC found in the town of Cierzo in the Chersonese region. They serve the purpose of providing some general information to the player about the region of Chersonese, and will occasionally convey messages from other characters.",
+"type": "General"
+},
+"Clayton": {
+"faction": "Sorobor Academy",
+"locations": "Ruins of Old Levant",
+"object_name": "UNPC_ClaytonA",
+"summary": "Clayton is an NPC in Outward.",
+"type": "General"
+},
+"Conrad": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"summary": "Conrad is an NPC in the city of Harmattan, in Outward.",
+"type": "General"
+},
+"Courier": {
+"faction": "Unknown",
+"locations": "Berg; New Sirocco",
+"summary": "Couriers is an NPC encountered during the Sirocco quest line.",
+"type": "General"
+},
+"Cremeuh Ayere": {
+"faction": "The Blue Chamber Collective",
+"locations": "Necropolis",
+"object_name": "UNPC_CremeuhA",
+"quests": "Skulls for Cremeuh",
+"summary": "Cremeuh Ayere is an NPC found in the lower area of the Necropolis in Berg, city in Enmerkar Forest.",
+"type": "General"
+},
+"Crock": {
+"class": "Bandit",
+"combat": "show",
+"damagetypes": "42",
+"faction": "The Vendavel",
+"health": "120",
+"impactresistance": "71",
+"inflicts": "Confusion",
+"locations": "Vendavel Fortress; Cierzo (Destroyed)",
+"object_name": "NewBandits_Bourrin; NewBandits_Bourrin(Drunk)",
+"resistances": "11 68 40 5 40 40 40",
+"summary": "Crock is an NPC and potential enemy in Outward.",
+"type": "General; Quest Enemy (potential)"
+},
+"Cyrene": {
+"combat": "leave non empty to show NPC combat data as specified below:",
+"damagetypes": "25 &nbsp; 16 &nbsp; 8",
+"faction": "The Heroic Kingdom of Levant",
+"health": "450",
+"impactresistance": "45",
+"locations": "Levant",
+"object_name": "UNPC_Cyrene",
+"quests": "Tending the Flame; Sand Corsairs",
+"resistances": "15 &nbsp; 50 &nbsp; 10",
+"summary": "Cyrene is an NPC and potential enemy in Outward.",
+"type": "General"
+},
+"Cyril Turnbull": {
+"faction": "Sorobor Academy",
+"locations": "Berg",
+"object_name": "UNPC_CyrilTurnbull",
+"summary": "Cyril Turnbull is a skill trainer in Berg, city in Enmerkar Forest.",
+"teaches": "Mist (skill)",
+"type": "Trainer"
+},
+"Damian Lockwell": {
+"faction": "The Holy Mission of Elatt",
+"locations": "Monsoon",
+"object_name": "UNPC_DamianLockwellA",
+"summary": "Damian Lockwell is an NPC in Outward.",
+"type": "General"
+},
+"David Parks, Craftsman": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"point": "30,45",
+"quests": "Need: Angel Food Cake",
+"summary": "David Parks, Craftsman is an merchant in Harmattan, city in the Antique Plateau.",
+"type": "Merchant (General)"
+},
+"Dawne": {
+"class": "Bandit",
+"combat": "yes",
+"damagetypes": "25",
+"faction": "The Sand Corsairs",
+"health": "90",
+"impactdamage": "32",
+"impactresistance": "18",
+"inflicts": "Bleeding",
+"locations": "Slums; Undercity Passage",
+"object_name": "UNPC_DawneA; UNPC_DawneA_fighting",
+"resistances": "26 -50",
+"summary": "Dawne is an NPC and potential enemy in Outward.",
+"type": "Quest Enemy (potential)"
+},
+"Desy Laroche": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"summary": "Desy Laroche is an NPC in the city of Harmattan, in Outward. She is a native from Karaburan.",
+"type": "General"
+},
+"Djinn": {
+"class": "Djinn",
+"damagetypes": "50 to 80",
+"health": "1200",
+"impactdamage": "120",
+"impactresistance": "55",
+"inflicts": "Pain; Confusion",
+"locations": "Oil Refinery",
+"resistances": "55 75 -20 25 -20 100",
+"statusimmunity": "Bleeding or Confusion",
+"summary": "Djinn is an NPC and potential enemy in Outward.",
+"type": "Normal"
+},
+"Dolar": {
+"faction": "The Ash Giants",
+"locations": "Giant's Sauna",
+"summary": "Dolar is an merchant in Giant's Sauna, in the Caldera region.",
+"type": "General"
+},
+"Dorion Dumas": {
+"faction": "Sirocco",
+"locations": "Old Sirocco; New Sirocco",
+"summary": "Dorion Dumas is an NPC involved in the Sirocco quest line in Caldera.",
+"type": "General"
+},
+"Edward Orville": {
+"faction": "Sirocco",
+"locations": "Ark of the Exiled",
+"summary": "Edward Orville is an NPC, and a member of the former Old Sirocco nobility.",
+"type": "General"
+},
+"Elatt": {
+"class": "Living Thought",
+"faction": "The Holy Mission of Elatt",
+"locations": "Monsoon; In Between",
+"object_name": "UNPC_ElattA",
+"summary": "Elatt is an NPC, a God of Discipline and the founder of the Holy Mission faction.",
+"teaches": "Infuse Light",
+"type": "General"
+},
+"Ella Lockwell, Master of Cursecraft": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"summary": "Ella Lockwell, Master of Cursecraft is a teacher of Hex Mage skills, found in the city of Harmattan in the Antique Plateau region.",
+"teaches": "Hex Mage",
+"type": "Teacher"
+},
+"Ellinara": {
+"faction": "The Holy Mission of Elatt",
+"locations": "Monsoon",
+"object_name": "UNPC_EllinaraA",
+"summary": "Ellinara is an NPC in Outward.",
+"type": "General"
+},
+"Engineer Orsten": {
+"faction": "The Heroic Kingdom of Levant",
+"locations": "Levant",
+"object_name": "HumanSNPC_Engineer",
+"point": "35,55",
+"summary": "Engineer Orsten is a Merchant in Levant, city in Abrassar Desert. Notably, he is a guaranteed source for the rare items Power Coil and Pressure Plate Trap.",
+"type": "Merchant (Equipment)"
+},
+"Erica Kasper, Dean of Naturalism": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"summary": "Erica Kasper, Dean of Naturalism is an NPC in the city of Harmattan in the Antique Plateau region.",
+"type": "General"
+},
+"Etios von Vanoos": {
+"faction": "Unknown",
+"locations": "Cierzo",
+"quests": "Purify The Water",
+"summary": "Etios von Vanoos, Engineer is an NPC that appears in Cierzo after the player joins any faction. When spoken to, he gives the quest Purify The Water.",
+"type": "General"
+},
+"Eto Akiyuki": {
+"faction": "The Kazite",
+"locations": "Cierzo",
+"object_name": "UNPC_EtoAkiyukiA",
+"summary": "Eto Akiyuki is a teacher of Kazite Spellblade skills in Cierzo, city in Chersonese, and a member of The Kazite. He can be found on the upper area of the Cierzo docks, next to Oda.",
+"teaches": "Kazite Spellblade",
+"type": "Teacher"
+},
+"Eva G. Leon": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"summary": "Eva G. Leon is an NPC in the city of Harmattan, in Outward.",
+"type": "General"
+},
+"Evangeline Vallier": {
+"faction": "Sirocco",
+"locations": "Old Sirocco; New Sirocco",
+"summary": "Evangeline Vallier is an NPC involved in the Sirocco quest line in Caldera.",
+"type": "General"
+},
+"Fang & Claw's Innkeeper": {
+"faction": "Holy Mission",
+"locations": "Monsoon",
+"summary": "The Fang & Claw's Innkeeper is the Innkeeper of the Fang & Claw's Inn in Monsoon.",
+"type": "Innkeeper"
+},
+"Felix Jimson, Shopkeeper": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"point": "14,36",
+"summary": "Felix Jimson, Shopkeeper is an merchant in Harmattan, city in the Antique Plateau.",
+"type": "Merchant (General)"
+},
+"Fifth Watcher": {
+"faction": "Unknown",
+"locations": "Conflux Chambers",
+"summary": "Fifth Watcher is an NPC at the Conflux Chambers in Outward.",
+"type": "Standard"
+},
+"First Watcher": {
+"faction": "Unknown",
+"locations": "Conflux Chambers",
+"quests": "Acquire Mana",
+"summary": "First Watcher is an NPC at the Conflux Chambers in Outward.",
+"teaches": "Flamethrower; Sigil of Fire; Reveal Soul",
+"type": "Trainer"
+},
+"Fishmonger Karl": {
+"faction": "The Blue Chamber Collective",
+"locations": "Cierzo",
+"object_name": "HumanSNPC_Fishmonger",
+"point": "57,50",
+"summary": "Fishmonger Karl is a Merchant in Cierzo, city in Chersonese.",
+"type": "Merchant (Food)"
+},
+"Five Eyes": {
+"faction": "The Ash Giants",
+"locations": "Giant's Sauna",
+"summary": "Five Eyes is an NPC at Giant's Sauna in the Caldera region.",
+"type": "General"
+},
+"Flase, Sage Trainer": {
+"faction": "The Blue Chamber Collective",
+"locations": "Berg",
+"object_name": "HumanSNPC_TrainerSage",
+"summary": "Flase, Sage Trainer is a teacher of Rune Sage skills in Berg, city in Enmerkar Forest.",
+"teaches": "Rune Sage",
+"type": "Teacher"
+},
+"Forge Master": {
+"class": "Lich",
+"damagetypes": "15 30",
+"faction": "Sorobor Academy (former)",
+"health": "850",
+"impactdamage": "97",
+"impactresistance": "7000",
+"locations": "Forgotten Research Laboratory",
+"resistances": "40 -40 40 -20 20 40",
+"statusimmunity": "Bleeding; Poison",
+"summary": "Forge Master is a Lich boss found at the Forgotten Research Laboratory in Antique Plateau. Involved in the Rust and Vengeance quest.",
+"type": "Lich; Boss"
+},
+"Fourth Watcher": {
+"faction": "Unknown",
+"locations": "Conflux Chambers",
+"object_name": "UNPC_WatcherFourthA",
+"summary": "Fourth Watcher is a Merchant at Conflux Chambers. They can be found at the top of the Chambers, near the boat at the end of the short tunnel.",
+"type": "Merchant (Alchemy)"
+},
+"Fourwind gang leader": {
+"faction": "Fourwind gang",
+"locations": "Harmattan; Old Harmattan",
+"summary": "Fourwind gang leader is an NPC, encountered during the quests Up The Ladder and A House Divided in the Sorobor Academy quest line.",
+"type": "General"
+},
+"Friendly Immaculate": {
+"combat": "leave non empty to show NPC combat data as specified below:",
+"damagetypes": "22.5 7.5",
+"health": "775",
+"impactdamage": "75",
+"impactresistance": "50",
+"locations": "Immaculate's Camp",
+"object_name": "ImmaculateNPC",
+"resistances": "20 -50",
+"summary": "The Friendly Immaculate is an Immaculate, a type of Scourge, NPC and potential enemy in Outward. They can be found in each region, inside Immaculate's Camps. When interacted with, they simply have the name \"Immaculate\". Members of the Holy Mission will find that the Immaculate will be immediately hostile to them upon entering its cave. Killing the Immaculate will prevent it from spawning in other locations...",
+"teaches": "Possessed (skill)",
+"type": "NPC; Trainer; Enemy"
+},
+"Gabriella Sullivan": {
+"faction": "The Blue Chamber Collective; The Krypteia",
+"locations": "Berg",
+"object_name": "UNPC_GabriellaSullivanA",
+"summary": "Gabriella Sullivan is an NPC in Outward.",
+"type": "General"
+},
+"Galira": {
+"faction": "The Holy Mission of Elatt",
+"locations": "Monsoon",
+"object_name": "UNPC_GaliraA",
+"summary": "Galira is a teacher of Warrior Monk skills in Monsoon, city in Hallowed Marsh.",
+"teaches": "Warrior Monk",
+"type": "Teacher"
+},
+"Gep": {
+"faction": "Unknown",
+"locations": "All",
+"summary": "Gep is a mysterious NPC in Outward, most notable for frequently rescuing the player in Defeat Scenarios. They are never actually seen in-game, although there are several items and NPCs related to Gep.",
+"type": "Other"
+},
+"Gold Belly": {
+"faction": "The Ash Giants",
+"locations": "Giants' Village",
+"object_name": "UNPC_BellyTheMerchant",
+"summary": "Gold Belly is a Merchant in Giants' Village, city in Hallowed Marsh. He can be found directly ahead when entering the village, on the right side of the first main area.",
+"type": "Merchant (General)"
+},
+"Grand Innkeeper": {
+"faction": "Heroic Kingdom",
+"locations": "Levant",
+"summary": "The Grand Innkeeper is the Innkeeper of the Grand Inn in Levant.",
+"type": "Innkeeper"
+},
+"Gregory Turnbull, Dean of the Arcane": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"quests": "Cloak and Dagger; A House Divided",
+"summary": "Gregory Turnbull, Dean of the Arcane is an NPC in the city of Harmattan in the Antique Plateau region.",
+"type": "General"
+},
+"Harmattan Guard": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"summary": "Harmattan Guards are an NPC found in the town of Harmattan in the Antique Plateau region. They serve the purpose of providing some general information to the player about the region of Antique Plateau, and will occasionally convey messages from other characters.",
+"type": "General"
+},
+"Headmaster Raul Salaberry": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"quests": "Up The Ladder",
+"summary": "Headmaster Raul Salaberry is an NPC in the city of Harmattan in the Antique Plateau region.",
+"teaches": "Doom Hex",
+"type": "General"
+},
+"Helen Turnbull": {
+"faction": "Sorobor Academy",
+"locations": "Cierzo",
+"object_name": "UNPC_HelenTurnbullA",
+"quests": "Helen's Fungus",
+"summary": "Helen Turnbull is an NPC found in Cierzo, and is a member of the Sorobor Academy. She can be found outside her house, south of the gate to Chersonese, and will reward the player with various items if they bring her certain rare artifacts.",
+"type": "General"
+},
+"Helmi the Alchemist": {
+"faction": "The Blue Chamber Collective",
+"locations": "Cierzo",
+"object_name": "HumanSNPC_Alchemist",
+"point": "36,63",
+"quests": "Acquire Mana; Alchemy: Crystal Powder",
+"summary": "Helmi the Alchemist the Alchemist is a Merchant in Cierzo's marketplace. She trades in alchemy ingredients, potions and recipes, and can give two minor quests.",
+"type": "Merchant (Alchemy)"
+},
+"Henri Wolfgang": {
+"faction": "The Wolfgang",
+"locations": "Old Harmattan",
+"summary": "Henri Wolfgang is an NPC, who can be encountered during the quest A House Divided in the Sorobor Academy quest line depending on your success in the debate and previous quests.",
+"type": "General"
+},
+"Highlord Cyr": {
+"class": "Giant",
+"combat": "show",
+"damagetypes": "58.5 Physical",
+"faction": "The Ash Giants",
+"health": "600",
+"impactdamage": "138",
+"impactresistance": "75",
+"locations": "Giants' Village",
+"object_name": "AshGiantPlate",
+"resistances": "30",
+"summary": "Highlord Cyr is a Giant NPC and potential enemy in Outward. He is the leader of the Giants at Giants' Village. His fellow giants consider him to be old-fashioned and resistant to change, according to Gold Belly.",
+"type": "Quest Enemy (potential)",
+"weaknesses": "-40"
+},
+"Howard Brock, Blacksmith": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"object_name": "HumanSNPC_Blacksmith",
+"point": "33,33",
+"summary": "Howard Brock, Blacksmith is a blacksmith in Harmattan, city in the Antique Plateau.",
+"type": "Merchant (Equipment); Blacksmith"
+},
+"Hugo Lockwell, Provost of Academic Affairs": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"summary": "Hugo Lockwell, Provost of Academic Affairs is an NPC in the city of Harmattan in the Antique Plateau region.",
+"type": "General"
+},
+"Ibolya Battleborn, Chef": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"point": "23,46",
+"quests": "Need: Manaheart Bass",
+"summary": "Ibolya Battleborn, Chef is an merchant in Harmattan, city in the Antique Plateau.",
+"type": "Merchant (Food)"
+},
+"Iron Sides": {
+"faction": "The Ash Giants",
+"locations": "Giants' Village",
+"object_name": "GiantLegacyWorker_NPC",
+"summary": "Iron Sides is a Merchant in the Giants' Village in Outward. He can be found next to the furnace, immediately to the right after entering the village.",
+"type": "Merchant (Equipment)"
+},
+"Jager Sullivan": {
+"faction": "Sorobor Academy",
+"locations": "Berg",
+"object_name": "UNPC_JagerSullivanA",
+"summary": "Jager Sullivan is an NPC in Outward, involved in the Purifier quest. He can be found at the western-most entrance to Berg, a short distance east. This entrance is west of the Blue Chamber itself, not the main south-western entrance.",
+"type": "General"
+},
+"Jaimon": {
+"faction": "The Heroic Kingdom of Levant",
+"locations": "Levant",
+"object_name": "HumanSNPC_TrainerMercenary",
+"summary": "Jaimon is a teacher of Mercenary skills in Levant, city in Abrassar.",
+"teaches": "Mercenary",
+"type": "Teacher"
+},
+"Jake": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"summary": "Jake is an NPC in the city of Harmattan, in Outward.",
+"type": "General"
+},
+"Jane Vincent, Recruiter": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"summary": "Jane Vincent, Recruiter is an NPC in the city of Harmattan in the Antique Plateau region.",
+"type": "General"
+},
+"Joliette Montgomery, Dean of History": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"summary": "Joliette Montgomery, Dean of History is an NPC in the city of Harmattan in the Antique Plateau region.",
+"type": "General"
+},
+"Josef Dumas": {
+"faction": "Sirocco",
+"locations": "Old Sirocco; New Sirocco",
+"summary": "Josef Dumas is an NPC involved in the Sirocco quest line in Caldera.",
+"type": "General"
+},
+"Julius Sutherland": {
+"faction": "The Blue Chamber Collective; The Krypteia",
+"locations": "Berg",
+"summary": "Julius Sutherland is an NPC located in Berg, in Outward. He is a member of The Blue Chamber Collective.",
+"type": "General"
+},
+"Justin Garnet, Specialist Trainer": {
+"faction": "Sirocco",
+"locations": "New Sirocco",
+"summary": "Justin Garnet, Specialist Trainer is a teacher of Specialist passive skills. This teacher is accessible to those who have purchased the appropriate upgrade for their Gladiator's Arena in New Sirocco.",
+"teaches": "Specialist",
+"type": "Teacher"
+},
+"Kapros": {
+"faction": "The Heroic Kingdom of Levant",
+"locations": "Berg",
+"object_name": "UNPC_KaprosA",
+"summary": "Kapros is an NPC in Outward. They play a small role in the quest Tending the Flame, a Heroic Kingdom faction quest.",
+"type": "General"
+},
+"King Simeon": {
+"faction": "The Heroic Kingdom of Levant",
+"locations": "Levant",
+"object_name": "UNPC_SimeonA",
+"summary": "King Simeon, along with his wife Queen Calixa, is one of the leaders of Levant, city in Abrassar and home of the Heroic Kingdom faction.",
+"teaches": "Simeon's Gambit",
+"type": "Trainer"
+},
+"Kirouac": {
+"faction": "The Heroic Kingdom of Levant",
+"locations": "Levant",
+"object_name": "UNPC_Kirouac",
+"summary": "Kirouac is an NPC in Outward.",
+"type": "General"
+},
+"Laine the Alchemist": {
+"faction": "The Holy Mission of Elatt",
+"locations": "Monsoon",
+"object_name": "HumanSNPC_LaineAberforthA",
+"point": "50,53",
+"summary": "Laine the Alchemist is a Merchant in Monsoon, city in Hallowed Marsh.",
+"type": "Merchant (Alchemy)"
+},
+"Lawrence Dakers, Hunter": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"point": "27,45",
+"quests": "Need: Tourmaline",
+"summary": "Lawrence Dakers, Hunter is an merchant in Harmattan, city in the Antique Plateau.",
+"type": "Merchant (Equipment)"
+},
+"Levant Guard": {
+"faction": "Heroic Kingdom",
+"locations": "Levant",
+"summary": "Levant Guards are an NPC found in the town of Levant in the Abrassar region. They serve the purpose of providing some general information to the player about the region of Abrassar, and will occasionally convey messages from other characters.",
+"type": "General"
+},
+"Light Mender": {
+"class": "Lich",
+"damagetypes": "16.17 32.83",
+"health": "1500",
+"impactdamage": "97",
+"impactresistance": "85",
+"locations": "Spire of Light; Berg Arena",
+"resistances": "40 -20 100 20",
+"statusimmunity": "Bleeding; Poison",
+"summary": "The Light Mender is a Unique Lich boss in Outward, found at the top of the Spire of Light in the Hallowed Marsh region, and also found in an Unknown Arena in Berg.",
+"type": "Lich; Boss"
+},
+"Lost Merchant": {
+"class": "Human",
+"faction": "Heroic Kingdom",
+"locations": "Abrassar",
+"summary": "Lost Merchant is a NPC in Outward involved in the eponymous quest Lost Merchant (quest).",
+"type": "General"
+},
+"Loud-Hammer": {
+"faction": "The Blue Chamber Collective",
+"locations": "Cierzo",
+"object_name": "HumanSNPC_Blacksmith",
+"point": "43,60",
+"summary": "Loud-Hammer is a blacksmith in Cierzo, city in Chersonese.",
+"type": "Merchant (Equipment); Blacksmith"
+},
+"Luc Salaberry, Alchemist": {
+"faction": "Sirocco",
+"locations": "New Sirocco",
+"summary": "Luc Salaberry, Alchemist is an merchant in New Sirocco, in the Caldera region. Can be accessed after unlocking the Alchemist shop. This merchant provides access to unique new Bombs when unlocked, as well as advanced Arrows with the Fletcher's Workshop upgrade.",
+"type": "Merchant (Alchemy)"
+},
+"Markus": {
+"combat": "leave non empty to show NPC combat data as specified below:",
+"damagetypes": "21 &nbsp;&nbsp; 7",
+"faction": "The Heroic Kingdom of Levant",
+"health": "90",
+"impactdamage": "23",
+"impactresistance": "13",
+"locations": "Slums; Undercity Passage",
+"object_name": "UNPC_MarkusA",
+"resistances": "2 &nbsp;&nbsp; 25 -100",
+"summary": "Markus is an NPC, skill trainer, and potential enemy in Outward.",
+"teaches": "Puncture",
+"type": "Trainer; Quest Enemy (potential)"
+},
+"Master of the Colosseum": {
+"faction": "Calygrey",
+"locations": "Calygrey Colosseum",
+"summary": "Master of the Colosseum is an NPC at Calygrey Colosseum, he is in charge of the arena which players can participate in.",
+"type": "General"
+},
+"Master-Chef Arago": {
+"faction": "The Blue Chamber Collective",
+"locations": "Cierzo",
+"object_name": "HumanSNPC_Cook; HumanSNPC_FishmongerA (dialogue)",
+"point": "50,49",
+"quests": "Need: Cierzo Ceviche",
+"summary": "Master-Chef Arago is a Merchant in Cierzo, a city in Chersonese. He is also the source of the quest Need: Cierzo Ceviche.",
+"type": "Merchant (Food)"
+},
+"Master-Smith Tokuga": {
+"faction": "The Heroic Kingdom of Levant",
+"locations": "Levant",
+"object_name": "HumanSNPC_Blacksmith",
+"point": "40,55",
+"summary": "Master-Smith Tokuga is a blacksmith in Levant, city in Abrassar Desert.",
+"type": "Merchant (Equipment); Blacksmith"
+},
+"Mathias": {
+"faction": "The Holy Mission of Elatt",
+"locations": "Berg",
+"object_name": "UNPC_MathiasA",
+"summary": "Mathias is an NPC and potential Merchant located in Berg, in Outward.",
+"type": "Merchant (Other)"
+},
+"Mavith": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"object_name": "UNPC_DLC_Prisma_Trainer",
+"summary": "Mavith is an NPC in the Military District of Harmattan, in Outward.",
+"teaches": "Prismatic Flurry",
+"type": "Trainer"
+},
+"Michel Aberdeen": {
+"faction": "The Blue Chamber Collective",
+"locations": "Chersonese",
+"object_name": "UNPC_MichelAberdeenA",
+"summary": "Michel Aberdeen is an NPC in Outward. He can be found on beaches south of Cierzo, which can be accessed easily through Cierzo Storage.",
+"type": "General"
+},
+"Mofat": {
+"faction": "The Holy Mission of Elatt",
+"locations": "Monsoon",
+"object_name": "UNPC_MofatA",
+"summary": "Mofat is an NPC in Outward.",
+"teaches": "Blessed (skill)",
+"type": "General; Trainer"
+},
+"Monsoon Guard": {
+"faction": "Holy Mission",
+"locations": "Cierzo",
+"summary": "Monsoon Guards are an NPC found in the town of Monsoon in the Hallowed Marsh region. They serve the purpose of providing some general information to the player about the region of Hallowed Marsh, and will occasionally convey messages from other characters.",
+"type": "General"
+},
+"Muii": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"summary": "Muii is an NPC in the city of Harmattan, in Outward.",
+"type": "General"
+},
+"Myriade": {
+"class": "Undead",
+"faction": "Unknown",
+"locations": "Corrupted Tombs",
+"object_name": "UNPC_AncienUndeadA; SNPC_TalkingHead",
+"quests": "A Myriad of Bones",
+"summary": "Myriade is a NPC in Outward, found at the Corrupted Tombs in Chersonese.",
+"type": "General"
+},
+"Oda, Kazite Trainer": {
+"faction": "The Kazite",
+"locations": "Cierzo",
+"object_name": "HumanSNPC_TrainerKazite",
+"summary": "Oda, Kazite Trainer is a skill trainer in Cierzo, city in Chersonese.",
+"teaches": "Talus Cleaver",
+"type": "Trainer"
+},
+"Ogoi, Kazite Assassin": {
+"faction": "The Kazite",
+"locations": "Berg",
+"object_name": "HumanSNPC_KaziteAssassin",
+"point": "92,72",
+"quests": "Need: Beast Golem Scraps",
+"summary": "Ogoi, Kazite Assassin is an NPC and Merchant in Berg, city in Enmerkar Forest.",
+"type": "Merchant (Other)"
+},
+"Old Coin's Innkeeper": {
+"faction": "Blue Chamber",
+"locations": "Berg",
+"summary": "The Old Coin's Innkeeper is the Innkeeper of the Old Coin's Inn in Berg.",
+"type": "Innkeeper"
+},
+"Oliele Aberdeen": {
+"faction": "The Holy Mission of Elatt",
+"locations": "Cierzo; Monsoon; Berg",
+"object_name": "UNPC_OlieleA",
+"summary": "Oliele Aberdeen is an NPC in Outward.",
+"type": "General"
+},
+"Ountz the Melon Farmer": {
+"faction": "The Holy Mission of Elatt",
+"locations": "Monsoon",
+"object_name": "HumanSNPC_CounterFoodStore",
+"point": "22.5,58.5",
+"summary": "Ountz the Melon Farmer is a Merchant in Monsoon, city in Hallowed Marsh.",
+"type": "Merchant (Food)"
+},
+"Owen, Healer": {
+"faction": "Sirocco",
+"locations": "Old Sirocco; New Sirocco",
+"summary": "Owen, Healer is an NPC in New Sirocco, accessible after building the Chapel.",
+"type": "General"
+},
+"Patrick Arago, General Store": {
+"faction": "Sirocco",
+"locations": "New Sirocco",
+"summary": "Patrick Arago, General Store is an merchant in New Sirocco, in the Caldera region. Accessible after building the General Store Building.",
+"type": "Merchant (General)"
+},
+"Paul, Disciple": {
+"faction": "Sirocco",
+"locations": "Old Sirocco; New Sirocco",
+"summary": "Paul, Disciple is an NPC in New Sirocco, accessible after building the Lotus of Light upgrade for the Chapel.",
+"teaches": "Elatt's Intervention (Holy Mission exclusive)",
+"type": "General; Trainer"
+},
+"Pelletier Baker, Chef": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"point": "43,16",
+"summary": "Pelletier Baker, Chef is an merchant in Harmattan, city in the Antique Plateau.",
+"type": "Merchant (Food)"
+},
+"Pholiota": {
+"faction": "Unknown",
+"locations": "Troglodyte Warren; Bandit Hideout; Various Antique Plateau Dungeons",
+"summary": "Pholiota is a secret merchant found in various dungeons in the Antique Plateau.",
+"type": "Merchant (Other)"
+},
+"Pigeoneye": {
+"faction": "The Heroic Kingdom of Levant",
+"locations": "Slums",
+"quests": "Silver for the Slums",
+"summary": "Pigeoneye is an NPC in the Slums in Outward. He can be found seated on the rooftops of the Slums, immediately west of the Levant entrance.",
+"type": "General"
+},
+"Plague Doctor": {
+"class": "Lich",
+"health": "1500",
+"impactresistance": "70",
+"locations": "Dark Ziggurat; Berg Arena",
+"resistances": "40 100 -20 20",
+"statusimmunity": "Bleeding; Poison",
+"summary": "The Plague Doctor is a Unique Lich boss in Outward, found at the bottom of the Dark Ziggurat in the Hallowed Marsh region, and also found in an Unknown Arena in Berg.",
+"type": "Lich; Boss"
+},
+"Prince Jaden": {
+"faction": "The Heroic Kingdom of Levant",
+"summary": "Prince Jaden is an NPC located in Levant, in Outward.",
+"type": "General"
+},
+"Prince Pietro": {
+"faction": "The Heroic Kingdom of Levant",
+"summary": "Prince Pietro is an NPC located in Levant, in Outward.",
+"type": "General"
+},
+"Queen Calixa": {
+"faction": "The Heroic Kingdom of Levant",
+"locations": "Levant",
+"object_name": "UNPC_CalixaA",
+"quests": "Mouths to Feed; Heroic Peacemaker",
+"summary": "Queen Calixa, along with her husband King Simeon, is one of the leaders of Levant, city in Abrassar and home of the Heroic Kingdom faction.",
+"type": "General"
+},
+"Quikiza the Blacksmith": {
+"faction": "The Blue Chamber Collective",
+"locations": "Berg",
+"object_name": "HumanSNPC_Blacksmith",
+"point": "21,51",
+"summary": "Quikiza the Blacksmith is a blacksmith in Berg, city in Enmerkar Forest.",
+"type": "Merchant (Equipment); Blacksmith"
+},
+"Raline Lor'eman": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"summary": "Raline Lor'eman is an NPC in the city of Harmattan, in Outward.",
+"type": "General"
+},
+"Rastarte": {
+"faction": "The Montcalm Tribe",
+"locations": "Montcalm Clan Fort",
+"object_name": "UNPC_RamzaA",
+"summary": "Rastarte is an NPC located at the Montcalm Clan Fort, in Outward. When available to speak to, he will be found sitting in a throne in a room at the very top of the stairs.",
+"type": "General"
+},
+"Rebel Priest": {
+"combat": "yes",
+"damagetypes": "26 - 33",
+"faction": "The Holy Mission of Elatt",
+"health": "90",
+"impactdamage": "20-36",
+"impactresistance": "19-34",
+"inflicts": "Bleeding (Fang Trident variant)",
+"locations": "Hollowed Lotus",
+"object_name": "UNPC_RebelPriestA; UNPC_RebelPriestB; UNPC_RebelPriestC",
+"resistances": "28 5 25 25-45 25-45",
+"summary": "Rebel Priest is an NPC and potential enemy encountered during Truth and Purpose, a Holy Mission faction quest.",
+"type": "Quest Enemy (potential)"
+},
+"Researcher Boye": {
+"faction": "Sorobor Academy",
+"locations": "Face of the Ancients",
+"object_name": "UNPC_Researcher",
+"quests": "Red Idol",
+"summary": "Researcher Boye is an archaeologist that can be found in the Face of the Ancients in the Enmerkar Forest.",
+"type": "General"
+},
+"Rissa Aberdeen": {
+"faction": "The Blue Chamber Collective; The Krypteia",
+"locations": "Cierzo; Berg",
+"object_name": "UNPC_RissaAberdeenA",
+"quests": "Call to Adventure; Looking to the Future; Mixed Legacies; Ash Giants; Whispering Bones; Ancestral Peacemaker",
+"summary": "Rissa Aberdeen is an NPC in Outward.",
+"type": "General"
+},
+"Robed Man": {
+"class": "Human",
+"faction": "Heroic Kingdom",
+"locations": "Nomad's Oasis",
+"summary": "Robed Man is a NPC in Outward, found at the Nomad's Oasis in Abrassar during the quest Blood Under The Sun.",
+"type": "General"
+},
+"Robyn Garnet, Alchemist": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"point": "32,40",
+"summary": "Robyn Garnet, Alchemist is an merchant in Harmattan, city in the Antique Plateau.",
+"teaches": "Haunt Hex",
+"type": "Merchant (Alchemy); Trainer"
+},
+"Roland Argenson": {
+"combat": "show",
+"damagetypes": "39",
+"faction": "The Blue Chamber Collective",
+"health": "250",
+"impactdamage": "19",
+"impactresistance": "64",
+"locations": "Cierzo; Berg",
+"object_name": "UNPC_RolandArgenson; UNPC_RolandArgenson(Lich)",
+"resistances": "10 7 40 40 40 40",
+"summary": "Roland Argenson is an NPC in Outward.",
+"type": "General; Quest Enemy (potential)"
+},
+"Rospa Akiyuki": {
+"class": "Bandit",
+"combat": "show",
+"damagetypes": "36.25",
+"faction": "The Vendavel; The Kazite",
+"health": "200",
+"impactresistance": "60",
+"locations": "Vendavel Fortress; Cierzo (Destroyed)",
+"object_name": "Rospa",
+"resistances": "7 58 45 10 45 88 45",
+"summary": "Rospa Akiyuki, also known as Rospa, the Conqueror, is an NPC and potential enemy in Outward.",
+"type": "General; Quest Enemy (potential)"
+},
+"Roy Sullivan, Raging Myrm Innkeeper": {
+"faction": "Sirocco",
+"locations": "Old Sirocco",
+"summary": "Roy Sullivan, Raging Myrm Innkeeper is an NPC in New Sirocco, accessible after building the Inn upgrade for the Food Store.",
+"type": "General"
+},
+"Rufus": {
+"faction": "The Holy Mission of Elatt",
+"locations": "Cierzo",
+"object_name": "UNPC_RufusA",
+"summary": "Rufus is a NPC in Cierzo, city in Chersonese.",
+"type": "General"
+},
+"Runed Immaculate": {
+"faction": "The Scourge",
+"locations": "Harmattan; Old Harmattan",
+"summary": "Runed Immaculate is an Immaculate NPC, encountered during the quests A Knife in the Back and A House Divided in the Sorobor Academy quest line.",
+"type": "General"
+},
+"Ryan Sullivan, Arcanist": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"point": "60,28",
+"summary": "Ryan Sullivan, Arcanist is an merchant in Harmattan, city in the Antique Plateau. They can be found near the Ley Line in Harmattan, and sell various Enchanting-related items.",
+"type": "Merchant (Other)"
+},
+"Sagard Battleborn": {
+"combat": "show",
+"damagetypes": "40",
+"faction": "The Blue Chamber Collective",
+"health": "750",
+"impactdamage": "37",
+"impactresistance": "50",
+"locations": "Berg",
+"object_name": "UNPC_SagardBattlebornA",
+"resistances": "50",
+"summary": "Sagard Battleborn is an NPC and Skill Trainer in Outward.",
+"teaches": "Execution",
+"type": "Trainer; Quest Enemy (potential)",
+"weaknesses": "-35"
+},
+"Sal Dumas, Blacksmith": {
+"faction": "Sirocco",
+"locations": "New Sirocco",
+"summary": "Sal Dumas, Blacksmith is an unlockable merchant in New Sirocco, in the Caldera region. He can be accessed after building the Blacksmith shop.",
+"type": "Merchant (Equipment)"
+},
+"Samantha Turnbull, Head Enchanter": {
+"faction": "Sirocco",
+"locations": "Old Sirocco; New Sirocco",
+"summary": "Samantha Turnbull, Head Enchanter is an NPC in New Sirocco, accessible after building the Enchanting Guild.",
+"teaches": "Infuse Mana (Sorobor Academy exclusive)",
+"type": "General; Trainer"
+},
+"Samuel Laurent, Dean of Engineering": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"summary": "Samuel Laurent, Dean of Engineering is an NPC in the city of Harmattan in the Antique Plateau region.",
+"type": "General"
+},
+"Sand Corsair Guard": {
+"class": "Human",
+"faction": "The Sand Corsairs",
+"locations": "Abrassar",
+"summary": "Sand Corsair Guard is a NPC in Outward who guards the entrance to Ruins of Old Levant, up until the player's third faction quest.",
+"type": "General"
+},
+"Scarlet Lady": {
+"faction": "The Krypteia (former)",
+"locations": "Scarlet Moon; Face of the Ancients (altar)",
+"object_name": "n/a",
+"summary": "The Scarlet Lady (also known as the Scarlet Lich or Red Lady) is an immortal Lich in the world of Aurai, who is associated with the Fire element. She is not encountered physically in game, but her Dagger can be obtained and she is involved in quests.",
+"type": "Lich"
+},
+"Sea-Salt Innkeeper": {
+"faction": "Blue Chamber",
+"locations": "Cierzo",
+"summary": "The Sea-Salt Innkeeper is the Innkeeper of the Sea Salt Inn in Cierzo.",
+"type": "Innkeeper"
+},
+"Second Watcher": {
+"faction": "Unknown",
+"locations": "Conflux Chambers",
+"summary": "Second Watcher is an NPC at the Conflux Chambers in Outward.",
+"teaches": "Cool (skill)",
+"type": "Trainer"
+},
+"Sekiguchi Meiko, Provost of Mercantile affairs": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"summary": "Sekiguchi Meiko, Provost of Mercantile affairs is an NPC in the city of Harmattan in the Antique Plateau region.",
+"type": "General"
+},
+"Serge Battleborn, Master of Motion": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"summary": "Serge Battleborn, Master of Motion is a teacher of The Speedster skills, found in the city of Harmattan in the Antique Plateau region.",
+"teaches": "The Speedster",
+"type": "Teacher"
+},
+"Shopkeeper Doran": {
+"faction": "The Blue Chamber Collective",
+"locations": "Cierzo",
+"object_name": "HumanSNPC_GeneralStore",
+"point": "32,53",
+"quests": "Ledger to Berg",
+"summary": "Shopkeeper Doran is a Merchant in Cierzo, city in Chersonese.",
+"type": "Merchant (General)"
+},
+"Shopkeeper Lyda": {
+"faction": "The Holy Mission of Elatt",
+"locations": "Monsoon",
+"object_name": "HumanSNPC_CounterGeneralStore",
+"point": "49,46",
+"quests": "Ledger to Levant",
+"summary": "Shopkeeper Lyda is a Merchant in Monsoon, city in Hallowed Marsh.",
+"type": "Merchant (General)"
+},
+"Shopkeeper Pleel": {
+"faction": "The Blue Chamber Collective",
+"locations": "Berg",
+"object_name": "HumanSNPC_CounterGeneralStore",
+"point": "49,64",
+"quests": "Ledger to Monsoon",
+"summary": "Shopkeeper Pleel is a Merchant in Berg, city in Enmerkar Forest.",
+"type": "Merchant (General)"
+},
+"Shopkeeper Suul": {
+"faction": "The Heroic Kingdom of Levant",
+"locations": "Levant",
+"object_name": "HumanSNPC_CounterGeneralStore",
+"point": "58,42",
+"quests": "Ledger to Cierzo",
+"summary": "Shopkeeper Suul is a Merchant in Levant, in Outward.",
+"type": "Merchant (General)"
+},
+"Silver Tooth": {
+"class": "Ash Giant",
+"faction": "The Ash Giants",
+"locations": "Silkworm's Refuge",
+"summary": "Silver Tooth is a merchant in Silkworm's Refuge, in the Caldera region.",
+"type": "Merchant"
+},
+"Silver-Nose the Trader": {
+"faction": "The Ash Giants",
+"locations": "Hallowed Marsh",
+"object_name": "GiantLegacyMerchant_NPC",
+"summary": "Silver-Nose the Trader is a rare Merchant located in Hallowed Marsh, in Outward. He can only appear in a certain defeat scenario, for players of the Blue Chamber who successfully allied with The Ash Giants during the quest of the same name. This scenario can occur if the player is within the general area of the Giants' Village - approximately from around the Vigil Pylon, to south of Under Island.",
+"type": "Merchant (Other)"
+},
+"Sinai, the Primal Ritualist": {
+"faction": "Sirocco",
+"locations": "Ritualist's hut",
+"summary": "Sinai, the Primal Ritualist is a teacher of Primal Ritualist skills. This teacher can be found at the Ritualist's hut in south-western Caldera.",
+"teaches": "Primal Ritualist",
+"type": "Teacher"
+},
+"Skeleton": {
+"faction": "None",
+"locations": "Wendigo Lair",
+"summary": "Skeleton is an NPC at the Wendigo Lair in Antique Plateau, in Outward.",
+"teaches": "Chill Hex",
+"type": "Trainer"
+},
+"Smooth the Tailor": {
+"faction": "The Heroic Kingdom of Levant",
+"locations": "Levant",
+"object_name": "HumanSNPC_ClothesShop",
+"point": "71,51",
+"summary": "Smooth the Tailor is an Merchant and Trainer in Levant, in Outward.",
+"teaches": "Warm (skill)",
+"type": "Merchant (Equipment); Trainer"
+},
+"Soeran": {
+"faction": "The Holy Mission of Elatt",
+"locations": "Monsoon",
+"object_name": "UNPC_SoeranA",
+"summary": "Soeran is a skill trainer in Monsoon, city in the Hallowed Marsh.",
+"teaches": "Juggernaut",
+"type": "Trainer"
+},
+"Soroborean Caravanner": {
+"faction": "Sorobor Academy",
+"locations": "All major Cities; All Regions",
+"object_name": "HumanSNPC_CaravanTrader",
+"quests": "Enrollment",
+"summary": "Soroborean Caravanner is a traveling Merchant found in Outward. They can be found at fixed locations in all major cities, as well as in random locations outside in all major regions. Their stock is not shared between locations, and not all items are available at all locations.",
+"type": "Merchant (General)"
+},
+"Styx": {
+"faction": "The Heroic Kingdom of Levant",
+"locations": "Slums",
+"object_name": "HumanSNPC_TrainerRogue",
+"summary": "Styx is a teacher of Rogue Engineer skills in the Slums of Levant, city in Abrassar.",
+"teaches": "Rogue Engineer",
+"type": "Teacher"
+},
+"Summoned Ghost": {
+"class": "Undead (Ghost)",
+"combat": "y",
+"damagetypes": "20",
+"health": "110",
+"impactdamage": "37",
+"object_name": "NewGhostOneHandedAlly",
+"resistances": "80",
+"summary": "Summoned Ghost is an ally Ghost summoned with Cabal Hermit magic in Outward.",
+"type": "Summoned Ally"
+},
+"Taleron": {
+"faction": "The Holy Mission of Elatt",
+"locations": "Berg",
+"object_name": "UNPC_TaleronA",
+"summary": "Taleron, is an NPC in Berg, city in Enmerkar Forest.",
+"teaches": "Mace Infusion",
+"type": "Trainer"
+},
+"Tamara the Smuggler": {
+"faction": "The Heroic Kingdom of Levant",
+"locations": "Slums",
+"object_name": "HumanSNPC_Smuggler",
+"point": "21,45",
+"quests": "Lost Merchant (quest)",
+"summary": "Tamara the Smuggler is a Merchant in the Slums in Outward. Tamara will appear after the player has sufficiently helped the Slums, such as by completing the Silver for the Slums quest. She sells various high level Equipment and other items, and offers the repeatable quest Lost Merchant.",
+"type": "Merchant (Other)"
+},
+"The 9th Watcher": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"summary": "The 9th Watcher is an NPC in Outward.",
+"teaches": "Reveal Soul; Sigil of Fire; Scorch Hex",
+"type": "Trainer"
+},
+"Third Watcher": {
+"faction": "Unknown",
+"locations": "Conflux Chambers",
+"summary": "Third Watcher is an NPC at the Conflux Chambers in Outward.",
+"type": "Standard"
+},
+"Titatrok the Cook": {
+"class": "Bandit",
+"combat": "yes",
+"damagetypes": "12",
+"faction": "The Vendavel",
+"health": "90",
+"impactdamage": "12",
+"impactresistance": "9",
+"locations": "Vendavel Fortress",
+"object_name": "NewBanditEquip_Cook",
+"resistances": "1 12 -40",
+"summary": "Titatrok the Cook is an NPC located in Vendavel Fortress, in the prison area.",
+"type": "General; Quest Enemy (potential)"
+},
+"Tuan the Alchemist": {
+"faction": "The Heroic Kingdom of Levant",
+"locations": "Levant",
+"object_name": "HumanSNPC_CounterGeneralStore",
+"point": "31,25",
+"summary": "Tuan the Alchemist is a Merchant in Levant, in Outward. Notably, they are the source of the Chemist's Broken Flask, an item required for Brand.",
+"type": "Merchant (Alchemy)"
+},
+"Ture": {
+"faction": "The Blue Chamber Collective",
+"locations": "Berg",
+"object_name": "HumanSNPC_TrainerHunter",
+"summary": "Ture is a teacher of Wild Hunter skills in Berg, city in Enmerkar Forest.",
+"teaches": "Wild Hunter",
+"type": "Teacher"
+},
+"Vay the Alchemist": {
+"faction": "The Blue Chamber Collective",
+"locations": "Berg",
+"object_name": "HumanSNPC_CounterAlchemist",
+"point": "40,62",
+"quests": "Alchemy: Cold Stone",
+"summary": "Vay the Alchemist is a Merchant in Berg, city in Enmerkar Forest.",
+"type": "Merchant (Alchemy)"
+},
+"Vendavel Prisoner": {
+"faction": "Unknown",
+"locations": "Vendavel Prison",
+"object_name": "UNPC_VendavelPrisonerA; UNPC_VendavelPrisonerB; UNPC_VendavelPrisonerC; UNPC_VendavelPrisonerD",
+"summary": "Vendavel Prisoner is a type of NPC at the Vendavel Prison in Outward.",
+"teaches": "Backstab",
+"type": "Merchant (General); Trainer"
+},
+"Vendavel's Nurse": {
+"class": "Bandit",
+"combat": "yes",
+"damagetypes": "12",
+"faction": "The Vendavel",
+"health": "90",
+"impactdamage": "12",
+"impactresistance": "6",
+"locations": "Vendavel Fortress",
+"object_name": "NewBanditEquip_Nurse",
+"resistances": "8 -40",
+"summary": "Vendavel's Nurse is an NPC located in Vendavel Fortress, in the prison area, who will purchase Bandages and Life Potions from the player.",
+"type": "General; Quest Enemy (potential)"
+},
+"Victor Berthelot, Dean of the Military": {
+"faction": "Sorobor Academy",
+"locations": "Harmattan",
+"quests": "A Knife in the Back",
+"summary": "Victor Berthelot, Dean of the Military is an NPC in the city of Harmattan in the Antique Plateau region.",
+"type": "General"
+},
+"Vyzyrinthrix the Blacksmith": {
+"faction": "The Holy Mission of Elatt",
+"locations": "Monsoon",
+"object_name": "HumanSNPC_Blacksmith",
+"point": "43.5,42",
+"summary": "Vyzyrinthrix the Blacksmith is a blacksmith in Monsoon, city in Hallowed Marsh.",
+"type": "Merchant (Equipment); Blacksmith"
+},
+"Wandering Mercenary": {
+"faction": "The Holy Mission of Elatt",
+"locations": "Monsoon",
+"object_name": "HumanSNPC_Copal",
+"summary": "Wandering Mercenary is an NPC at the Fang & Claw's Inn in Monsoon in Outward.",
+"teaches": "Moon Swipe",
+"type": "Trainer"
+},
+"Whispering Bones (Lich)": {
+"faction": "The Blue Chamber Collective",
+"locations": "Necropolis",
+"object_name": "UNPC_Roland(Lich)",
+"summary": "Whispering Bones (Lich) is an NPC in Outward.",
+"type": "Lich"
+},
+"William": {
+"class": "Undead (Ghost)",
+"combat": "y",
+"damagetypes": "22",
+"health": "100",
+"impactdamage": "37",
+"object_name": "WillOWispGhostOneHandedAlly",
+"resistances": "85% 50%",
+"summary": "William is an ally Ghost which can be encountered through various Defeat Scenarios in Outward.",
+"type": "Summoned Ally"
+},
+"Yan, Levantine Alchemist": {
+"faction": "Sirocco",
+"locations": "Old Sirocco; New Sirocco",
+"summary": "Yan, Levantine Alchemist is an NPC in New Sirocco, accessible after building the Levantin Laboratory upgrade for the Alchemist shop.",
+"teaches": "Kirouac's Breakthrough (Heroic Kingdom exclusive)",
+"type": "General; Trainer"
+},
+"Yzan Argenson": {
+"combat": "leave non empty to show NPC combat data as specified below:",
+"damagetypes": "42",
+"faction": "The Heroic Kingdom of Levant",
+"health": "150 or 300",
+"impactdamage": "43",
+"impactresistance": "15",
+"inflicts": "Pain",
+"locations": "Cierzo; Levant; Dock's Storage",
+"object_name": "UNPC_YzanArgensonA",
+"summary": "Yzan Argenson is a prominent NPC in Outward.",
+"type": "General; Quest Enemy (potential)",
+"weaknesses": "-35"
+},
+"Zagis": {
+"class": "Bandit",
+"combat": "display",
+"damagetypes": "40",
+"faction": "The Sand Corsairs",
+"health": "150",
+"impactresistance": "53",
+"inflicts": "Pain",
+"locations": "Ruins of Old Levant",
+"object_name": "UNPC_ZagisA",
+"protection": "5",
+"resistances": "5 40 -35",
+"summary": "Zagis is an NPC and potential enemy in Outward. He is the leader of The Sand Corsairs, a remnant of Old Levant who oppose the ruling powers of Levant.",
+"type": "Quest Enemy (potential)"
+},
+"Zephyrien": {
+"faction": "The Holy Mission of Elatt",
+"locations": "Monsoon; Holy Mission's Conflux Path; Berg (during council meeting); Conflux Chambers",
+"object_name": "UNPC_ZephyrienA",
+"summary": "Zephyrien is an NPC in Outward.",
+"type": "General"
+}
+}

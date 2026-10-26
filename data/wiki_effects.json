@@ -1,0 +1,950 @@
+{
+"Aetherbomb": {
+"dlc": "The Three Brothers",
+"duration": "15 seconds",
+"effects": "After 15 seconds, deals severe ethereal damage.",
+"summary": "Aetherbomb is a negative Status Effect in Outward.",
+"type": "Debuff"
+},
+"Alert": {
+"dlc": "The Soroboreans",
+"duration": "240 seconds",
+"effects": "Per stack (1 to 4):; +5% Dodge Invulnerability window; -5% all damage resistance",
+"summary": "Alert is a Status Effect in Outward, related to The Speedster skill tree.",
+"type": "Other Positive"
+},
+"Ambraine Withdrawal": {
+"dlc": "The Three Brothers",
+"effects": "-5% Stamina regeneration; -25% Status Resistance",
+"summary": "Ambraine Withdrawal is a disease contracted from withdrawal from Ambraine. It is obtained if you go more than 6 hours without taking Ambraine, after starting to take it.",
+"type": "Disease"
+},
+"Bag Overweight": {
+"effects": "Reduced Movement Speed; Immobility",
+"summary": "Bag Overweight is a negative status effect in Outward. It is acquired by having too many items in the player's equipped backpack.",
+"type": "Weight"
+},
+"Bandages (Effect)": {
+"duration": "40 seconds",
+"effects": "+0.5 Health per second",
+"summary": "Bandages is a positive status effect in Outward.",
+"type": "Vital"
+},
+"Barrier (Effect)": {
+"dlc": "The Three Brothers",
+"duration": "180 seconds",
+"effects": "+3 to +6 Barrier",
+"summary": "Barrier (Effect) is a Status Effect in Outward.",
+"type": "Buff"
+},
+"Blaze": {
+"dlc": "The Three Brothers",
+"duration": "30 seconds",
+"effects": "1.25 damage every 0.25 seconds (5 per second); Leaves fire spots which deal 1.5 damage and inflict Burning every 0.5 seconds (3 per second)",
+"summary": "Blaze is a negative Status Effect in Outward. This status requires Burning to be active on the target to be applied, and will remove Burning when applied.",
+"type": "DoT"
+},
+"Bleeding": {
+"duration": "120 seconds",
+"effects": "On Player: -0.5% health per sec; On Enemies: -0.29% health per sec",
+"summary": "Bleeding is a negative Status Effect in Outward.",
+"type": "DoT"
+},
+"Blessed": {
+"amplifiedeffects": "+30% Lightning damage; +30% Lightning resistance",
+"duration": "240 seconds",
+"effects": "+20% Lightning damage; +20% Lightning resistance",
+"summary": "Blessed is a positive Status Effect in Outward, and it is a type of Boon.",
+"type": "Boon"
+},
+"Blood Bullet Imbue": {
+"effects": "Next shot deals Decay damage.; Pistol's damage is converted to Decay; Damage multiplier: 0.8x",
+"summary": "Blood Bullet Imbue is an imbue — a positive status effect in Outward.",
+"type": "Imbue"
+},
+"Blood Leech": {
+"dlc": "The Soroboreans",
+"duration": "120 seconds",
+"effects": "Leech -0.41% of Blood Leech Victim's Health per second",
+"summary": "Blood Leech is a Status Effect and Skill Combination in Outward. This unique effect is obtained by using Dagger Slash on an enemy while inside a Blood Sigil.",
+"type": "Other Positive"
+},
+"Blood Leech Victim": {
+"dlc": "The Soroboreans",
+"duration": "120 seconds",
+"effects": "Lose -0.41% Health per second",
+"summary": "Blood Leech Victim is a Status Effect in Outward.",
+"type": "Other Negative"
+},
+"Breathless": {
+"dlc": "The Three Brothers",
+"duration": "30 seconds",
+"effects": "-100% Stamina Regen",
+"summary": "Breathless is a negative Status Effect in Outward.",
+"type": "Debuff"
+},
+"Burning": {
+"duration": "40 seconds",
+"effects": "On Player: 2 damage per sec; On Enemies: 3 damage per sec",
+"summary": "Burning is a negative Status Effect in Outward. This status is a prerequisite for Blaze and Holy Blaze to be applied on a target and is removed upon application.",
+"type": "DoT"
+},
+"Calygrey Bone Cage": {
+"dlc": "The Three Brothers",
+"duration": "2400 seconds (40 minutes)",
+"effects": "Restore +0.25 Health per second; +10% Physical damage bonus",
+"summary": "Calygrey Bone Cage is an Item in Outward.",
+"type": "Sleep"
+},
+"Camouflaged Tent": {
+"duration": "2400 seconds (40 minutes)",
+"effects": "+5% Stealth; -10% Stamina cost of actions",
+"summary": "Camouflaged Tent is a type of tent in Outward, used for Resting.",
+"type": "Sleep"
+},
+"Chill": {
+"duration": "240 seconds",
+"effects": "-25% Frost damage; -25% Frost resistance",
+"summary": "Chill is a negative Status Effect in Outward, and it is a type of Hex effect.",
+"type": "Hex"
+},
+"Cold (Disease)": {
+"effects": "Reduces Stamina regeneration by 15% to 30%; Chance to cough, interrupting and preventing the player from performing actions",
+"summary": "A Cold is one of the diseases that the player can contract in Outward, received from the Needs: Cold effect when untreated.",
+"type": "Disease"
+},
+"Cold Weather Def Up": {
+"duration": "240 seconds",
+"effects": "+15 Cold Weather Def",
+"summary": "Cold Weather Def Up is a positive Status Effect in Outward. It helps protect the player against the effects Cold Weather. It has no negative effect if used in hot environments.",
+"type": "Weather"
+},
+"Confusion": {
+"duration": "240 seconds",
+"effects": "-25% Impact resistance",
+"summary": "Confusion is a negative Status Effect in Outward, and it is a type of Hex effect.",
+"type": "Hex"
+},
+"Cool": {
+"amplifiedeffects": "+30% Frost damage; +30% Frost resistance; +16 Hot Weather Defense",
+"duration": "240 seconds",
+"effects": "+20% Frost damage; +20% Frost resistance; +8 Hot Weather Defense",
+"summary": "Cool is a positive Status Effect in Outward, and it is a type of Boon.",
+"type": "Boon"
+},
+"Corrupted": {
+"dlc": "The Soroboreans",
+"effects": "Positive:; +15% Decay resistance; +15% Decay and Frost damage bonusNegative:; Hunger rate +100%; Lightning Resistance -50%",
+"summary": "Corrupted is a Status Effect in Outward, received when the player has between 51% and 75% Corruption.",
+"type": "Corruption"
+},
+"Corruption Recovery": {
+"dlc": "The Soroboreans",
+"duration": "300 seconds",
+"effects": "-0.1% Corruption per second",
+"summary": "Corruption Recovery is a Status Effect in Outward, related to the Corruption Mechanic.",
+"type": "Other Positive"
+},
+"Corruption Resistance": {
+"dlc": "The Soroboreans",
+"duration": "300 seconds",
+"effects": "+20 to 50 Corruption resistance",
+"summary": "Corruption Resistance is a Status Effect in Outward, related to the Corruption Mechanic.",
+"type": "Other Positive"
+},
+"Corruption Totemic Lodge": {
+"dlc": "The Three Brothers",
+"duration": "2400 seconds (40 minutes)",
+"effects": "-15% Stamina costs; +10% Decay damage bonus; -35% lightning resistance",
+"summary": "Corruption Totemic Lodge is an Item in Outward.",
+"type": "Sleep"
+},
+"Craze": {
+"dlc": "The Three Brothers",
+"duration": "240 seconds",
+"effects": "Per stack (1 to 5):; +5% all Damage dealt; -10% Impact resistance",
+"summary": "Craze is a Status Effect in Outward, obtained from the Crescendo skill.",
+"type": "Buff"
+},
+"Crippled": {
+"duration": "10 seconds",
+"effects": "-50% Movement Speed",
+"summary": "Crippled is a negative Status Effect in Outward.",
+"type": "Debuff"
+},
+"Curse": {
+"duration": "240 seconds",
+"effects": "-25% Decay damage; -25% Decay resistance",
+"summary": "Curse is a negative Status Effect in Outward, and it is a type of Hex effect.",
+"type": "Hex"
+},
+"Decay Shield Imbue": {
+"duration": "600 seconds",
+"effects": "Decay explosion on next blocked Melee attack",
+"summary": "Decay Shield Imbue is an imbue — a positive status effect in Outward. It is acquired via blocking a Decay attack with the Shield Infusion skill.",
+"type": "Imbue"
+},
+"Defiled": {
+"dlc": "The Soroboreans",
+"effects": "Positive:; +15% Decay resistance; +50% Decay damage bonus; +15% Frost damage bonusNegative:; Hunger rate +100%; Lightning Resistance -50%; Lightning Damage -50%; Attack Speed -10%; Physical Resistance -30%; Impact Resistance -30%; Chance for Corruption Spirit to spawn",
+"summary": "Defiled is a Status Effect in Outward, received when the player has between 76% and 99% Corruption.",
+"type": "Corruption"
+},
+"Despirited": {
+"dlc": "The Three Brothers",
+"duration": "600 seconds",
+"effects": "-50% reduction (increases cooldowns)",
+"summary": "Despirited is a negative Status Effect in Outward.",
+"type": "Debuff"
+},
+"Discipline": {
+"amplifiedeffects": "+30% Physical damage",
+"duration": "240 seconds",
+"effects": "+15% Physical damage",
+"summary": "Discipline is a positive Status Effect in Outward, and it is a type of Boon.",
+"type": "Boon"
+},
+"Divine Light Imbue": {
+"duration": "180 seconds",
+"effects": "Increases base damage by 25% as Lightning damage; Grants +6 flat Lightning damage. ; Emits light",
+"summary": "Divine Light Imbue is an imbue — a positive status effect in Outward.",
+"type": "Imbue"
+},
+"Dizzy": {
+"duration": "60 seconds",
+"effects": "-60% Impact Resistance",
+"summary": "Dizzy is a negative Status Effect in Outward.",
+"type": "Debuff"
+},
+"Doomed": {
+"duration": "240 seconds",
+"effects": "-25% Lightning damage; -25% Lightning resistance",
+"summary": "Doomed is a negative Status Effect in Outward, and it is a type of Hex effect.",
+"type": "Hex"
+},
+"Drawback": {
+"dlc": "The Three Brothers",
+"duration": "15 seconds",
+"effects": "All Resistances -50%.",
+"summary": "Drawback is a Status Effect in Outward, obtained from the Moment of Truth skill.",
+"type": "Debuff"
+},
+"Elatt's Barrier": {
+"dlc": "The Three Brothers",
+"duration": "2 hours",
+"effects": "+4 Barrier",
+"summary": "Elatt's Barrier is a positive Status Effect in Outward.",
+"type": "Buff"
+},
+"Elatt's Sanctuary": {
+"dlc": "The Three Brothers",
+"duration": "2 hours",
+"effects": "+4 Barrier; +25% Status Resistance",
+"summary": "Elatt's Sanctuary is a positive Status Effect in Outward.",
+"type": "Buff"
+},
+"Elemental Immunity": {
+"duration": "15 seconds",
+"effects": "Immune to Frost, Fire, Lightning, Decay and Ethereal Damage",
+"summary": "Elemental Immunity is a positive Status Effect in Outward. It grants total immunity to all non-physical damage, however it has a short duration of 15 seconds.",
+"type": "Buff"
+},
+"Elemental Resistance": {
+"duration": "240 seconds",
+"effects": "+20% resistance to Ethereal, Decay, Lightning, Frost and Fire",
+"summary": "Elemental Resistance is a positive Status Effect in Outward.",
+"type": "Buff"
+},
+"Elemental Vulnerability": {
+"duration": "240 seconds",
+"effects": "-25% resistance to Ethereal, Decay, Lightning, Frost and Fire",
+"summary": "Elemental Vulnerability is a negative Status Effect in Outward.",
+"type": "Debuff"
+},
+"Energized": {
+"dlc": "The Soroboreans",
+"duration": "300 seconds",
+"effects": "+10% Cooldown Reduction",
+"summary": "Energized is a Status Effect in Outward.",
+"type": "Buff"
+},
+"Ethereal Shield Imbue": {
+"duration": "600 seconds",
+"effects": "Ethereal explosion on next blocked Melee attack",
+"summary": "Ethereal Shield Imbue is an imbue — a positive status effect in Outward. It is acquired via blocking a Ethereal attack with the Shield Infusion skill.",
+"type": "Imbue"
+},
+"Ethereal Totemic Lodge": {
+"dlc": "The Three Brothers",
+"duration": "2400 seconds (40 minutes)",
+"effects": "-15% Stamina costs; +10% Ethereal damage bonus; -35% Physical resistance",
+"summary": "Ethereal Totemic Lodge is an Item in Outward.",
+"type": "Sleep"
+},
+"Extreme Bleeding": {
+"duration": "120 seconds",
+"effects": "On Player: -1% health per sec; On Enemies: -0.41% health per sec",
+"summary": "Extreme Bleeding is a negative Status Effect in Outward.",
+"type": "DoT"
+},
+"Extreme Mana Recovery": {
+"dlc": "The Soroboreans",
+"duration": "30 seconds",
+"effects": "+8 Mana per second",
+"summary": "Extreme Mana Recovery is a Status Effect in Outward.",
+"type": "Vital"
+},
+"Extreme Poison": {
+"duration": "90 seconds",
+"effects": "On Player: 3 damage per sec; On Enemies: 4 damage per sec",
+"summary": "Extreme Poison is a negative Status Effect in Outward.",
+"type": "DoT"
+},
+"Fire Imbue": {
+"duration": "90 seconds",
+"effects": "Increases damage by 10% as Fire damage; Grants +4 flat Fire damage.",
+"summary": "Fire Imbue is an imbue — a positive status effect in Outward.",
+"type": "Imbue"
+},
+"Fire Shield Imbue": {
+"duration": "600 seconds",
+"effects": "Fire explosion on next blocked Melee attack",
+"summary": "Fire Shield Imbue is an imbue — a positive status effect in Outward. It is acquired via blocking a Fire attack with the Shield Infusion skill.",
+"type": "Imbue"
+},
+"Fire Totemic Lodge": {
+"dlc": "The Three Brothers",
+"duration": "2400 seconds (40 minutes)",
+"effects": "-15% Stamina costs; +10% Fire damage bonus; -35% Frost resistance",
+"summary": "Fire Totemic Lodge is an Item in Outward.",
+"type": "Sleep"
+},
+"Force Bubble": {
+"duration": "4 seconds",
+"effects": "Immune to all normal Damage (except for Raw, falling damage, Bleeding and Diseases); -50% Impact Resistance",
+"summary": "Force Bubble is a positive Status Effect in Outward.",
+"type": "Other Positive"
+},
+"Frost Bullet Imbue": {
+"effects": "Next shot creates a Frost explosion with bonus damage; Inflicts Slow Down, Crippled and pistol's effects",
+"summary": "Frost Bullet Imbue is an imbue — a positive status effect in Outward. It is acquired via the Frost Bullet skill.",
+"type": "Imbue"
+},
+"Frost Imbue": {
+"duration": "90 seconds",
+"effects": "Increases damage by 10% as Frost damage; Grants +5 flat Frost damage.",
+"summary": "Frost Imbue is an imbue — a positive status effect in Outward.",
+"type": "Imbue"
+},
+"Frost Shield Imbue": {
+"duration": "600 seconds",
+"effects": "Frost explosion on next blocked Melee attack",
+"summary": "Frost Shield Imbue is an imbue — a positive status effect in Outward. It is acquired via blocking a Frost attack with the Shield Infusion skill.",
+"type": "Imbue"
+},
+"Full Petrification": {
+"dlc": "The Three Brothers",
+"duration": "n/a",
+"effects": "Counts as if you've been Defeated. Can be revived by an ally to revert back to Mild Petrification.",
+"summary": "Full Petrification is a Status Effect in Outward.",
+"type": "Debuff"
+},
+"Fur Tent": {
+"duration": "2400 seconds (40 minutes)",
+"effects": "+10 Cold Weather Def; -15% Stamina costs",
+"summary": "Fur Tent is a type of tent in Outward, used for Resting.",
+"type": "Sleep"
+},
+"Gaberry Wine (effect)": {
+"duration": "300 seconds",
+"effects": "-20% Mana Cost; +15% Physical Resistance; -15% Impact Resistance",
+"obtain": "Gaberry Wine",
+"summary": "Gaberry Wine is a status effect in Outward.",
+"type": "Buff"
+},
+"Ghost of Rhythm": {
+"dlc": "The Three Brothers",
+"duration": "3 seconds",
+"effects": "+5 Protection",
+"summary": "Ghost of Rhythm is a Status Effect in Outward.",
+"type": "Buff"
+},
+"Gift of Blood": {
+"dlc": "The Soroboreans",
+"duration": "60 seconds",
+"effects": "-1 Health per second.; Increase Frost, Decay and Physical Damage by 15%.",
+"summary": "Gift of Blood is a status effect and skill combination in Outward.",
+"type": "Other Positive"
+},
+"Gift of Blood Ally": {
+"dlc": "The Soroboreans",
+"duration": "10 seconds",
+"effects": "+2 Health per second for 10 seconds; Increases Corruption by 6% (once).",
+"summary": "Gift of Blood Ally is a status effect in Outward.",
+"type": "Other Positive"
+},
+"Greater Decay Imbue": {
+"duration": "180 seconds",
+"effects": "Increases damage by 20% as Decay damage; Grants +15 flat Decay damage.",
+"summary": "Greater Decay Imbue is a positive status effect in Outward. It shares the same icon with Poison Imbue.",
+"type": "Imbue"
+},
+"Greater Ethereal Imbue": {
+"duration": "180 seconds",
+"effects": "Increases base damage by 10% as Ethereal damage; Grants +15 flat Ethereal damage.",
+"summary": "Greater Ethereal Imbue is an imbue — a positive status effect in Outward.",
+"type": "Imbue"
+},
+"Greater Fire Imbue": {
+"duration": "180 seconds",
+"effects": "Increases damage by 10% as Fire damage; Grants +12 flat Fire damage.; Inflicts Burning (40%)",
+"summary": "Greater Fire Imbue is an imbue — a positive status effect in Outward.",
+"type": "Imbue"
+},
+"Greater Frost Imbue": {
+"duration": "180 seconds",
+"effects": "Increases damage by 10% as Frost damage; Grants +15 flat Frost damage.; Inflicts Slow Down (40%)",
+"summary": "Greater Frost Imbue is an imbue — a positive status effect in Outward.",
+"type": "Imbue"
+},
+"Greater Lightning Imbue": {
+"duration": "180 seconds",
+"effects": "Increases damage by 10% as Lightning damage; Grants +15 flat Lightning damage.",
+"summary": "Greater Lightning Imbue is an imbue — a positive status effect in Outward.",
+"type": "Imbue"
+},
+"Greater Poison Imbue": {
+"duration": "180 seconds",
+"effects": "Weapon inflicts Extreme Poison (40% buildup)",
+"summary": "Greater Poison Imbue is an imbue — a positive status effect in Outward. Unlike other imbues, Poison Imbue adds no damage and instead adds a chance of inflicting Poison.",
+"type": "Imbue"
+},
+"Hampered": {
+"dlc": "The Three Brothers",
+"duration": "6 seconds",
+"effects": "Reduces movement speed to 0% and cannot perform dodges.",
+"summary": "Hampered is a negative Status Effect in Outward.",
+"type": "Debuff"
+},
+"Haunted": {
+"duration": "240 seconds",
+"effects": "-25% Ethereal damage; -25% Ethereal resistance",
+"summary": "Haunted is a negative Status Effect in Outward, and it is a type of Hex effect.",
+"type": "Hex"
+},
+"Healing Water (Effect)": {
+"dlc": "The Three Brothers",
+"duration": "180 seconds",
+"effects": "+0.2 Health per second; +10 Hot Weather defense",
+"summary": "Healing Water (Effect) is a Status Effect in Outward.",
+"type": "Vital"
+},
+"Health Recovery": {
+"duration": "600 seconds",
+"effects": "+0.2 to 0.5 Health per second",
+"summary": "Health Recovery is a positive status effect in Outward.",
+"type": "Vital"
+},
+"Hive Infestation": {
+"effects": "Status Effect Resistance -15% to -30%; Health burn rate +100% to 200%; Stamina burn rate +100% to 200%",
+"summary": "Hive Infestation is one of the Diseases the player can contract in Outward.",
+"type": "Disease"
+},
+"Holy Blaze": {
+"dlc": "The Three Brothers",
+"duration": "30 seconds",
+"effects": "6 damage per second",
+"summary": "Holy Blaze is a negative Status Effect in Outward. This status requires Burning to be active on the target to be applied, and will remove Burning when applied.",
+"type": "DoT"
+},
+"Hot Weather Defense": {
+"duration": "240 seconds",
+"effects": "+15 Hot Weather Def",
+"summary": "Hot Weather Defense is a positive Status Effect in Outward. It helps protect the player against the effects of Hot Weather. It has no negative effect if used in cold environments.",
+"type": "Weather"
+},
+"Ice Totemic Lodge": {
+"dlc": "The Three Brothers",
+"duration": "2400 seconds (40 minutes)",
+"effects": "-15% Stamina costs; +10% Frost damage bonus; -35% Fire resistance",
+"summary": "Ice Totemic Lodge is an Item in Outward.",
+"type": "Sleep"
+},
+"Immolate": {
+"duration": "60 seconds",
+"effects": "+30% fire damage bonus; Take 0.5 fire damage per second",
+"summary": "Immolate is a status effect and skill combination in Outward.",
+"type": "Buff"
+},
+"Impact Resistance Up": {
+"duration": "240 seconds",
+"effects": "+25% Impact Resistance",
+"summary": "Impact Resistance Up is a positive status effect in Outward.",
+"type": "Buff"
+},
+"Impact Up": {
+"duration": "240 seconds",
+"effects": "+20% Impact damage",
+"summary": "Impact Up is a positive Status Effect in Outward, and it is a type of Boon.",
+"type": "Buff"
+},
+"Indigestion": {
+"effects": "40% to 80% chance to be sick when eating, nullifying the food's effects.",
+"summary": "Indigestion is a type of disease that can be contracted by the player in Outward. It has infinite duration unless treated.",
+"type": "Disease"
+},
+"Infection": {
+"effects": "Lose 3% to 10% Health per minute; Eating restores -15% to -30% less Hunger",
+"summary": "Infection is a disease that can be contracted through bites or cuts from various wildlife throughout Outward.",
+"type": "Disease"
+},
+"Infuse Blood (Imbue)": {
+"dlc": "The Three Brothers",
+"duration": "180 seconds",
+"effects": "Adds +10 flat Decay damage; Inflicts Extreme Poison (35%); Inflicts Extreme Bleeding (35%); Absorbs 10% of damage dealt as Health",
+"summary": "Infuse Blood (Imbue) is an imbue — a positive status effect in Outward.",
+"type": "Imbue"
+},
+"Infuse Mana (Imbue)": {
+"dlc": "The Three Brothers",
+"duration": "180 seconds",
+"effects": "Increases damage by 25% as Ethereal damage; Grants +10 flat Ethereal damage.",
+"summary": "Infuse Mana (Imbue) is an imbue — a positive status effect in Outward.",
+"type": "Imbue"
+},
+"Kill Streak": {
+"dlc": "The Three Brothers",
+"duration": "180 seconds",
+"effects": "+20% all Damage; +10% Movement Speed; +50% Stability regeneration; -25% Impact dealt",
+"summary": "Kill Streak is a Status Effect in Outward, obtained from the Scalp Collector skill.",
+"type": "Buff"
+},
+"Leywilt": {
+"effects": "+40% to +20% Mana costs; +6 to +3 Barrier",
+"summary": "Leywilt is one of the Diseases the player can contract in Outward.",
+"type": "Disease"
+},
+"Life Drain": {
+"effects": "-30% to -90% Maximum Health",
+"summary": "Life Drain is a permanent effect in Outward, received from the Exalted skill.",
+"type": "Other Negative"
+},
+"Lightning Imbue": {
+"duration": "90 seconds",
+"effects": "Increases damage by 10% as Lightning damage; Grants +5 flat Lightning damage.",
+"summary": "Lightning Imbue is an imbue — a positive status effect in Outward.",
+"type": "Imbue"
+},
+"Lightning Shield Imbue": {
+"duration": "600 seconds",
+"effects": "Lightning explosion on next blocked Melee attack",
+"summary": "Lightning Shield Imbue is an imbue — a positive status effect in Outward. It is acquired via blocking a Lightning attack with the Shield Infusion skill.",
+"type": "Imbue"
+},
+"Lightning Totemic Lodge": {
+"dlc": "The Three Brothers",
+"duration": "2400 seconds (40 minutes)",
+"effects": "-15% Stamina costs; +10% Lightning damage bonus; -35% Decay resistance",
+"summary": "Lightning Totemic Lodge is an Item in Outward.",
+"type": "Sleep"
+},
+"Luxury Tent": {
+"duration": "2400 seconds (40 minutes)",
+"effects": "-20% Stamina cost of actions",
+"summary": "Luxury Tent is a type of tent in Outward, used for Resting.",
+"type": "Sleep"
+},
+"Mage Tent": {
+"duration": "2400 seconds (40 minutes)",
+"effects": "-15% Mana costs",
+"summary": "Mage Tent is a type of tent in Outward, used for Resting.",
+"type": "Sleep"
+},
+"Mana Cost Reduction": {
+"dlc": "The Three Brothers",
+"duration": "240 seconds",
+"effects": "-15% Mana costs",
+"summary": "Mana Cost Reduction is a Status Effect in Outward.",
+"type": "Buff"
+},
+"Mana Ratio Recovery": {
+"duration": "600 seconds",
+"effects": "+0.15% to 0.25% Mana per second",
+"summary": "Mana Ratio Recovery is a positive status effect in Outward. It comes in three levels.",
+"type": "Vital"
+},
+"Marsh High Poison": {
+"duration": "2 seconds",
+"effects": "5 damage per second",
+"summary": "Marsh High Poison is a negative Status Effect in Outward, encountered in the Hallowed Marsh area.",
+"type": "DoT"
+},
+"Marsh Poison": {
+"duration": "20 seconds",
+"effects": "1 damage per second",
+"summary": "Marsh Poison is a negative Status Effect in Outward, encountered in the Hallowed Marsh area.",
+"type": "DoT"
+},
+"Meeka Fever": {
+"effects": "Weather protection -10 to -15; Thirst deplete rate +100% to +200%",
+"summary": "Meeka Fever is one of the Diseases the player can contract in Outward.",
+"type": "Disease"
+},
+"Mild Petrification": {
+"dlc": "The Three Brothers",
+"effects": "-0.1 Attack Speed; -20% Movement Speed",
+"summary": "Mild Petrification is a Status Effect in Outward.",
+"type": "Debuff"
+},
+"Mist": {
+"amplifiedeffects": "+30% Ethereal damage; +30% Ethereal resistance",
+"duration": "240 seconds",
+"effects": "+20% Ethereal damage; +20% Ethereal resistance",
+"summary": "Mist is a positive Status Effect in Outward, and it is a type of Boon.",
+"type": "Boon"
+},
+"Mystic Fire Imbue": {
+"duration": "180 seconds",
+"effects": "Increases damage by 25% as Fire damage; Grants +7 flat Fire damage.; Inflicts Burning (49%)",
+"summary": "Mystic Fire Imbue is an imbue — a positive status effect in Outward.",
+"type": "Imbue"
+},
+"Mystic Frost Imbue": {
+"duration": "180 seconds",
+"effects": "Increases damage by 25% as Frost damage; Grants +10 flat Frost damage.; Inflicts Slow Down (49%)",
+"summary": "Mystic Frost Imbue is an imbue — a positive status effect in Outward.",
+"type": "Imbue"
+},
+"Needs: Cold": {
+"effects": "-15% Movement Speed; Chance to receive Cold (Disease); Can become more severe",
+"summary": "Needs: Cold is a negative Status Effect in Outward related to the player's Temperature attribute. It is acquired by spending time in Cold environments without adequate protection.",
+"type": "Needs"
+},
+"Needs: Hot": {
+"effects": "+50% Stamina cost of actions; -60% Impact resistance when Very Hot",
+"summary": "Needs: Hot is a negative Status Effect in Outward related to the player's Temperature attribute. It is acquired by spending time in Hot environments without adequate protection.",
+"type": "Needs"
+},
+"Needs: Hungry": {
+"effects": "Health burns 3x faster",
+"summary": "Needs: Hungry is a negative Status Effect, related to the player's Food need.",
+"type": "Needs"
+},
+"Needs: Thirsty": {
+"effects": "Stamina burns 3x faster",
+"summary": "Needs: Thirsty is a negative Status Effect, related to the player's Drink need.",
+"type": "Needs"
+},
+"Needs: Tired": {
+"duration": "∞",
+"effects": "-15% to -30% Stamina regeneration rate; +0.2 to 0.3 Mana per second",
+"remove": "Resting",
+"summary": "Needs: Tired is one of the Needs and a Status Effect in Outward related to the player's 'Sleep'.",
+"type": "Needs"
+},
+"Pain": {
+"duration": "240 seconds",
+"effects": "-25% Physical resistance",
+"summary": "Pain is a negative Status Effect in Outward, and it is a type of Hex effect.",
+"type": "Hex"
+},
+"Panic": {
+"dlc": "The Three Brothers",
+"duration": "10 seconds",
+"effects": "Removes Physical, Elemental and impact resistances.",
+"summary": "Panic is a negative Status Effect in Outward.",
+"type": "Debuff"
+},
+"Physical Attack Up": {
+"duration": "240 seconds",
+"effects": "+20% Physical damage",
+"summary": "Physical Attack Up is a Status Effect in Outward.",
+"type": "Buff"
+},
+"Physical Attack Up (Food)": {
+"dlc": "The Three Brothers",
+"duration": "240 seconds",
+"effects": "+10% Physical damage",
+"summary": "Physical Attack Up (Food) is a Status Effect in Outward.",
+"type": "Buff"
+},
+"Plague": {
+"dlc": "The Three Brothers",
+"duration": "90 seconds",
+"effects": "4 damage per second. Contagious.",
+"summary": "Plague is a negative Status Effect in Outward.",
+"type": "DoT"
+},
+"Plant Tent": {
+"duration": "2400 seconds (40 minutes)",
+"effects": "+10 Hot Weather Def",
+"summary": "Plant Tent is one of the deployable items in Outward. Like all tents, it is used for sleeping.",
+"type": "Sleep"
+},
+"Poison Imbue": {
+"duration": "90 seconds",
+"effects": "Weapon inflicts Poisoned (40% buildup)",
+"summary": "Poison Imbue is an imbue — a positive status effect in Outward. Unlike other imbues, Poison Imbue adds no damage and instead adds a chance of inflicting Poison.",
+"type": "Imbue"
+},
+"Poisoned": {
+"duration": "90 seconds",
+"effects": "On Player: 1 damage per sec; On Enemies: 1.5 damage per sec",
+"summary": "Poisoned is a negative Status Effect in Outward.",
+"type": "DoT"
+},
+"Possessed": {
+"amplifiedeffects": "+30% Decay damage; +30% Decay resistance",
+"duration": "240 seconds",
+"effects": "+20% Decay damage; +20% Decay resistance",
+"summary": "Possessed is a positive Status Effect in Outward, and it is a type of Boon.",
+"type": "Boon"
+},
+"Pouch Overweight": {
+"effects": "Reduced Movement Speed",
+"summary": "Pouch Overweight is a negative status effect in Outward. It is acquired by having too much weight in items inside of the player's pouch.",
+"type": "Weight"
+},
+"Prime (Effect)": {
+"dlc": "The Soroboreans",
+"duration": "180 seconds",
+"effects": "Instantly resets the cooldown of the next skill used in the next 3 minutes",
+"summary": "Prime (Effect) is a Status Effect in Outward, obtained from the Prime skill.",
+"type": "Other Positive"
+},
+"Protection (Effect)": {
+"dlc": "The Three Brothers",
+"duration": "180 seconds",
+"effects": "+3 to +6 Protection",
+"summary": "Protection (Effect) is a Status Effect in Outward.",
+"type": "Buff"
+},
+"Rage": {
+"amplifiedeffects": "+35% Impact bonus damage",
+"duration": "240 seconds",
+"effects": "+25% Impact bonus damage",
+"summary": "Rage is a positive Status Effect in Outward, and it is a type of Boon.",
+"type": "Boon"
+},
+"Sapped": {
+"dlc": "The Soroboreans",
+"duration": "60 seconds",
+"effects": "-40% All Non-Physical Damage dealt",
+"summary": "Sapped is a Status Effect in Outward.",
+"type": "Debuff"
+},
+"Scorched": {
+"duration": "240 seconds",
+"effects": "-25% Fire damage; -25% Fire resistance",
+"summary": "Scorched is a negative Status Effect in Outward, and it is a type of Hex effect.",
+"type": "Hex"
+},
+"Scourge Cocoon": {
+"dlc": "The Soroboreans",
+"duration": "2400 seconds (40 minutes)",
+"effects": "-5% Stamina costs of actions",
+"summary": "Scourge Cocoon is an Item in Outward.",
+"type": "Sleep"
+},
+"Shatter Bullet Imbue": {
+"effects": "Next shot deals high Impact; Inflicts Pain; All damage is converted to Physical.",
+"summary": "Shatter Bullet Imbue is an imbue — a positive status effect in Outward. It is acquired via the Shatter Bullet skill. Unlike melee weapon imbues which have a set duration, pistol imbues have no set duration and last for one shot. Multiple different pistols can be loaded with imbues simultaneously. While the pistol is infused, another infusion cannot be applied until the current one is fired.",
+"type": "Imbue"
+},
+"Shimmer": {
+"dlc": "The Three Brothers",
+"duration": "180 seconds",
+"effects": "+15% all Elemental Damage",
+"summary": "Shimmer is a Status Effect in Outward.",
+"type": "Buff"
+},
+"Simple Tent": {
+"duration": "2400 seconds (40 minutes)",
+"effects": "-5% Stamina cost of actions",
+"summary": "Simple Tent is a type of tent in Outward, used for Resting.",
+"type": "Sleep"
+},
+"Sky Rhythm": {
+"dlc": "The Three Brothers",
+"duration": "3 seconds",
+"effects": "+5 Barrier",
+"summary": "Sky Rhythm is a Status Effect in Outward.",
+"type": "Buff"
+},
+"Sleep: Berg": {
+"duration": "2400 seconds (40 minutes)",
+"effects": "-20% Stamina costs ; +10 ethereal Damage resistance",
+"obtain": "Resting in Berg Beds",
+"summary": "Sleep: Berg is an effect in Outward, obtained from Resting in any bed in Berg.",
+"type": "Sleep"
+},
+"Sleep: Cierzo": {
+"duration": "2400 seconds (40 minutes)",
+"effects": "-20% Stamina costs ; +5 Cold Weather Def",
+"obtain": "Resting in Cierzo Beds",
+"summary": "Sleep: Cierzo is an effect in Outward, obtained from Resting in any bed in Cierzo.",
+"type": "Sleep"
+},
+"Sleep: City Hall": {
+"dlc": "The Three Brothers",
+"duration": "2400 seconds (40 minutes)",
+"effects": "-20% Stamina cost of actions",
+"obtain": "Resting",
+"summary": "Sleep: City Hall is an effect in Outward.",
+"type": "Sleep"
+},
+"Sleep: Embassy": {
+"dlc": "The Three Brothers",
+"duration": "2400 seconds (40 minutes)",
+"effects": "-20% Stamina cost of actions; +15% Status Resistance",
+"obtain": "Resting",
+"summary": "Sleep: Embassy is an effect in Outward.",
+"type": "Sleep"
+},
+"Sleep: Giants": {
+"dlc": "The Three Brothers",
+"duration": "2400 seconds (40 minutes)",
+"effects": "-20% Stamina costs; +5 Hot resistance",
+"obtain": "Resting",
+"summary": "Sleep: Giants is an effect in Outward.",
+"type": "Sleep"
+},
+"Sleep: Harmattan": {
+"dlc": "The Soroboreans",
+"duration": "2400 seconds (40 minutes)",
+"effects": "10% to 20% reduced Stamina costs; 5% to 10% Decay resistance bonus",
+"obtain": "Resting in Harmattan Beds",
+"summary": "Sleep: Harmattan is an effect in Outward, obtained from Resting in any bed in Harmattan.",
+"type": "Sleep"
+},
+"Sleep: Levant": {
+"duration": "2400 seconds (40 minutes)",
+"effects": "-20% Stamina costs ; +5 Hot Weather Def",
+"obtain": "Resting in Levant Beds",
+"summary": "Sleep: Levant is an effect in Outward, obtained from Resting in any bed in Levant.",
+"type": "Sleep"
+},
+"Sleep: Monsoon": {
+"duration": "2400 seconds (40 minutes)",
+"effects": "-20% Stamina costs ; +5 Impact resistance",
+"obtain": "Resting in Monsoon Beds",
+"summary": "Sleep: Monsoon is an effect in Outward, obtained from Resting in any bed in Monsoon.",
+"type": "Sleep"
+},
+"Sleep: New Sirocco": {
+"dlc": "The Three Brothers",
+"duration": "2400 seconds (40 minutes)",
+"effects": "-20% Stamina cost of actions; +5 Hot resistance; +5 Cold resistance",
+"obtain": "Resting",
+"summary": "Sleep: New Sirocco is an effect in Outward.",
+"type": "Sleep"
+},
+"Slow Down": {
+"duration": "90 seconds",
+"effects": "-25% Movement Speed",
+"summary": "Slow Down is a negative Status Effect in Outward.",
+"type": "Debuff"
+},
+"Sparkling Water (Effect)": {
+"dlc": "The Three Brothers",
+"duration": "180 seconds",
+"effects": "+0.75 Stamina per second; +10 Hot Weather defense",
+"summary": "Sparkling Water (Effect) is a Status Effect in Outward.",
+"type": "Vital"
+},
+"Speed Up": {
+"duration": "240 seconds",
+"effects": "+15% Movement Speed",
+"summary": "Speed Up is a positive status effect in Outward.",
+"type": "Buff"
+},
+"Stamina Recovery": {
+"duration": "900 seconds",
+"effects": "+0.4 to 1.2 Stamina per second",
+"summary": "Stamina Recovery is a positive status effect in Outward. It comes in five levels.",
+"type": "Vital"
+},
+"Status Build up Resistance Down": {
+"dlc": "The Three Brothers",
+"duration": "120 seconds",
+"effects": "-30% Status Resistance",
+"summary": "Status Build up Resistance Down is a negative Status Effect in Outward.",
+"type": "Debuff"
+},
+"Status Build up Resistance Up": {
+"dlc": "The Three Brothers",
+"duration": "60 seconds",
+"effects": "+75% Status Resistance",
+"summary": "Status Build up Resistance Up is a positive Status Effect in Outward.",
+"type": "Buff"
+},
+"Stealth Up": {
+"duration": "240 seconds",
+"effects": "+25% Stealth",
+"summary": "Stealth Up is a positive status effect in Outward.",
+"type": "Buff"
+},
+"Sulphur Poisoning": {
+"duration": "20 seconds",
+"effects": "1 damage per second",
+"summary": "Sulphur Poisoning is a negative Status Effect in Outward.",
+"type": "DoT"
+},
+"Tainted": {
+"dlc": "The Soroboreans",
+"effects": "Hunger rate +100%; Lightning Resistance -25%",
+"summary": "Tainted is a Status Effect in Outward, received when the player has between 26% and 50% Corruption.",
+"type": "Corruption"
+},
+"The Hunch": {
+"effects": "Physical damage bonus -15%; Physical resistance bonus 0 to -15%",
+"summary": "The Hunch is one of the Diseases the player can contract in Outward.",
+"type": "Disease"
+},
+"Unerring Read (Effect)": {
+"dlc": "The Soroboreans",
+"duration": "20 seconds",
+"effects": "Cancels the next hit received in the next 20 seconds",
+"summary": "Unerring Read (Effect) is a Status Effect in Outward, obtained from the Unerring Read skill.",
+"type": "Other Positive"
+},
+"Warm": {
+"amplifiedeffects": "+30% Fire damage; +30% Fire resistance; +16 Cold Weather Defense",
+"duration": "240 seconds",
+"effects": "+20% Fire damage; +20% Fire resistance; +8 Cold Weather Defense",
+"summary": "Warm is a positive Status Effect in Outward, and it is a type of Boon.",
+"type": "Boon"
+},
+"Water Effect": {
+"duration": "180 seconds",
+"effects": "+0.3 Stamina per second; +10 Hot Weather Def",
+"summary": "Water Effect is a positive status effect in Outward.",
+"type": "Vital"
+},
+"Weaken": {
+"dlc": "The Soroboreans",
+"duration": "60 seconds",
+"effects": "-40% Physical damage dealt; -40% Impact damage dealt",
+"summary": "Weaken is a Status Effect in Outward.",
+"type": "Debuff"
+},
+"Weather Defense": {
+"duration": "600 seconds",
+"effects": "+20 Hot Weather Def; +20 Cold Weather Def; +10 Decay resist",
+"summary": "Weather Defense is a positive effect in Outward. It helps protect the player against the effects hot and cold weather simultaneously. Stacks with both Cold Weather Def Up and Hot Weather Defense.",
+"type": "Weather"
+},
+"Wet": {
+"duration": "8 Seconds",
+"effects": "-2 Cold Weather Def ; -25 Frost Resist; +25 Fire resist",
+"obtain": "Standing in Rain",
+"summary": "Wet is a Status Effect in Outward. It is acquired when the player is standing outdoors while it is raining.",
+"type": "Weather"
+},
+"Wind Imbue": {
+"duration": "180 seconds",
+"effects": "1.2x Attack Speed; 1.5x Weapon Impact damage; 2.0x Stamina Burn rate",
+"summary": "Wind Imbue is an imbue — a positive status effect in Outward. Unlike elemental imbues, this imbue does not add any damage.",
+"type": "Imbue"
+}
+}

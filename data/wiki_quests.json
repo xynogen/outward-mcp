@@ -1,0 +1,677 @@
+{
+"A Fallen City": {
+"dynamic": "no",
+"location": "Berg",
+"next": "From the Ashes",
+"prereq": "Well-Earned Rest",
+"previous": "Well-Earned Rest",
+"repeatable": "no",
+"summary": "Our well-earned rest is interrupted with news from Sirocco. A devastating natural disaster has struck the region and immediate aid is required. We are to make our way to the hostile region of Caldera and assist any survivors who might remain. This quest requires the player to have finished any of the other Faction quest lines first. You will then receive this quest in your journal.",
+"timed": "no",
+"type": "Main Quest"
+},
+"A House Divided": {
+"dynamic": "yes",
+"location": "Harmattan",
+"next": "Well-Earned Rest",
+"prereq": "Cloak and Dagger",
+"previous": "Cloak and Dagger",
+"questgiver": "Gregory Turnbull",
+"repeatable": "no",
+"summary": "Unlike the other factions, this is not a Peacemaker quest, we instead prepare for an important debate against Victor regarding the pacifying experiment on the Runed Immaculate.",
+"timed": "yes",
+"type": "Main Quest"
+},
+"A Knife in the Back": {
+"dynamic": "yes",
+"location": "Harmattan",
+"next": "Cloak and Dagger",
+"prereq": "Up The Ladder",
+"previous": "Up The Ladder",
+"questgiver": "Victor Berthelot",
+"repeatable": "no",
+"summary": "In this quest, the player performs various tasks for deans Victor Berthelot and Gregory Turnbull. For Victor, we make our way to the Electric Lab in Abrassar to retrieve some replacement valves and \"lightning grease\". For Turnbull, we negotiate with some Immaculates.",
+"timed": "yes",
+"type": "Main Quest"
+},
+"A Myriad of Bones": {
+"dynamic": "yes",
+"location": "Corrupted Tombs",
+"questgiver": "Myriade",
+"repeatable": "no",
+"summary": "A Myriad of Bones is a minor quest at the Corrupted Tombs in Outward.",
+"timed": "no",
+"type": "Minor Quest"
+},
+"A Scholar's Ransom": {
+"dynamic": "no",
+"location": "Harmattan",
+"questgiver": "Defeat Scenario during A Knife in the Back",
+"repeatable": "no",
+"reward": "Can access Harmattan Market again",
+"summary": "A Scholar's Ransom is a minor quest in Outward.",
+"timed": "no",
+"type": "Minor"
+},
+"Acquire Mana": {
+"dynamic": "no",
+"location": "Cierzo",
+"questgiver": "First Watcher; Helmi",
+"repeatable": "no",
+"summary": "Acquire Mana is a Minor Quest in Outward.",
+"timed": "no",
+"type": "Minor Quest"
+},
+"Ancestral Peacemaker": {
+"dynamic": "yes",
+"faction": "Blue Chamber",
+"location": "Berg",
+"next": "Well-Earned Rest",
+"previous": "Whispering Bones",
+"questgiver": "Rissa",
+"repeatable": "no",
+"summary": "While you were dealing with the events of the previous quest, the war between the Heroic Kingdom and the Collective has only intensified. It has gotten to the point that Elatt himself has to interfere and order for peace between the two factions. However, some members of the collective are not happy about this outcome and do not wish to make peace with Levant. You must convince them that peace is ",
+"timed": "yes",
+"type": "Main Quest"
+},
+"Ancestral Peacemaker/Quick guide": {
+"summary": "Ancestral Peacemaker is the final faction quest for The Blue Chamber Collective in Outward, and seventh in the series of main quests."
+},
+"Arcane Machine": {
+"dynamic": "no",
+"location": "Electric Lab",
+"prereq": "None",
+"questgiver": "-",
+"repeatable": "no",
+"reward": "Tsar Stone, 5x Ornate Chests",
+"summary": "Arcane Machine is a Minor Quest in Outward that begins in the Electric Lab in Abrassar.",
+"timed": "no",
+"type": "Minor Quest"
+},
+"Ash Giants": {
+"dynamic": "yes",
+"faction": "Blue Chamber",
+"location": "Berg",
+"next": "Whispering Bones",
+"previous": "Mixed Legacies",
+"questgiver": "Rissa",
+"repeatable": "no",
+"summary": "Following the attack on the Blue Chamber, we talk to Rissa to learn that the war with Heroic Kingdom is not going well. If the Blue Chamber is to stand a chance, they will need to recruit some help. Rissa asks you to attempt negotiations with The Ash Giants at Giants' Village, and attempt to convince them to join the Blue Chamber.",
+"timed": "yes",
+"type": "Main Quest"
+},
+"Ash Giants/Quick guide": {
+"summary": "Ash Giants is the second faction quest for The Blue Chamber Collective in Outward, and fifth in the series of main quests."
+},
+"Beware the Gold Lich": {
+"dynamic": "no",
+"location": "Spire of Light",
+"questgiver": "Light Mender",
+"repeatable": "yes",
+"summary": "Beware the Gold Lich is a Minor Quest in Outward that takes place inside the Spire of Light in south eastern Hallowed Marsh.",
+"timed": "no",
+"type": "Minor Quest"
+},
+"Beware the Jade Lich": {
+"dynamic": "no",
+"location": "Dark Ziggurat",
+"questgiver": "Plague Doctor",
+"repeatable": "no",
+"summary": "Beware the Jade Lich is a Minor Quest in Outward found within the Dark Ziggurat in western Hallowed Marsh.",
+"timed": "no",
+"type": "Minor Quest"
+},
+"Blood Under The Sun": {
+"dynamic": "yes",
+"failure": "Buy Prices in Levant permanently raised",
+"location": "Any Inn",
+"prereq": "Reach the point of the Attack on Berg in your faction quests",
+"questgiver": "n/a",
+"repeatable": "no",
+"reward": "Varies",
+"summary": "Blood Under The Sun is a Parallel Quest in Outward.",
+"timed": "yes",
+"type": "Parallel Quest"
+},
+"Blood Under The Sun/Quick guide": {
+"summary": "Blood Under The Sun is a Parallel Quest in Outward."
+},
+"Bloody Business": {
+"dynamic": "no",
+"location": "Blood Mage Hideout",
+"repeatable": "no",
+"reward": "Curse Hex",
+"summary": "Bloody Business is a Minor Quest in Outward.",
+"timed": "no",
+"type": "Minor Quest"
+},
+"Call to Adventure": {
+"dynamic": "yes",
+"failure": "Lose Cierzo player house",
+"location": "Cierzo",
+"next": "Looking to the Future",
+"previous": "Castaway",
+"questgiver": "Rissa",
+"repeatable": "no",
+"reward": "Keep Cierzo player house",
+"summary": "After completing Castaway, you awake in the lighthouse of Cierzo. With your best hope of paying off your family's blood debt ruined in the shipwreck, you are tasked with finding another way of making the payment and saving your home. When you step outside, you learn that your voyage lasted 4 months, and that you had visited Oroshi. 12 people died in the shipwreck, and Rissa Aberdeen has declared a",
+"timed": "yes",
+"type": "Main Quest"
+},
+"Call to Adventure/Quick guide": {
+"summary": "Call to Adventure/Quick guide is the second main quest in Outward."
+},
+"Castaway": {
+"dynamic": "no",
+"location": "Shipwreck (Castaway)",
+"next": "Call to Adventure",
+"questgiver": "None",
+"repeatable": "no",
+"summary": "This quest starts immediately when the player begins their game. A backstory is provided which explains the situation in which the player finds themseleves:",
+"timed": "no",
+"type": "Main Quest"
+},
+"Castaway/Quick guide": {
+"summary": "Castaway is the first main quest in Outward."
+},
+"Cloak and Dagger": {
+"dynamic": "yes",
+"location": "Harmattan",
+"next": "A House Divided",
+"prereq": "A Knife in the Back",
+"previous": "A Knife in the Back",
+"questgiver": "Gregory Turnbull",
+"repeatable": "no",
+"summary": "Continuing our work with Turnbull and Desy Laroche, we are tasked with preventing the destruction of a tunnel which contains some ancient Runic messages, which Turnbull believes hold the key to the Scourge's curse. We will need to cause enough chaos to delay the operations, but not too much that we blow our cover.",
+"timed": "yes",
+"type": "Main Quest"
+},
+"Doubts and Secrets": {
+"dynamic": "yes",
+"faction": "Holy Mission",
+"location": "Monsoon",
+"next": "Truth and Purpose",
+"previous": "Questions and Corruption",
+"questgiver": "Ellinara",
+"repeatable": "no",
+"summary": "While you were investigating the Corrupted Tombs with Oliele, a number of important political matters have arisen. The people of Sirocco are requesting immediate immigration into Monsoon, as a volcano near their settlement is dangerously close to erupting. As well as this, tensions have stirred between the Blue Chamber and the Heroic Kingdom, with the Sand Corsairs demanding control over the Abras",
+"timed": "yes",
+"type": "Main Quest"
+},
+"Doubts and Secrets/Quick guide": {
+"summary": "Doubts and Secrets is the second faction quest for The Holy Mission of Elatt in Outward, and fifth in the series of main quests."
+},
+"Enrollment": {
+"dynamic": "yes",
+"failure": "n/a",
+"location": "Any City",
+"next": "Up The Ladder",
+"prereq": "Call to Adventure",
+"previous": "Call to Adventure",
+"questgiver": "Soroborean Caravanner",
+"repeatable": "no",
+"reward": "Join Sorobor Academy",
+"summary": "Enrollment is obtained upon entering Harmattan for the first time, if you have not already joined a faction. You have the choice to join the Sorobor Academy faction instead of the options in Looking to the Future. Choosing to join the Academy will prevent you from joining any other faction.",
+"timed": "no",
+"type": "Main Quest"
+},
+"Enrollment/Quick guide": {
+"summary": "Enrollment/Quick guide is a Quest in Outward. It is third in the series of main quests, and is the pre-quest to the Sorobor Academy quest-line."
+},
+"From the Ashes": {
+"dynamic": "yes",
+"location": "New Sirocco",
+"next": "Stealing Fire",
+"previous": "A Fallen City",
+"repeatable": "no",
+"summary": "Note: it is highly recommended to prepare a large supply of Gold Ingot or Silver before you begin, as the Sirocco quest line requires a large investment to rebuild the city, and there is a timer for you to finish your construction. This quest has a timer of 150 days, after which workers will start leaving the settlement, slowing down your construction speeds permanently.",
+"timed": "yes",
+"type": "Main Quest"
+},
+"Hallowed Peacemaker": {
+"dynamic": "yes",
+"faction": "Holy Mission",
+"location": "Monsoon",
+"next": "Well-Earned Rest",
+"previous": "Truth and Purpose",
+"questgiver": "Cardinal Bourlamaque",
+"repeatable": "no",
+"summary": "The war between the Blue Chamber and the Heroic Kingdom has continued while you have been dealing with the matters of the Holy Mission, and the Holy Mission's neutrality in the war is at risk. Elatt has demanded a cease-fire, to which most have obliged, however there are still some holding out on peace. Lockwell has been hiding some Levantine agents in an ancient ruin, and has been coordinating wi",
+"timed": "yes",
+"type": "Main Quest"
+},
+"Hallowed Peacemaker/Quick guide": {
+"summary": "Hallowed Peacemaker is the final faction quest for The Holy Mission of Elatt in Outward, and seventh in the series of main quests."
+},
+"Helen's Fungus": {
+"dynamic": "no",
+"location": "Cierzo",
+"prereq": "None",
+"questgiver": "Helen Turnbull",
+"repeatable": "no",
+"reward": "70",
+"summary": "Helen's Fungus is a Minor Quest given by Helen Turnbull, who can be found in Cierzo.",
+"timed": "no",
+"type": "Minor Quest"
+},
+"Heroic Peacemaker": {
+"dynamic": "yes",
+"faction": "Heroic Kingdom",
+"location": "Levant",
+"next": "Well-Earned Rest",
+"previous": "Mouths to Feed",
+"questgiver": "Queen Calixa",
+"repeatable": "no",
+"summary": "While you were dealing with Levant's food shortages, the war with the Blue Chamber Collective has continued. Elatt has intervened, demanding peace. While the Blue Chamber and Levant's ruling class have agreed, some of the military including Yzan and Cyrene feel too emotionally invested in the war to let it go, and Calixa fears they may be planning a coup. Martial Law has been declared in the palac",
+"timed": "yes",
+"type": "Main Quest"
+},
+"Heroic Peacemaker/Quick guide": {
+"summary": "While you were dealing with Levant's food shortages, the war with the Blue Chamber Collective has continued. Elatt has intervened, demanding peace. While the Blue Chamber and Levant's ruling class have agreed, some of the military including Yzan and Cyrene feel too emotionally invested in the war to let it go, and Calixa fears they may be planning a coup. Martial Law has been declared in the palac"
+},
+"Ledger to Berg": {
+"dynamic": "no",
+"location": "Cierzo",
+"questgiver": "Doran",
+"repeatable": "yes",
+"reward": "1x Medium Ruby",
+"summary": "Ledger to Berg is a repeatable Minor Quest given by Shopkeeper Doran, who can be found in Cierzo.",
+"timed": "no",
+"type": "Minor Quest"
+},
+"Ledger to Cierzo": {
+"dynamic": "no",
+"location": "Levant",
+"questgiver": "Suul",
+"repeatable": "yes",
+"reward": "1x Large Emerald",
+"summary": "Ledger to Cierzo is a repeatable Minor Quest given by Shopkeeper Suul, who can be found in Levant.",
+"timed": "no",
+"type": "Minor Quest"
+},
+"Ledger to Levant": {
+"dynamic": "no",
+"location": "Monsoon",
+"questgiver": "Lyda",
+"repeatable": "yes",
+"reward": "1x Large Emerald",
+"summary": "Ledger to Levant is a repeatable Minor Quest given by Lyda, who can be found in Monsoon.",
+"timed": "no",
+"type": "Minor Quest"
+},
+"Ledger to Monsoon": {
+"dynamic": "no",
+"location": "Berg",
+"questgiver": "Pleel",
+"repeatable": "yes",
+"reward": "1x Medium Ruby",
+"summary": "Ledger to Monsoon is a repeatable Minor Quest given by Shopkeeper Pleel, who can be found in Berg.",
+"timed": "no",
+"type": "Minor Quest"
+},
+"Liberate the Sun": {
+"dynamic": "yes",
+"location": "New Sirocco",
+"next": "Vengeful Ouroboros",
+"previous": "Stealing Fire",
+"repeatable": "no",
+"summary": "To continue the expansion of the city of New Sirocco, you will need to help Evangeline solve the temperature control issue. Complete construction of a total of 3 specialized buildings and an upgrade to an existing building within 150 days. Once completed you will need to ask the Djinn for assistance in moving the Emberheart to New Sirocco.",
+"timed": "yes",
+"type": "Main Quest"
+},
+"Looking to the Future": {
+"dynamic": "yes",
+"failure": "n/a",
+"location": "Cierzo",
+"previous": "Call to Adventure",
+"questgiver": "Rissa",
+"repeatable": "no",
+"reward": "Join a Faction",
+"summary": "Following the events of Call to Adventure, Rissa informs the player that Yzan and Oliele are leaving. Oliele is leaving to join the Holy Mission, and nothing Rissa could say would convince her to stay. We learn that Roland was the cause of the shipwreck, having fallen asleep while on duty at the lighthouse. While Roland accepts the Blood Price placed on his bloodline as consequence, Yzan does not,",
+"timed": "no",
+"type": "Main Quest"
+},
+"Looking to the Future/Quick guide": {
+"summary": "Looking to the Future is the third main quest in Outward."
+},
+"Lost Merchant (quest)": {
+"dynamic": "yes",
+"location": "Levant",
+"prereq": "Helped Slums enough for Tamara to appear",
+"questgiver": "Tamara, The Smuggler",
+"repeatable": "yes",
+"reward": "2x Poison Varnish; Gold Ingot",
+"summary": "Lost Merchant (quest) is a minor quest in Outward.",
+"timed": "yes",
+"type": "Minor"
+},
+"Mixed Legacies": {
+"dynamic": "yes",
+"faction": "Blue Chamber",
+"location": "Berg",
+"next": "Ash Giants",
+"previous": "Looking to the Future",
+"questgiver": "Rissa Aberdeen",
+"repeatable": "no",
+"summary": "After successfully being adopted into the Aberdeen family and joining the collective, Rissa informs you that the other chamberlords are on their way to Berg for a council meeting. Two important issues are at stake, both of which could cause a major impact on relations between the Collective and the regions of Sirocco and Abrassar. # Old Levant wants the Heroic Kingdom to cede control of the Abrass",
+"timed": "yes ; (Partial; see \"Mercenary Captain\" section)",
+"type": "Main Quest"
+},
+"Mixed Legacies/Quick guide": {
+"summary": "Mixed Legacies is the first faction quest for The Blue Chamber Collective in Outward, and the fourth in the series of main quests."
+},
+"Mouths to Feed": {
+"dynamic": "yes",
+"faction": "Heroic Kingdom",
+"location": "Levant",
+"next": "Heroic Peacemaker",
+"previous": "Sand Corsairs",
+"questgiver": "Queen Calixa",
+"repeatable": "no",
+"summary": "Following the events of Sand Corsairs, Calixa informs us that Sirocco is no longer able to supply the region with food, and that the Holy Mission has stepped in to help, though it is not enough. The food they are able to send is very limited, due to the extreme heat of the desert. She will ask you to assist Kirouac in finding a solution in Monsoon, by speaking to the alchemist Laine.",
+"timed": "yes",
+"type": "Main Quest"
+},
+"Mouths to Feed/Quick guide": {
+"summary": "Mouths to Feed is the third faction quest for The Heroic Kingdom of Levant in Outward, and sixth in the series of main quests."
+},
+"Need: Angel Food Cake": {
+"dynamic": "no",
+"location": "Harmattan",
+"questgiver": "David Parks, Craftsman",
+"repeatable": "yes",
+"summary": "Need: Angel Food Cake is a repeatable minor quest given by David Parks, Craftsman in Antique Plateau.",
+"timed": "no",
+"type": "Minor quest"
+},
+"Need: Beast Golem Scraps": {
+"dynamic": "no",
+"location": "Berg",
+"questgiver": "Ogoi",
+"repeatable": "yes",
+"reward": "2 x Assassin Elixir",
+"summary": "Need: Beast Golem Scraps is a repeatable minor quest given by Ogoi, who can be found in Berg.",
+"timed": "no",
+"type": "minor quest"
+},
+"Need: Cierzo Ceviche": {
+"dynamic": "no",
+"location": "Cierzo",
+"prereq": "None",
+"questgiver": "Arago",
+"repeatable": "yes",
+"reward": "4 x Ocean Fricassee",
+"summary": "Need: Cierzo Ceviche is a repeatable minor quest given by Arago, who can be found in Cierzo.",
+"timed": "no",
+"type": "minor quest"
+},
+"Need: Fire Elemental Particles": {
+"dynamic": "no",
+"location": "Harmattan",
+"questgiver": "Bradley Auteil, Armory",
+"repeatable": "yes",
+"summary": "Need: Fire Elemental Particles is a repeatable minor quest given by Bradley Auteil, Armory in Antique Plateau.",
+"timed": "no",
+"type": "Minor quest"
+},
+"Need: Manaheart Bass": {
+"dynamic": "no",
+"location": "Harmattan",
+"questgiver": "Ibolya Battleborn, Chef",
+"repeatable": "yes",
+"summary": "Need: Manaheart Bass is a repeatable minor quest given by Ibolya Battleborn, Chef in Antique Plateau.",
+"timed": "no",
+"type": "Minor quest"
+},
+"Need: Manticore Tail": {
+"dynamic": "no",
+"location": "Berg",
+"prereq": "None",
+"questgiver": "Chef Iasu",
+"repeatable": "yes",
+"reward": "2x Gold Ingot; 3x Bread Of The Wild",
+"summary": "Need: Manticore Tail is a repeatable minor quest given by Chef Iasu in Berg.",
+"timed": "no",
+"type": "minor quest"
+},
+"Need: Shark Cartilage": {
+"dynamic": "no",
+"location": "Levant",
+"questgiver": "Chef Tenno",
+"repeatable": "yes",
+"reward": "4 Spiny Meringue",
+"summary": "Need: Shark Cartilage is a repeatable minor quest given by Chef Tenno in Levant.",
+"timed": "no",
+"type": "minor quest"
+},
+"Need: Shield Golem Scrap": {
+"dynamic": "no",
+"location": "Harmattan",
+"questgiver": "Cera Carillion, Weaponsmith",
+"repeatable": "yes",
+"summary": "Need: Shield Golem Scrap is a repeatable minor quest given by Cera Carillion, Weaponsmith in Antique Plateau.",
+"timed": "no",
+"type": "Minor quest"
+},
+"Need: Tourmaline": {
+"dynamic": "no",
+"location": "Harmattan",
+"questgiver": "Lawrence Dakers, Hunter",
+"repeatable": "yes",
+"summary": "Need: Tourmaline is a repeatable minor quest given by Lawrence Dakers, Hunter in Antique Plateau.",
+"timed": "no",
+"type": "Minor quest"
+},
+"Purifier": {
+"dynamic": "yes",
+"location": "Hallowed Marsh or Monsoon",
+"prereq": "Join a Faction",
+"questgiver": "Varies",
+"repeatable": "no",
+"summary": "Purifier is a Parallel Quest in Outward.",
+"timed": "yes",
+"type": "Parallel Quest"
+},
+"Purifier/Quick guide": {
+"summary": "Purifier is a Parallel Quest in Outward."
+},
+"Purify The Water": {
+"dynamic": "yes",
+"location": "Cierzo",
+"previous": "Looking to the Future",
+"questgiver": "Etios von Vanoos",
+"repeatable": "no",
+"summary": "This quest becomes available in Cierzo concurrently with Vendavel Quest immediately after the player joins a faction. This quest cannot be completed if Cierzo becomes inaccessible. When the player first visits Cierzo after joining a faction, they may observe that the basin of the water purifier is suddenly filled with rancid water.",
+"timed": "yes",
+"type": "Minor Quest"
+},
+"Questions and Corruption": {
+"dynamic": "yes",
+"faction": "Holy Mission",
+"location": "Monsoon",
+"next": "Doubts and Secrets",
+"previous": "Looking to the Future",
+"questgiver": "Ellinara",
+"repeatable": "no",
+"summary": "After the player joins the Holy Mission, Ellinara in Monsoon will send you to the nearby vigil tower so the player can understand how Vigil Pylons actually work. Elatt sensed there is corruption growing in Chersonese, and so Ellinara will send the player to source of corruption - Corrupted Tombs - along with Oliele to investigate the site on behalf of Elatt.",
+"timed": "yes",
+"type": "Main Quest"
+},
+"Questions and Corruption/Quick guide": {
+"summary": "Questions and Corruption is the first faction quest for The Holy Mission of Elatt in Outward, and the fourth in the series of main quests."
+},
+"Red Idol": {
+"dynamic": "yes",
+"location": "Face of the Ancients",
+"questgiver": "Researcher Boye",
+"repeatable": "no",
+"reward": "Either 300 silver, OR:; Red Lady's Dagger",
+"summary": "Red Idol is a quest given by Researcher Boye in the Face of the Ancients in the Enmerkar Forest.",
+"timed": "no",
+"type": "Minor Quest"
+},
+"Rust and Vengeance": {
+"dynamic": "yes",
+"location": "Harmattan",
+"questgiver": "Broken Golem in Harmattan",
+"repeatable": "no",
+"summary": "This quest involves traveling around through the Antique Plateau dungeons to find four Gemstone Keys, which will allow us to enter the Forgotten Research Laboratory and confront the Forge Master. The dungeons are connected through a runic train system, and certain dungeons (such as the Forgotten Laboratory) are only accessible through this train system.",
+"timed": "yes",
+"type": "Parallel Quest"
+},
+"Sand Corsairs": {
+"dynamic": "yes",
+"faction": "Heroic Kingdom",
+"location": "Levant",
+"next": "Mouths to Feed",
+"previous": "Tending the Flame",
+"questgiver": "Cyrene",
+"repeatable": "no",
+"summary": "War has been declared between The Blue Chamber Collective and Heroic Kingdom of Levant, and while the war is going well for the Heroic Kingdom it has cut them off from their usual trade routes, and the few that remain are being plundered by The Sand Corsairs. The player will be tasked with bringing the Corsair's leader to justice in an attempt to stop Levant's populations from starving to death.",
+"timed": "no",
+"type": "Main Quest"
+},
+"Sand Corsairs/Quick guide": {
+"summary": "Sand Corsairs is the second faction quest for The Heroic Kingdom of Levant in Outward, and the fifth in the series of main quests."
+},
+"Silver for the Slums": {
+"dynamic": "no",
+"location": "Slums in Levant",
+"questgiver": "Pigeoneye",
+"repeatable": "no",
+"reward": "Tamara's shop will open",
+"summary": "Silver for the Slums is a Minor Quest given by Pigeoneye in Levant.",
+"timed": "no",
+"type": "Minor Quest"
+},
+"Skulls for Cremeuh": {
+"dynamic": "no",
+"location": "Necropolis (lower area)",
+"prereq": "Complete 3rd faction quest (6th main quest)",
+"questgiver": "Cremeuh Ayere",
+"repeatable": "no",
+"reward": "Ornate Bone Shield",
+"summary": "Skulls for Cremeuh is a Minor Quest given by Cremeuh Ayere in the Necropolis under Berg.",
+"timed": "no",
+"type": "Minor Quest"
+},
+"Stealing Fire": {
+"dynamic": "yes",
+"location": "New Sirocco",
+"next": "Liberate the Sun",
+"previous": "From the Ashes",
+"repeatable": "no",
+"summary": "The trio is planning on building some forges in New Sirocco to streamline production, but they are unsure about which type they want to make. Josef knows of a more advanced type of forge, but it requires a Charged Forge Stone in order to function, which can only be obtained by venturing to the depths of The Eldest Brother volcano.",
+"timed": "yes",
+"type": "Main Quest"
+},
+"Strange Apparitions": {
+"dynamic": "no",
+"location": "Spire of Light",
+"questgiver": "n/a",
+"repeatable": "no",
+"reward": "Light Mender's Backpack",
+"summary": "Strange Apparitions is a Minor Quest in Outward, which the player can receive at the Spire of Light in Hallowed Marsh.",
+"timed": "no",
+"type": "Minor Quest"
+},
+"Tending the Flame": {
+"dynamic": "yes",
+"faction": "Heroic Kingdom",
+"location": "Levant",
+"next": "Sand Corsairs",
+"previous": "Looking to the Future",
+"questgiver": "Cyrene",
+"repeatable": "no",
+"summary": "After the player gains citizenship either through Cyrene or Baron Montgomery, Cyrene will task the player with serving as a bodyguard for Kirouac, one of Levant's ambassadors. Kirouac has been sent on a diplomatic mission to resolve an issue involving Old Levant, The Blue Chamber Collective, and The Heroic Kingdom of Levant, also known as New Levant. In short, Old Levant claims to be the rightful ",
+"timed": "no",
+"type": "Main Quest"
+},
+"Tending the Flame/Quick guide": {
+"summary": "Tending the Flame is the first faction quest for The Heroic Kingdom of Levant in Outward, and the fourth in the series of main quests."
+},
+"Treasure Hunt": {
+"dynamic": "no",
+"location": "Pirates' Hideout",
+"questgiver": "Note at Pirates' Hideout",
+"repeatable": "no",
+"reward": "Tsar Stone",
+"summary": "Treasure Hunt is a Minor Quest in Outward, which can be started at the Pirates' Hideout in Chersonese.",
+"timed": "no",
+"type": "Minor Quest"
+},
+"Truth and Purpose": {
+"dynamic": "yes",
+"faction": "Holy Mission",
+"location": "Monsoon",
+"next": "Hallowed Peacemaker",
+"previous": "Doubts and Secrets",
+"questgiver": "Ellinara",
+"repeatable": "no",
+"summary": "Oliele has gone to Abrassar to learn about Elatt's history, hoping to ease her doubts about the Holy Mission. Ellinara and Elatt ask us to keep an eye on Oliele, as Elatt senses she is on the verge of a major discovery.",
+"timed": "yes",
+"type": "Main Quest"
+},
+"Truth and Purpose/Quick guide": {
+"summary": "Truth and Purpose is the third faction quest for The Holy Mission of Elatt in Outward, and sixth in the series of main quests."
+},
+"Up The Ladder": {
+"dynamic": "yes",
+"location": "Harmattan",
+"next": "A Knife in the Back",
+"prereq": "Enrollment",
+"previous": "Enrollment",
+"questgiver": "Headmaster Raul Salaberry",
+"repeatable": "no",
+"summary": "The first quest of the Sorobor Academy faction sees the player working their way up through the ranks of the Sorobor Academy. What starts out as a few simple errands very quickly demonstrates the harshness of the Antique Plateau, and the lengths certain members of the Academy are willing to go to in order to make it out here.",
+"timed": "yes",
+"type": "Main Quest"
+},
+"Vendavel Quest": {
+"dynamic": "yes",
+"location": "Cierzo",
+"prereq": "Join a Faction. The quest can also be completed without joining a faction. If you simply deal with the 3 warlords without being told to do so.",
+"questgiver": "Burac Carillon",
+"repeatable": "no",
+"summary": "Vendavel is a Parallel Quest in Outward.",
+"timed": "yes",
+"type": "Parallel Quest"
+},
+"Vendavel Quest/Quick guide": {
+"summary": "Vendavel is a Parallel Quest in Outward."
+},
+"Vengeful Ouroboros": {
+"dynamic": "yes",
+"location": "New Sirocco",
+"next": "Well-Earned Rest",
+"previous": "Liberate the Sun",
+"repeatable": "no",
+"summary": "The Magma level in lower New Sirocco is rising, and we need to act fast if we want to retain access to this part of the city, including the New Sirocco Mines. The player will need to identify the source of the rising magma level and stop it before it is too late.",
+"timed": "yes",
+"type": "Main Quest"
+},
+"Whispering Bones": {
+"dynamic": "yes",
+"faction": "Blue Chamber",
+"location": "Berg",
+"next": "Ancestral Peacemaker",
+"previous": "Ash Giants",
+"questgiver": "Rissa",
+"repeatable": "no",
+"summary": "After completing Ash Giants, Rissa Aberdeen asks you to join The Krypteia. Krypteia governs Blue Chamber using Ancestral Memories, memories that are enshrined by several founding members of Blue Chamber. One member of Krypteia, a follower of the Scarlet Lady, has been leeching power from Ancestral Memories. The player and Roland Argenson, Yzan's younger brother, will be tasked with safeguarding An",
+"timed": "yes",
+"type": "Main Quest"
+},
+"Whispering Bones/Quick guide": {
+"summary": "Whispering Bones is the third faction quest for The Blue Chamber Collective in Outward, and sixth in the series of main quests."
+},
+"William of the Wisp": {
+"dynamic": "no",
+"location": "Enmerkar Forest",
+"questgiver": "Unique defeat scenario at Cabal of Wind Temple",
+"repeatable": "no",
+"summary": "William of the Wisp is a minor quest in Outward.",
+"timed": "no",
+"type": "Minor Quest"
+}
+}

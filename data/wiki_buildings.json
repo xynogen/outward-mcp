@@ -1,0 +1,87 @@
+{
+"Berg player house": {
+"location": "Berg",
+"summary": "The Berg player house is the Player House of Berg. It can be found in the southern area of the city.",
+"type": "Player House"
+},
+"Blue Chamber building": {
+"location": "Berg",
+"summary": "The Blue Chamber building in Berg is where many factions meet to discuss important issues. Notably, this location is where the 'attack on Berg' occurs during the early parts of each faction quest-line.",
+"type": "Council chamber"
+},
+"Cierzo Town Hall": {
+"location": "Cierzo",
+"summary": "The Town Hall in Cierzo is where players will find Rissa Aberdeen when she is in Cierzo, after the events of Castaway.",
+"type": "Town Hall"
+},
+"Cierzo player house": {
+"location": "Cierzo",
+"summary": "The Cierzo player house is the Player House of Cierzo, and is the player's starting house. It is a lighthouse perched atop the tallest hill in the city, giving it the best visibility for ships making their way to shore. The house has several levels, although players are only able to access the first two floors and the basement.",
+"type": "Player House"
+},
+"Citizen's Barracks Inn": {
+"location": "Harmattan",
+"summary": "The Citizen's Barracks Inn is one of the Inns in Outward, found in the central area of the city of Harmattan, east of the Sorobor Academy building.",
+"type": "Inn"
+},
+"Fang & Claw's Inn": {
+"location": "Monsoon",
+"summary": "The Fang & Claw's Inn is one of the Inns in Outward, found in the eastern area of the city of Monsoon.",
+"type": "Inn"
+},
+"Grand Inn": {
+"location": "Levant",
+"summary": "The Grand Inn is one of the Inns in Outward, found in the north-western area of the city of Levant.",
+"type": "Inn"
+},
+"Harmattan player house": {
+"location": "Harmattan",
+"summary": "The Harmattan player house is the Player House of Harmattan. It can be found in the south-eastern area of the city.",
+"type": "Player House"
+},
+"Heroes' Palace": {
+"location": "Levant",
+"summary": "The Heroes' Palace in Levant is the home to the royalty of The Heroic Kingdom of Levant.",
+"type": "Royal palace"
+},
+"Levant player house": {
+"location": "Levant",
+"summary": "The Levant player house is the Player House of Levant. It can be found in the south-western area of the city.",
+"type": "Player House"
+},
+"Monsoon City Hall": {
+"location": "Monsoon",
+"summary": "The City Hall in Monsoon is the offices of Damian Lockwell and his guards.",
+"type": "City Hall"
+},
+"Monsoon Lotus Temple": {
+"location": "Monsoon",
+"summary": "The Lotus Temple in Monsoon is home to the Holy Mission's devoted followers, and the primary worship site for Elatt.",
+"type": "Temple"
+},
+"Monsoon player house": {
+"location": "Monsoon",
+"summary": "The Monsoon player house is the Player House of Monsoon. It can be found in the south-western area of the city.",
+"type": "Player House"
+},
+"Old Coin's Inn": {
+"location": "Berg",
+"summary": "The Old Coin's Inn is one of the Inns in Outward, found in the eastern area of the city of Berg.",
+"type": "Inn"
+},
+"Sea Salt Inn": {
+"location": "Cierzo",
+"summary": "The Sea Salt Inn is one of the Inns in Outward, found in the south-eastern area of the city of Cierzo.",
+"type": "Inn"
+},
+"Sorobor Academy building": {
+"location": "Harmattan",
+"summary": "The Sorobor Academy building is a large tower found in the north-central area of Harmattan, home to many important features and NPCs of the Sorobor Academy faction.",
+"type": "Multi-purpose tower"
+},
+"Victorious Light Inn": {
+"location": "Harmattan",
+"summary": "The Victorious Light Inn is one of the Inns in Outward, found in the north-western area of the city of Harmattan.",
+"type": "Inn"
+}
+}

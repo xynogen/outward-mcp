@@ -1,0 +1,115 @@
+{
+"Blood Tendrils": {
+"combo": "Blood Sigil > Mana Push",
+"duration": "Instant",
+"effects": "The Mana Push gains Blood Tendril effects; Adds 50 Decay and 50 Physical damage; Adds 25 Impact; Add 3% Corruption to caster (once)",
+"summary": "Blood Tendrils is a skill combination in Outward."
+},
+"Blood Turret": {
+"combo": "Blood Sigil > Conjure",
+"duration": "Instant",
+"effects": "Summons a Decay turret which lasts 30 seconds; Shoots once per second, dealing 15 Decay damage and 10 Impact; Add 6% Corruption to caster (once)",
+"summary": "Blood Turret is a skill combination in Outward."
+},
+"Ethereal Bolt": {
+"combo": "Sigil of Wind > Mana Push",
+"duration": "Instant",
+"effects": "Launch a long-range Ethereal bolt ; Deals 25 ethereal damage and 100 impact",
+"summary": "Ethereal Bolt is a skill combination in Outward."
+},
+"Fireball": {
+"combo": "Sigil of Fire > Spark",
+"duration": "Instant",
+"effects": "Launch a fast-moving Fireball projectile; Deals 60 fire damage and 60 impact; Inflicts Burning",
+"summary": "Fireball is a skill combination in Outward."
+},
+"Frost Burst": {
+"combo": "Sigil of Ice > Mana Ward",
+"duration": "Instant",
+"effects": "Creates a short-range Frost explosion centered on you; Deals 100 frost damage and 60 impact; Inflicts Slow Down",
+"summary": "Frost Burst is a skill combination in Outward."
+},
+"Frost Kick": {
+"combo": "Sigil of Ice > Push Kick",
+"duration": "Instant",
+"effects": "Creates a short-range Frost explosion where you kick; Deals 60 frost damage and 50 impact; Inflicts Slow Down",
+"summary": "Frost Kick is a skill combination in Outward."
+},
+"Frost Push": {
+"combo": "Sigil of Ice > Mana Push",
+"duration": "Instant",
+"effects": "Launch a Frost projectile from the push; Deals 85 frost damage and 60 impact; Inflicts Slow Down",
+"summary": "Frost Push is a skill combination in Outward."
+},
+"Lightning Bullet": {
+"combo": "Sigil of Wind > Fire and Reload",
+"duration": "Instant",
+"effects": "Pistol shot becomes a powerful Lightning projectile; Damage and impact are increased to (1.6x) of their normal value and converted to lightning",
+"requires": "Pistol and Bullet",
+"summary": "Lightning Bullet is a skill combination in Outward."
+},
+"Lightning Spark": {
+"combo": "Sigil of Wind > Spark",
+"duration": "Instant",
+"effects": "Creates a Lightning explosion from the Spark; Deals 85 lightning damage and 75 impact",
+"summary": "Lightning Spark is a skill combination in Outward."
+},
+"Lightning Strike": {
+"combo": "Sigil of Wind > Conjure",
+"duration": "Instant",
+"effects": "Creates a large Lightning explosion centered on the Sigil; Deals 165 lightning damage and 200 impact",
+"summary": "Lightning Strike is a skill combination in Outward."
+},
+"Mana Spark": {
+"combo": "Reveal Soul > Spark",
+"duration": "Instant",
+"effects": "Consumes the Soul Spot to restore Mana; Restores 50% of max Mana",
+"summary": "Mana Spark is a skill combination in Outward."
+},
+"Ring of Fire": {
+"combo": "Flint and Steel + Sigil of Fire",
+"duration": "25 seconds",
+"effects": "6 Fire damage every 0.25 seconds; Inflicts Burning",
+"summary": "Ring of Fire is a skill combination in Outward."
+},
+"Runic Detonation": {
+"combo": "Runic Trap&nbsp;+&nbsp;&nbsp;+&nbsp",
+"duration": "Instant",
+"effects": "Creates an explosion on the Runic Trap, and consumes it.",
+"requires": "Arcane Syntax",
+"summary": "Runic Detonation is a Rune Magic spell used to detonate a Runic Trap. This spell requires Arcane Syntax."
+},
+"Runic Heal": {
+"combo": "Runic Protection&nbsp;+&nbsp;&nbsp;+&nbsp",
+"consumes": "Runic Protection",
+"duration": "Instant",
+"effects": "Consumes Runic Protection to restore Health",
+"requires": "Arcane Syntax",
+"summary": "Runic Heal is a skill combination cast with Rune Magic. This spell requires Arcane Syntax."
+},
+"Runic Lantern": {
+"combo": "+",
+"duration": "300 seconds",
+"effects": "Floating magic lantern",
+"summary": "Runic Lantern is a magical hands-free lantern cast with Rune Magic in Outward."
+},
+"Runic Lightning": {
+"combo": "Runic Lantern&nbsp;+&nbsp;&nbsp;+&nbsp",
+"duration": "Instant",
+"effects": "Launch a fast-moving Lightning projectile; Deals 55+ lightning damage and 30 impact",
+"requires": "Arcane Syntax",
+"summary": "Runic Lightning is a skill combination cast with Rune Magic in Outward. This spell requires Arcane Syntax."
+},
+"Runic Protection": {
+"combo": "+",
+"duration": "180 seconds",
+"effects": "Grants Runic Protection for 180 seconds (effects vary)",
+"summary": "Runic Protection is a skill combination in Outward, which is cast with Rune Magic and grants a positive effect."
+},
+"Runic Trap": {
+"combo": "+",
+"duration": "∞",
+"effects": "Summons a magic trap. When triggered:; Deals 70 ethereal damage and 100 impact; Has additional effects with Runic Prefix and Arcane Syntax",
+"summary": "Runic Trap is a magical trap, created with Rune Magic in Outward."
+}
+}

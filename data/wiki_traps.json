@@ -1,0 +1,109 @@
+{
+"Bleed Trap": {
+"armedwith": "Predator Bones; Insect Husk; Axes; Swords",
+"damage": "35 Physical",
+"effects": "Inflicts Bleeding",
+"impact": "50 Impact",
+"summary": "Bleed Trap is a type of Tripwire Trap."
+},
+"Bludgeon Trap": {
+"armedwith": "Maces",
+"damage": "35 Physical",
+"effects": "Inflicts Confusion",
+"impact": "120 Impact",
+"summary": "Bludgeon Trap is a type of Tripwire Trap."
+},
+"Ethereal Trap": {
+"armedwith": "Spiritual Varnish; Occult Remains; Shark Cartilage; Ghost's Eye",
+"damage": "60 Ethereal",
+"effects": "Haunted",
+"impact": "100",
+"summary": "Ethereal Trap is a type of Pressure Plate Trap."
+},
+"Flash Trap": {
+"armedwith": "Firefly Powder",
+"damage": "60 Lightning",
+"impact": "200",
+"summary": "Flash Trap is a type of Pressure Plate Trap."
+},
+"Frost Trap": {
+"armedwith": "Ice Varnish; Blue Sand; Cold Stone",
+"damage": "80 Frost",
+"effects": "Slow Down",
+"impact": "100",
+"summary": "Frost Trap is a type of Pressure Plate Trap."
+},
+"Improved Bleed Trap": {
+"armedwith": "Coralhorn Antler; Shark Cartilage; Thorny Cartilage",
+"damage": "60 Physical",
+"effects": "Inflicts Extreme Bleeding",
+"impact": "80 Impact",
+"summary": "Improved Bleed Trap is a type of Tripwire Trap."
+},
+"Improved Incendiary Trap": {
+"armedwith": "Fire Varnish; Fire Stone; Obsidian Shard; Explorer Lantern",
+"damage": "100 Fire",
+"effects": "Burning",
+"impact": "120",
+"summary": "Improved Incendiary Trap is a type of Pressure Plate Trap."
+},
+"Improved Spike Trap": {
+"armedwith": "Palladium Spikes; Assassin Tongue; Beast Golem Scraps",
+"damage": "75 Physical",
+"effects": "Inflicts Pain",
+"impact": "75 Impact",
+"summary": "Improved Spike Trap is a type of Tripwire Trap."
+},
+"Improved Toxic Trap": {
+"armedwith": "Dark Varnish; Poison Varnish; Phytosaur Horn",
+"damage": "80 Decay",
+"effects": "Extreme Poison",
+"summary": "Improved Toxic Trap is a type of Pressure Plate Trap."
+},
+"Incendiary Trap": {
+"armedwith": "Charge – Incendiary; Old Lantern",
+"damage": "85 Fire",
+"effects": "Burning",
+"impact": "75",
+"summary": "Incendiary Trap is a type of Pressure Plate Trap."
+},
+"Nerve Gas Trap": {
+"armedwith": "Charge – Nerve Gas",
+"damage": "Up to 100 Ethereal",
+"effects": "Pain",
+"impact": "Up to 8",
+"summary": "Nerve Gas Trap is a type of Pressure Plate Trap."
+},
+"Sapped Trap": {
+"armedwith": "Arcane Dampener",
+"damage": "90 Lightning",
+"effects": "Sapped",
+"summary": "Sapped Trap is a type of Pressure Plate Trap."
+},
+"Shock Trap": {
+"armedwith": "Bolt Varnish; Gold-Lich Mechanism",
+"damage": "90 Lightning",
+"effects": "Confusion",
+"impact": "80",
+"summary": "Shock Trap is a type of Pressure Plate Trap."
+},
+"Spike Trap": {
+"armedwith": "Iron Spikes; Polearms; Spears",
+"damage": "50 Physical",
+"effects": "Inflicts Pain",
+"impact": "50 Impact",
+"summary": "Spike Trap is type of Tripwire Trap."
+},
+"Toxic Trap": {
+"armedwith": "Charge – Toxic; Miasmapod; Boiled Miasmapod",
+"damage": "80 Decay",
+"effects": "Poisoned",
+"summary": "Toxic Trap is a type of Pressure Plate Trap."
+},
+"Wood Spike Trap": {
+"armedwith": "Wooden Spikes, Primitive Club, Quarterstaff",
+"damage": "25 Physical",
+"impact": "50 Impact",
+"summary": "Wood Spike Trap is a type of Tripwire Trap."
+}
+}

@@ -1,0 +1,832 @@
+{
+"Abandoned Living Quarters": {
+"region": "Antique Plateau",
+"scenename": "AntiqueField_Dungeon1",
+"summary": "Abandoned Living Quarters is a location in the Antique Plateau region in Outward.",
+"type": "Dungeon"
+},
+"Abandoned Shed": {
+"region": "Hallowed Marsh",
+"scenename": "HallowedDungeonsSmall",
+"summary": "Abandoned Shed is an old building in the Hallowed Marsh, just west of the dock to Monsoon by the Old Windmill marker.",
+"type": "Dungeon"
+},
+"Abandoned Storage": {
+"scenename": "AntiqueFieldDungeonsSmall",
+"summary": "Abandoned Storage is a location in the Antique Plateau, in Outward.",
+"type": "Misc. Dungeon"
+},
+"Abandoned Ziggurat": {
+"region": "Hallowed Marsh",
+"scenename": "HallowedDungeonsSmall",
+"summary": "The Abandoned Ziggurat is an abandoned, one room temple found in south-west Hallowed Marsh, east of the Cabal of Wind tower.",
+"type": "Dungeon"
+},
+"Abrassar": {
+"scenename": "Abrassar",
+"summary": "Abrassar is a Region in Outward which houses the city of Levant, home of the Heroic Kingdom faction. The temperature in the region is oppressively hot in the daytime and bitter cold at night, making it difficult to traverse.",
+"type": "Region"
+},
+"Ancestor's Resting Place": {
+"region": "Enmerkar Forest",
+"scenename": "Emercar_Dungeon5",
+"summary": "Ancestor's Resting Place is a location northwest of Berg in the Enmerkar Forest, marked as \"Fort\". It can be found by leaving Berg via its north-western gate, and traversing a small valley containing many ruined buildings.",
+"type": "Dungeon"
+},
+"Ancient Foundry": {
+"region": "Antique Plateau",
+"scenename": "AntiqueField_Dungeon3",
+"summary": "Ancient Foundry is a location in the Antique Plateau region in Outward.",
+"type": "Dungeon"
+},
+"Ancient Hive": {
+"region": "Abrassar",
+"scenename": "Abrassar_Dungeon5",
+"summary": "Ancient Hive is a marked location in Abrassar, marked as \"Colossal Hive\". It dates back to the original Scourge invasion almost a century ago.",
+"type": "Dungeon"
+},
+"Antique Plateau": {
+"scenename": "AntiqueField",
+"summary": "The Antique Plateau is a region in Outward, home of the Sorobor Academy faction. The main city of Antique Plateau is Harmattan. This region is exclusive to The Soroboreans DLC.",
+"type": "Region"
+},
+"Ark of the Exiled": {
+"region": "Caldera",
+"scenename": "CalderaDungeon10",
+"summary": "Ark of the Exiled is a moving location in the Caldera region in Outward. It can be found at 6 possible locations around the Caldera region.",
+"type": "Dungeon"
+},
+"Bandit Hideout": {
+"scenename": "AntiqueFieldDungeonsSmall",
+"summary": "Bandit Hideout is a location in the Antique Plateau, in Outward.",
+"type": "Misc. Dungeon"
+},
+"Bandits' Prison": {
+"region": "Chersonese",
+"scenename": "ChersoneseDungeonsSmall",
+"summary": "Bandits' Prison is a marked location in the Chersonese region. It is marked as the southern \"Bandit Camp\".",
+"type": "Dungeon"
+},
+"Berg": {
+"region": "Enmerkar Forest",
+"scenename": "Berg",
+"summary": "Berg is the major City in the Enmerkar Forest region in Outward.",
+"type": "City"
+},
+"Blister Burrow": {
+"region": "Chersonese",
+"scenename": "Chersonese_Dungeon2",
+"summary": "Blister Burrow is an unmarked location in Chersonese, and is the stronghold for the local Troglodyte population. It is located in the far north-western corner of Chersonese. From the entrance of Cierzo, it can be found by following the path to the left and taking two left turns.",
+"type": "Dungeon"
+},
+"Blood Mage Hideout": {
+"scenename": "AntiqueFieldDungeonsSmall",
+"summary": "Blood Mage Hideout is a location in the Antique Plateau, in Outward.",
+"type": "Misc. Dungeon"
+},
+"Blue Chamber's Conflux Path": {
+"region": "Chersonese",
+"scenename": "Chersonese_Dungeon4_BlueChamber",
+"summary": "Blue Chamber's Conflux Path is a location on Conflux Mountain, which leads to Conflux Chambers.",
+"type": "Dungeon"
+},
+"Burnt Outpost": {
+"region": "Enmerkar Forest",
+"scenename": "EmercarDungeonsSmall",
+"summary": "Burnt Outpost is a marked location in southern Enmerkar Forest, marked as \"Bandit Camp\". It can be accessed by heading south of Burning Tree into the smouldering camp on the hill. The outpost itself is the building at the back of the camp.",
+"type": "Camp"
+},
+"Cabal of Wind Outpost": {
+"region": "Abrassar",
+"scenename": "AbrassarDungeonsSmall",
+"summary": "The Cabal of Wind Outpost is a ransacked Cabal hut in the north-eastern Abrassar Desert. The Abrassar Cabal of Wind Altar can be found north-east of this location.",
+"type": "Other"
+},
+"Cabal of Wind Temple": {
+"region": "Enmerkar Forest",
+"scenename": "Emercar_Dungeon3",
+"summary": "The Cabal of Wind Temple is a marked location in south-western Enmerkar Forest. The curiously shaped temple sits atop a tall mountain, so it stands out from almost anywhere in the forest.",
+"type": "Temple"
+},
+"Caldera": {
+"scenename": "Caldera",
+"summary": "Caldera is a region in Outward. The main city of Caldera was Old Sirocco, but with the aid of the player New Sirocco becomes the region's main city. This region is exclusive to The Three Brothers DLC.",
+"type": "Region"
+},
+"Calygrey Colosseum": {
+"region": "Caldera",
+"scenename": "CalderaDungeonsSmall",
+"summary": "Calygrey Colosseum is a location in the Caldera region in Outward.",
+"type": "Dungeon"
+},
+"Chersonese": {
+"scenename": "ChersoneseNewTerrain",
+"summary": "Chersonese is a Region in Outward. The main city of Chersonese is Cierzo. It is a mountainous, coastal region. Common enemies in this region include bandits, pearlbirds, hyenas and mantis shrimp.",
+"type": "Region"
+},
+"Cierzo": {
+"region": "Chersonese",
+"scenename": "CierzoNewTerrain",
+"summary": "Cierzo is the major City in the Chersonese region in Outward.",
+"type": "City"
+},
+"Cierzo (Destroyed)": {
+"region": "Chersonese",
+"scenename": "CierzoDestroyed",
+"summary": "Cierzo (Destroyed) is an alternate version of Cierzo, which players may encounter depending on their outcome of Vendavel Quest.",
+"type": "Other"
+},
+"Cierzo Storage": {
+"region": "Chersonese",
+"scenename": "Chersonese_Dungeon8",
+"summary": "Cierzo Storage is a minor dungeon in Cierzo, accessible from the docks below the Lighthouse.",
+"type": "Dungeon"
+},
+"Compromised Mana Transfer Station": {
+"region": "Antique Plateau",
+"scenename": "AntiqueField_Dungeon8",
+"summary": "Compromised Mana Transfer Station is a location in the Antique Plateau region in Outward.",
+"type": "Dungeon"
+},
+"Conflux Chambers": {
+"region": "Chersonese",
+"scenename": "Chersonese_Dungeon4_CommonPath",
+"summary": "The Conflux Chambers are located at the end of the Conflux Paths on Conflux Mountain. This location is involved in Acquire Mana.",
+"type": "Dungeon"
+},
+"Conflux Mountain": {
+"region": "Chersonese",
+"scenename": "ChersoneseNewTerrain",
+"summary": "Conflux Mountain is a marked location at the center of the Chersonese region. It is a large mountain with a corkscrew winding path that ascends to the peak.",
+"type": "External area of Chersonese"
+},
+"Corrupted Cave": {
+"scenename": "AntiqueFieldDungeonsSmall",
+"summary": "Corrupted Cave is a location in the Antique Plateau, in Outward.",
+"type": "Misc. Dungeon"
+},
+"Corrupted Tombs": {
+"region": "Chersonese",
+"scenename": "Chersonese_Dungeon6",
+"summary": "Corrupted Tombs is an unmarked location in Chersonese, marked as the northern Ancient Ruins. The main entrance is located beyond Ghost Pass, and to the north west.",
+"type": "Dungeon"
+},
+"Corsairs' Headquarters": {
+"region": "Abrassar",
+"scenename": "AbrassarDungeonsSmall",
+"summary": "Corsairs' Headquarters is room beneath the Vigil Pylon in the Abrassar Desert, found at the Ruins of Old Levant. It is the base of operations for The Sand Corsairs, with an ornately decorated throne which belongs to Zagis.",
+"type": "Fort"
+},
+"Crumbling Loading Docks": {
+"region": "Antique Plateau",
+"scenename": "AntiqueField_Dungeon6",
+"summary": "Crumbling Loading Docks is a location in the Antique Plateau region in Outward, marked as Vigil Pylon on the map.",
+"type": "Dungeon"
+},
+"Damp Hunter's Cabin": {
+"region": "Enmerkar Forest",
+"scenename": "EmercarDungeonsSmall",
+"summary": "Damp Hunter's Cabin is an unmarked cabin found in western Enmerkar Forest, where the Royal Manticore is commonly found. From the western \"Ancient Ruins\" marker, head slightly south-west into the valley, then north as far as possible.",
+"type": "Cabin"
+},
+"Dark Ziggurat": {
+"region": "Hallowed Marsh",
+"scenename": "Hallowed_Dungeon4_Interior",
+"summary": "Dark Ziggurat is a large marked dungeon on the west coast of Hallowed Marsh. It is the creation and fortress of the Plague Doctor, a powerful Lich. The towering structure resembles a pyramid, and contains a complex system of pipes which channel the Corruption from the Marsh directly to the Plague Doctor himself, empowering him.",
+"type": "Dungeon"
+},
+"Dead Roots": {
+"region": "Hallowed Marsh",
+"scenename": "Hallowed_Dungeon7",
+"summary": "Dead Roots is a dungeon marked as Huge Tree on Hallowed Marsh's west coast. It is north of Dark Ziggurat. The dungeon has two entrances: one at the top of the tree on the southern side, and another in a gulch at the bottom on the northern side.",
+"type": "Dungeon"
+},
+"Dead Tree": {
+"region": "Hallowed Marsh",
+"scenename": "HallowedDungeonsSmall",
+"summary": "Dead Tree is a locked zone in Dead Roots, location in Hallowed Marsh. It can be accessed by unlocking a wooden door inside the dungeon Dead Roots with the Dead Roots Key. This key is acquired by obtaining all four clues during Purifier (not just the 3 that are required to progress in the quest). The door is found towards the bottom of the dungeon, near where the Marsh Captain is usually found.",
+"type": "Dungeon inside Dead Roots"
+},
+"Destroyed Test Chambers": {
+"region": "Antique Plateau",
+"scenename": "AntiqueField_Dungeon7",
+"summary": "Destroyed Test Chambers is a location in the Antique Plateau region in Outward.",
+"type": "Dungeon"
+},
+"Dock's Storage": {
+"region": "Abrassar",
+"scenename": "AbrassarDungeonsSmall",
+"summary": "Dock's Storage is a marked location in the Abrassar Desert, marked as Abandoned Docks.",
+"type": "Other"
+},
+"Dolmen Crypt": {
+"region": "Enmerkar Forest",
+"scenename": "EmercarDungeonsSmall",
+"summary": "Dolmen Crypt is a burial tomb in western Enmerkar Forest, under the northern Lonely Tower marker.",
+"type": "Cave"
+},
+"Electric Lab": {
+"region": "Abrassar",
+"scenename": "Abrassar_Dungeon2",
+"summary": "Electric Lab is a large, multi-level laboratory marked as \"Fort\" in the north eastern part of Abrassar, which is the source of many Golem enemies. The player can trigger the minor quest Arcane Machine if they successfully navigate the elevator puzzle inside. The unique item Werlig Spear is also found here. The exterior area of the Fortress contains a one-way drop to the rest of Abrassar desert, at...",
+"type": "Fort"
+},
+"Enmerkar Forest": {
+"scenename": "Emercar",
+"summary": "Enmerkar Forest is a region in Outward. The main town of Enmerkar Forest is Berg, which is the home of the Blue Chamber Collective. Common enemies in this region include bandits, Coralhorns, Ghosts, and more.",
+"type": "Region"
+},
+"Face of the Ancients": {
+"region": "Enmerkar Forest",
+"scenename": "Emercar_Dungeon4",
+"summary": "Face of the Ancients is a marked dungeon in the north-eastern part of Enmerkar Forest in Outward.",
+"type": "Dungeon"
+},
+"Flooded Cellar": {
+"region": "Hallowed Marsh",
+"scenename": "HallowedDungeonsSmall",
+"summary": "Flooded Cellar is an old storage cellar marked as Ancient Ruins in the Hallowed Marsh, controlled by Marsh Bandits. The entrance is in the western building of the ruins.",
+"type": "Dungeon"
+},
+"Forest Hives": {
+"region": "Enmerkar Forest",
+"scenename": "Emercar_Dungeon2",
+"summary": "The Forest Hives is a large dungeon and area in Outward located in south-eastern Enmerkar Forest, with multiple entrances. It is marked on the map twice as \"Colossal Hive\". The northern marker is in-between the two main entrances to the dungeon, and the southern marker indicates the large external area which is only accessible by passing through the hives. At the northern entrance, the player can...",
+"type": "Dungeon"
+},
+"Forgotten Research Laboratory": {
+"region": "Antique Plateau",
+"scenename": "AntiqueField_Dungeon2",
+"summary": "Forgotten Research Laboratory is a location in the Antique Plateau region in Outward.",
+"type": "Dungeon"
+},
+"Ghost Pass": {
+"region": "Chersonese",
+"scenename": "Chersonese_Dungeon3",
+"summary": "Ghost Pass is a marked location in Chersonese (marked as \"Fort\"). Crossing through it is required to access the north-eastern portion of the region.",
+"type": "Dungeon"
+},
+"Giant's Sauna": {
+"region": "Caldera",
+"scenename": "CalderaDungeonsSmall",
+"summary": "Giant's Sauna is a location in the Caldera region in Outward.",
+"type": "Dungeon"
+},
+"Giants' Village": {
+"region": "Hallowed Marsh",
+"scenename": "Hallowed_Dungeon2",
+"summary": "Giants' Village is a minor City in the Hallowed Marsh region in Outward.",
+"type": "Minor City"
+},
+"Haboob": {
+"category": "Unimplemented",
+"region": "Bellowgale",
+"summary": "Haboob is the major city of Bellowgale (and a potential starting location) in the game Outward 2. Haboob is an inaccessible location in the game Outward.",
+"type": "City"
+},
+"Hallowed Marsh": {
+"scenename": "HallowedMarshNewTerrain",
+"summary": "Hallowed Marsh is a Region in Outward, which houses the city of Monsoon, home of the Holy Mission. It is a harsh, toxic environment strongly associated with the Decay element. Common enemies in this region include various Marsh Bandits, Reptilian Wildlife, and Golems.",
+"type": "Region"
+},
+"Harmattan": {
+"region": "Antique Plateau",
+"scenename": "Harmattan",
+"summary": "Harmattan is a city in the Antique Plateau region, and is the home of the Sorobor Academy.",
+"type": "City"
+},
+"Hermit's House": {
+"region": "Chersonese",
+"scenename": "ChersoneseDungeonsSmall",
+"summary": "Hermit's House is a marked location in the Chersonese region, marked as \"Cabal of Wind Tower\". Navigating through Ghost Pass is mandatory to reach this location, unless the player has unlocked the path through Corrupted Tombs, east of Montcalm Clan Fort. The Chersonese Wind Altar can be found slightly south of this location.",
+"type": "Other"
+},
+"Heroic Kingdom's Conflux Path": {
+"region": "Chersonese",
+"scenename": "Chersonese_Dungeon4_Levant",
+"summary": "Heroic Kingdom's Conflux Path is a location on Conflux Mountain, which leads to Conflux Chambers.",
+"type": "Dungeon"
+},
+"Hive Prison": {
+"region": "Abrassar",
+"scenename": "AbrassarDungeonsSmall",
+"summary": "The Hive Prison is an unmarked cave just north of the Ancient Hive (marked \"Colossal Hive\") in southern Abrassar. Before reaching the Ancient Hive, ruins can be seen on your left. The prison entrance is a cave opening at the back of the ruins. Inside is a hive nesting ground.",
+"type": "Cave"
+},
+"Hive's Trap": {
+"region": "Enmerkar Forest",
+"scenename": "EmercarDungeonsSmall",
+"summary": "Hive's Trap is a small dungeon, which can be found north of the northern-most entrance to Forest Hives.",
+"type": "Dungeon"
+},
+"Hollowed Lotus": {
+"region": "Hallowed Marsh",
+"scenename": "HallowedDungeonsSmall",
+"summary": "Hollowed Lotus is an unmarked dungeon found south of Monsoon and north-west of the 'Huge Tree' marker (Reptilian Lair). The entrance is located up a short path on a hill, and it leads into the largest of the giant Lotus plants. This location is involved in Truth and Purpose, during which Oliele and the player negotiate with a Rebel Priests.",
+"type": "Dungeon"
+},
+"Holy Mission's Conflux Path": {
+"region": "Chersonese",
+"scenename": "Chersonese_Dungeon4_HolyMission",
+"summary": "Holy Mission's Conflux Path is a location on Conflux Mountain, which leads to Conflux Chambers.",
+"type": "Dungeon"
+},
+"Hyena Burrow": {
+"region": "Chersonese",
+"scenename": "ChersoneseDungeonsSmall",
+"summary": "Hyena Burrow is an unmarked dungeon found south of Cierzo in Chersonese. From the first path on the right out of Cierzo, follow it directly south, then south-east, and you will arrive at the entrance. It is in the valley south of Cierzo.",
+"type": "Cave"
+},
+"Immaculate's Camp": {
+"region": "All",
+"scenename": "ChersoneseDungeonsSmall; HallowedDungeonsSmall; AbrassarDungeonsSmall; EmercarDungeonsSmall; AntiqueFieldDungeonsSmall",
+"summary": "Immaculate's Camps (sometimes called Immaculate's Caves) are unmarked locations in Outward that appear in every region.",
+"type": "Cave"
+},
+"Immaculate's Refuge": {
+"region": "Caldera",
+"scenename": "CalderaDungeonsSmall",
+"summary": "Immaculate's Refuge is a location in the Caldera region in Outward.",
+"type": "Dungeon"
+},
+"In Between": {
+"region": "Unknown",
+"scenename": "DreamWorld",
+"summary": "In Between is the ascendant realm of Living Thought, home to Elatt.",
+"type": "Other"
+},
+"Jade Quarry": {
+"region": "Hallowed Marsh",
+"scenename": "Hallowed_Dungeon1",
+"summary": "Jade Quarry is a marked location found in south-west Hallowed Marsh. A lot of the dungeon is flooded with rancid water. It is advised to bring Decay resistance equipment and potions, such as Ash Armor or Possessed Potion.",
+"type": "Dungeon"
+},
+"Karaburan": {
+"category": "Unimplemented",
+"summary": "Karaburan is an inaccessible location in the game Outward.",
+"type": "City"
+},
+"Levant": {
+"region": "Abrassar",
+"scenename": "Levant",
+"summary": "Levant is the major City in the Abrassar region in Outward, home to The Heroic Kingdom of Levant. Ruled by King Simeon and Queen Calixa, it is located on the eastern side of Abrassar.",
+"type": "City"
+},
+"Lost Golem Manufacturing Facility": {
+"region": "Antique Plateau",
+"scenename": "AntiqueField_Dungeon5",
+"summary": "Lost Golem Manufacturing Facility is a location in the Antique Plateau region in Outward.",
+"type": "Dungeon"
+},
+"Mansion's Cellar": {
+"region": "Chersonese",
+"scenename": "ChersoneseDungeonsSmall",
+"summary": "Mansion's Cellar is a small, unmarked dungeon in far north-eastern Chersonese, beyond Ghost Pass. The entrance is found in the ruins over the second wooden bridge, beyond Hermit's House in the north-eastern area.",
+"type": "Other"
+},
+"Monsoon": {
+"region": "Hallowed Marsh",
+"scenename": "Monsoon",
+"summary": "Monsoon is the major City in the Hallowed Marsh region in Outward.",
+"type": "City"
+},
+"Montcalm Clan Fort": {
+"region": "Chersonese",
+"scenename": "Chersonese_Dungeon9",
+"summary": "Montcalm Clan Fort is a marked location in northern Chersonese (marked as northern \"Bandit Camp\"). It is the home of The Montcalm Tribe, a minor faction within the Blue Chamber Collective that is hostile towards Cierzo (and by extension, the player). The Montcalm Chamberlord, Rastarte, is only found in the camp during a specific faction quest for the Blue Chamber Collective.",
+"type": "Fort"
+},
+"Myrmitaur's Haven": {
+"region": "Caldera",
+"scenename": "Caldera_Dungeon6",
+"summary": "Myrmitaur's Haven is a location in the Caldera region in Outward.",
+"type": "Dungeon"
+},
+"Necropolis": {
+"region": "Enmerkar Forest",
+"scenename": "Emercar_Dungeon6",
+"summary": "Necropolis is a dungeon accessible from the Berg city chambers, and from Ancestor's Resting Place.",
+"type": "Dungeon"
+},
+"New Sirocco": {
+"region": "Caldera",
+"scenename": "NewSirocco",
+"summary": "New Sirocco is the major City in the Caldera region in Outward. Accessing this city requires The Three Brothers and starting the Sirocco quest line, until then it appears as some old ruins on the map.",
+"type": "City (potential)"
+},
+"New Sirocco Mines": {
+"region": "Caldera",
+"scenename": "CalderaDungeonsSmall",
+"summary": "New Sirocco Mines is a location in the Caldera region in Outward, accessed from New Sirocco.",
+"type": "Dungeon"
+},
+"Oil Refinery": {
+"region": "Caldera",
+"scenename": "Caldera_Dungeon7",
+"summary": "Oil Refinery is a location in the Caldera region in Outward.",
+"type": "Dungeon"
+},
+"Oily Cavern": {
+"region": "Caldera",
+"scenename": "CalderaDungeonsSmall",
+"summary": "Oily Cavern is a location in the Caldera region in Outward.",
+"type": "Dungeon"
+},
+"Old Harmattan": {
+"region": "Antique Plateau",
+"scenename": "AntiqueField_Dungeon9",
+"summary": "Old Harmattan is a location in the Antique Plateau region in Outward.",
+"type": "Dungeon"
+},
+"Old Harmattan Basement": {
+"scenename": "AntiqueFieldDungeonsSmall",
+"summary": "Old Harmattan Basement is a location in the Antique Plateau, in Outward.",
+"type": "Misc. Dungeon"
+},
+"Old Hunter's Cabin": {
+"region": "Enmerkar Forest",
+"scenename": "EmercarDungeonsSmall",
+"summary": "Old Hunter's Cabin is an unmarked cabin in Enmerkar Forest, north-east of the Burning Tree. This cabin provides a bed, a Totem Workshop, a few items, and safety from ambush.",
+"type": "Cabin"
+},
+"Old Sirocco": {
+"region": "Caldera",
+"scenename": "CalderaDungeon9",
+"summary": "Old Sirocco is a location in the Caldera region in Outward. It was once the major city of the region, but it was devastated by a natural disaster from the region's many volcanoes.",
+"type": "Dungeon"
+},
+"Oroshi": {
+"category": "Unimplemented",
+"img1width": "175px",
+"summary": "Oroshi is an inaccessible location in the game Outward. It is a floating city at sea, home to The Kazite.",
+"type": "City"
+},
+"Parched Shipwrecks": {
+"region": "Abrassar",
+"scenename": "AbrassarDungeonsSmall",
+"summary": "The Parched Shipwrecks are a pair of marooned ships buried in the sands of the Abrassar Desert. It is located in the center of the valley between The Walled Garden, Abandoned Docks and Stone Titan Caves.",
+"type": "Other"
+},
+"Pirates' Hideout": {
+"region": "Chersonese",
+"scenename": "ChersoneseDungeonsSmall",
+"summary": "Pirates' Hideout is a dungeon in Chersonese, marked as the southern \"Ancient Ruins\". The entrance is found at the end of a bridge, at the bottom of the hill where a tower can be seen.",
+"type": "Other"
+},
+"Reptilian Lair": {
+"region": "Hallowed Marsh",
+"scenename": "Hallowed_Dungeon3",
+"summary": "Reptilian Lair is a large cave network in central Hallowed Marsh, marked as Huge Tree.",
+"type": "Dungeon"
+},
+"Ritualist's hut": {
+"region": "Caldera",
+"scenename": "CalderaDungeonsSmall",
+"summary": "Ritualist's hut is a location in the Caldera region in Outward.",
+"type": "Dungeon"
+},
+"River's End": {
+"region": "Abrassar",
+"scenename": "AbrassarDungeonsSmall",
+"summary": "River's End is a hidden cave at the north end of the river that flows into Levant. It can be found by heading north-east out of Levant and following the river as far North as it goes.",
+"type": "Cave"
+},
+"Royal Manticore's Lair": {
+"region": "Enmerkar Forest",
+"scenename": "Emercar_Dungeon1",
+"summary": "Royal Manticore's Lair is an unmarked dungeon in the Enmerkar Forest, to the west of the Cabal of Wind Temple.",
+"type": "Dungeon"
+},
+"Ruined Outpost": {
+"region": "Abrassar",
+"scenename": "AbrassarDungeonsSmall",
+"summary": "The Ruined Outpost is a small bandit camp in southern Abrassar desert. The entrance is found south-west of Levant, at the end of a valley which leads north-west.",
+"type": "Other"
+},
+"Ruined Warehouse": {
+"region": "Antique Plateau",
+"scenename": "AntiqueField_Dungeon4",
+"summary": "Ruined Warehouse is a location in the Antique Plateau region in Outward.",
+"type": "Dungeon"
+},
+"Ruins of Old Levant": {
+"region": "Abrassar",
+"scenename": "Abrassar",
+"summary": "The Ruins of Old Levant is a marked location in north-western Abrassar.",
+"type": "Exterior"
+},
+"Sand Rose Cave": {
+"region": "Abrassar",
+"scenename": "Abrassar_Dungeon6",
+"summary": "Sand Rose Cave is a marked location in south-eastern Abrassar desert, occupied by The Sand Corsairs.",
+"type": "Dungeon"
+},
+"Scarlet Sanctuary": {
+"region": "Caldera",
+"scenename": "Caldera_Dungeon4",
+"summary": "Scarlet Sanctuary is a location in the Caldera region in Outward, accessible after part of the Sirocco quest line.",
+"type": "Dungeon"
+},
+"Shipwreck (Castaway)": {
+"region": "Chersonese",
+"scenename": "CierzoTutorial",
+"summary": "Shipwreck (also known as Shipwreck Beach) is a location in Chersonese where all players begin their game.",
+"type": "Exterior"
+},
+"Silkworm's Refuge": {
+"region": "Caldera",
+"scenename": "CalderaDungeonsSmall",
+"summary": "Silkworm's Refuge is a location in the Caldera region in Outward.",
+"type": "Dungeon"
+},
+"Spire of Light": {
+"region": "Hallowed Marsh",
+"scenename": "Hallowed_Dungeon5",
+"summary": "Spire of Light is a dungeon in south-east Hallowed Marsh, and a creation of the Light Mender, a powerful Lich. It contains many Lightning Golem enemies.",
+"type": "Dungeon"
+},
+"Starfish Cave": {
+"region": "Chersonese",
+"scenename": "ChersoneseDungeonsSmall",
+"summary": "Starfish Cave is an unmarked location found on the beaches south-west of Cierzo. The entrance is surrounded by giant seashells, slightly east of the shore on the grassy area.",
+"type": "Cave"
+},
+"Steakosaur's Burrow": {
+"region": "Hallowed Marsh",
+"scenename": "HallowedDungeonsSmall",
+"summary": "Steakosaur's Burrow is an unmarked location in south-east Hallowed Marsh, north-west of the Spire of Light on a hill.",
+"type": "Dungeon"
+},
+"Steam Bath Tunnels": {
+"region": "Caldera",
+"scenename": "Caldera_Dungeon1",
+"summary": "Steam Bath Tunnels is a location in the Caldera region in Outward.",
+"type": "Dungeon"
+},
+"Stone Titan Caves": {
+"region": "Abrassar",
+"scenename": "Abrassar_Dungeon4",
+"summary": "Stone Titan Caves is a marked dungeon found in the Abrassar region, home to bandits and strange rune stones.",
+"type": "Dungeon"
+},
+"Sulphuric Caverns": {
+"region": "Caldera",
+"scenename": "Caldera_Dungeon2",
+"summary": "Sulphuric Caverns is a location in the Caldera region in Outward.",
+"type": "Dungeon"
+},
+"The Eldest Brother": {
+"region": "Caldera",
+"scenename": "Caldera_Dungeon3",
+"summary": "The Eldest Brother is a location in the Caldera region in Outward, accessed from Old Sirocco.",
+"type": "Dungeon"
+},
+"The Grotto of Chalcedony": {
+"region": "Caldera",
+"scenename": "Caldera_Dungeon5",
+"summary": "The Grotto of Chalcedony is a location in the Caldera region in Outward.",
+"type": "Dungeon"
+},
+"The River of Red": {
+"region": "Caldera",
+"scenename": "CalderaDungeonsSmall",
+"summary": "The River of Red is a location in the Caldera region in Outward.",
+"type": "Dungeon"
+},
+"The Slide": {
+"region": "Abrassar",
+"scenename": "Abrassar_Dungeon3",
+"summary": "The Slide is an unmarked dungeon in Abrassar with multiple entrances.",
+"type": "Dungeon"
+},
+"The Tower of Regrets": {
+"region": "Caldera",
+"scenename": "CalderaDungeonsSmall",
+"summary": "The Tower of Regrets is a location in the Caldera region in Outward.",
+"type": "Dungeon"
+},
+"The Vault of Stone": {
+"region": "Caldera",
+"scenename": "Caldera_Dungeon8",
+"summary": "The Vault of Stone is a location in the Caldera region in Outward.",
+"type": "Dungeon"
+},
+"The Walled Garden": {
+"region": "Abrassar",
+"scenename": "Abrassar",
+"summary": "The Walled Garden is a marked exterior location in Abrassar.",
+"type": "Exterior"
+},
+"Tramontane": {
+"category": "Unimplemented",
+"height": "\"100px\"",
+"img1width": "175px",
+"region": "Gilded Mountains",
+"summary": "Tramontane is an inaccessible city in the game Outward, located in the frigid northern regions of Aurai, surrounded by the region known as the Gilded Mountains. It will be one of the potential starting locations of Outward 2.",
+"type": "City",
+"width": "\"100px\""
+},
+"Tree Husk": {
+"img1width": "250px",
+"region": "Enmerkar Forest",
+"scenename": "EmercarDungeonsSmall",
+"summary": "Tree Husk is an unmarked location in Enmerkar Forest. It can be found in the island in the middle of the map, and it's closer to the southern bridge. The dungeon is accessible via a door inside the large hollow tree. To get past the locked gate inside the dungeon, a lever must be flipped at the eastern Lonely Tower.",
+"type": "Cave"
+},
+"Trog Infiltration": {
+"region": "Chersonese",
+"scenename": "ChersoneseDungeonsSmall",
+"summary": "Trog Infiltration is an unmarked dungeon found south-west of Conflux Mountain, and north-west of Vendavel Fortress. If you head north of Vendavel and enter the valley to the north-west, a small wooden archway can be seen out the front of the dungeon.",
+"type": "Cave"
+},
+"Troglodyte Warren": {
+"scenename": "AntiqueFieldDungeonsSmall",
+"summary": "Troglodyte Warren is a location in the Antique Plateau, in Outward.",
+"type": "Misc. Dungeon"
+},
+"Under Island": {
+"region": "Hallowed Marsh",
+"scenename": "HallowedDungeonsSmall",
+"summary": "Under Island is an abandoned shed belonging to the Ash Giants of Giants' Village, marked as Giants' Ruins on the map. It can be found on Hallowed Marsh's east coast, south of the entrance to Giants' Village on an island in the center of the bay.",
+"type": "Dungeon"
+},
+"Undercity Passage": {
+"region": "Abrassar",
+"scenename": "Abrassar_Dungeon1",
+"summary": "The Undercity Passage is a cave network and smuggling passage beneath Levant in Abrassar, with multiple entrances.",
+"type": "Dungeon"
+},
+"Underside Loading Dock": {
+"region": "Caldera",
+"scenename": "CalderaDungeonsSmall",
+"summary": "Underside Loading Dock is a location in the Caldera region in Outward.",
+"type": "Dungeon"
+},
+"Unknown Arena": {
+"region": "All",
+"scenename": "{Region}DungeonsBosses",
+"summary": "Unknown Arenas are hidden Boss Arenas found in various locations in each region in Outward. There are 12 Arenas in total, 3 of which can be found in each region. The Soroboreans DLC adds 3 more arenas, and The Three Brothers adds another 4.",
+"type": "Boss Arenas"
+},
+"Unknown Arena/Berg": {
+"region": "Enmerkar Forest",
+"scenename": "EmercarDungeonsBosses",
+"summary": "The Unknown Arena at Berg contains the Light Mender and Plague Doctor bosses.",
+"type": "Boss Arena"
+},
+"Unknown Arena/Blister Burrow": {
+"region": "Chersonese",
+"scenename": "ChersoneseDungeonsBosses",
+"summary": "The Unknown Arena at Blister Burrow contains several Troglodyte enemies and the powerful Troglodyte Queen.",
+"type": "Boss Arena"
+},
+"Unknown Arena/Burning Tree": {
+"region": "Enmerkar Forest",
+"scenename": "EmercarDungeonsBosses",
+"summary": "The Unknown Arena at Burning Tree contains the powerful Elite Burning Man and Elite Obsidian Elemental bosses.",
+"type": "Boss Arena"
+},
+"Unknown Arena/Cabal of Wind Temple": {
+"region": "Enmerkar Forest",
+"scenename": "EmercarDungeonsBosses",
+"summary": "The Unknown Arena at Cabal of Wind Temple contains the powerful Immaculate Dreamer boss.",
+"type": "Boss Arena"
+},
+"Unknown Arena/Conflux Mountain": {
+"region": "Chersonese",
+"scenename": "ChersoneseDungeonsBosses",
+"summary": "The Unknown Arena at Conflux Mountain contains the powerful Brand Squire boss.",
+"type": "Boss Arena"
+},
+"Unknown Arena/Electric Lab": {
+"region": "Abrassar",
+"scenename": "AbrassarDungeonsBosses",
+"summary": "The Unknown Arena at Electric Lab contains the powerful Elite Crescent Shark bosses.",
+"type": "Boss Arena"
+},
+"Unknown Arena/Giants' Village (north)": {
+"region": "Hallowed Marsh",
+"scenename": "HallowedDungeonsBosses",
+"summary": "The Unknown Arena at Giants' Village (north) contains three powerful Elite Ash Giant bosses.",
+"type": "Boss Arena"
+},
+"Unknown Arena/Giants' Village (south)": {
+"region": "Hallowed Marsh",
+"scenename": "HallowedDungeonsBosses",
+"summary": "The Unknown Arena at Giants' Village (south) contains the powerful Ash Giant Highmonk boss.",
+"type": "Boss Arena"
+},
+"Unknown Arena/Immaculate's Camp": {
+"region": "Antique Plateau",
+"scenename": "AntiqueFieldDungeonsBosses",
+"summary": "The Unknown Arena at the Immaculate's Camp in Antique Plateau contains the powerful Immaculate's Bird boss.",
+"type": "Boss Arena"
+},
+"Unknown Arena/Isolated Windmill": {
+"region": "Antique Plateau",
+"scenename": "AntiqueFieldDungeonsBosses",
+"summary": "The Unknown Arena at the Isolated Windmill in Antique Plateau contains the powerful Elite Sublime Shell boss.",
+"type": "Boss Arena"
+},
+"Unknown Arena/Levant": {
+"region": "Levant",
+"scenename": "AbrassarDungeonsBosses",
+"summary": "The Unknown Arena at Levant contains the powerful Calixa boss.",
+"type": "Boss Arena"
+},
+"Unknown Arena/Mana Lake": {
+"region": "Antique Plateau",
+"scenename": "AntiqueFieldDungeonsBosses",
+"summary": "The Unknown Arena at the Mana Lake in Antique Plateau contains the powerful Elite Boozu boss.",
+"type": "Boss Arena"
+},
+"Unknown Arena/New Sirocco": {
+"region": "Caldera",
+"scenename": "CalderaDungeonsBosses",
+"summary": "The Caldera Arena at New Sirocco in Caldera contains the powerful Elite Gargoyle bosses.",
+"type": "Boss Arena"
+},
+"Unknown Arena/Parched Shipwrecks": {
+"region": "Abrassar",
+"scenename": "AbrassarDungeonsBosses",
+"summary": "The Unknown Arena at Parched Shipwrecks contains the powerful Elite Beast Golem boss.",
+"type": "Boss Arena"
+},
+"Unknown Arena/River of Red": {
+"region": "Caldera",
+"scenename": "CalderaDungeonsBosses",
+"summary": "The Caldera Arena at The River of Red in Caldera contains a the powerful Elite Torcrab boss.",
+"type": "Boss Arena"
+},
+"Unknown Arena/Tower of Regrets": {
+"region": "Caldera",
+"scenename": "CalderaDungeonsBosses",
+"summary": "The Caldera Arena at The Tower of Regrets in Caldera contains a unique encounter with the regrets of our bloodline's past.",
+"type": "Boss Arena"
+},
+"Unknown Arena/Vault of Stone": {
+"region": "Caldera",
+"scenename": "CalderaDungeonsBosses",
+"summary": "The Caldera Arena at The Vault of Stone in Caldera contains a the powerful Elite Crimson Avatar boss.",
+"type": "Boss Arena"
+},
+"Unknown Arena/Voltaic Hatchery": {
+"region": "Chersonese",
+"scenename": "ChersoneseDungeonsBosses",
+"summary": "The Unknown Arena at Voltaic Hatchery contains the powerful Elite Mantis Shrimp boss.",
+"type": "Boss Arena"
+},
+"Unknown Arena/Ziggurat Passage": {
+"region": "Hallowed Marsh",
+"scenename": "HallowedDungeonsBosses",
+"summary": "The Unknown Arena at Ziggurat Passage contains the powerful Elite Alpha Tuanosaur boss.",
+"type": "Boss Arena"
+},
+"Vendavel Fortress": {
+"region": "Chersonese",
+"scenename": "Chersonese_Dungeon1",
+"summary": "Vendavel Fortress is a marked location in south-western Chersonese along the coast line. The large fortress is home to the Vendavel Warlords Balira, Crock and Rospa, as well as the Kazite Bandits. The entrance to the fortress is in the middle of the visible wall on the coast, and appears to lead onto a beach.",
+"type": "Fort"
+},
+"Vigil Pylon (Chersonese)": {
+"region": "Chersonese",
+"scenename": "ChersoneseNewTerrain",
+"summary": "Vigil Pylon (Chersonese) is a marked location in the Chersonese region. It is located in south-east Chersonese between the paths to Hallowed Marsh and Enmerkar Forest.",
+"type": "Exterior"
+},
+"Vigil Pylon (Enmerkar Forest)": {
+"region": "Enmerkar Forest",
+"scenename": "EmercarDungeonsSmall",
+"summary": "Enmerkar Vigil Pylon is a marked location in Enmerkar Forest, marked as \"Vigil Pylon\", found east of Berg. A lever is hidden in the water behind the Chest which opens up the rest of the dungeon.",
+"type": "Dungeon"
+},
+"Vigil Pylon (Hallowed Marsh)": {
+"region": "Hallowed Marsh",
+"scenename": "HallowedMarshNewTerrain",
+"summary": "The Vigil Pylon in the Hallowed Marsh is found just east of the dock to Monsoon. On the hill, there is an altar involved in Questions and Corruption, a Holy Mission quest.",
+"type": "Exterior"
+},
+"Voltaic Hatchery": {
+"region": "Chersonese",
+"scenename": "Chersonese_Dungeon5",
+"summary": "Voltaic Hatchery is an unmarked dungeon in Outward, located in the far south-eastern corner of Chersonese.",
+"type": "Dungeon"
+},
+"Wendigo Lair": {
+"scenename": "AntiqueFieldDungeonsSmall",
+"summary": "Wendigo Lair is a location in the Antique Plateau, in Outward.",
+"type": "Misc. Dungeon"
+},
+"Worn Hunter's Cabin": {
+"region": "Enmerkar Forest",
+"scenename": "EmercarDungeonsSmall",
+"summary": "Worn Hunter's Cabin is an unmarked cabin found in western Enmerkar Forest, north-west of the western \"Ancient Ruins\" marker.",
+"type": "Cabin"
+},
+"Ziggurat Passage": {
+"region": "Hallowed Marsh",
+"scenename": "Hallowed_Dungeon6",
+"summary": "The Zigguratt Passage is a dungeon along the east coast of Hallowed Marsh. Once completed, it can be used as a shortcut from Hallowed Marsh to Enmerkar Forest and vice versa.",
+"type": "Dungeon"
+}
+}

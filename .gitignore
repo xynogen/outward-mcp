@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+# build output of mod/build.py
+mod/*.dll
+# local agent settings and plans
+.pi/
