@@ -9,6 +9,7 @@ from pathlib import Path
 
 from .repositories import (CHAR_FILE, WORLD_FILE, ItemRepository, LiveRepository, RecipeRepository,
                            SaveRepository, WikiRepository, container_uid, sync_items, tag, xml_to_obj)
+from .search import SearchIndex, tokens, without_ids, words
 
 VITALS = ("Health", "BurntHealth", "Stamina", "BurntStamina", "Mana", "BurntMana",
           "Food", "Drink", "Sleep", "Corruption")
@@ -61,6 +62,8 @@ class OutwardService:
         self.recipes = recipes
         self.live = live
         self.wiki = wiki
+        self._search_index = None
+        self._search_sources = None
 
     def _snap(self, ref: SaveRef) -> Path:
         return self.saves.snapshot(ref.character, ref.snapshot)
@@ -117,10 +120,82 @@ class OutwardService:
         facts = {k: v for k, v in self.items.get(item_id).items() if k != "description"}
         return {**facts, **row}  # save values (qty, durability) win over item facts
 
-    def live_state(self) -> dict:
-        return self.live.read() or {
-            "error": "No live data. Install the OutwardDataExport mod (python mod/build.py) and start the game.",
-            "expected_file": str(self.live.path)}
+    def state(self, ref: SaveRef = SaveRef(), sections: list[str] | None = None, source: str = "auto",
+              include_stash: bool = False, offset: int = 0, limit: int = 20) -> dict:
+        sections = ["vitals"] if sections is None else sections
+        inv = self.inventory(ref, include_skills="skills" in sections)
+        live = self._live() if source != "save" and str(ref.snapshot) == "0" else None
+        if live and live.get("character", "").casefold() != inv["character"].casefold():
+            live = None
+        if source == "live" and not live:
+            raise ValueError("No fresh live data matching this character/latest snapshot; use source=save or auto")
+        current = live or inv
+        result = {"character": inv["character"], "source": "live" if live else "save",
+                  "snapshot": Path(inv["save"]).name, "area": self._place(current["area"])[0],
+                  "silver": current["silver"]}
+        result["stashed_silver"] = {"source": "save", "amount": inv["stashed_silver"]}
+        if live:
+            result["age_seconds"] = live["age_seconds"]
+        if "vitals" in sections:
+            result["vitals"] = current["vitals"] if live else {
+                re.sub(r"(?<!^)(?=[A-Z])", "_", k).lower(): v for k, v in inv["vitals"].items()}
+            result["status"] = {"source": "save", "effects": inv["status"]}
+            if live:
+                result["needs"] = {"source": "save", **{k: v for k, v in inv["vitals"].items()
+                                                          if k in ("Food", "Drink", "Sleep", "Corruption")}}
+            result["needs_scale"] = NEED_MAX
+        if "skills" in sections:
+            result["skills"] = {"source": "save", "items": [without_ids(r) for r in inv["items"]
+                                                           if r["location"] == "skill"]}
+        if "inventory" in sections:
+            rows, equipped = [], set()
+            for row in current["items"]:
+                if row["location"] == "skill":
+                    continue
+                if row["location"] == "stash" and not include_stash:
+                    continue
+                if row["location"] == "equipped":
+                    identity = (row.get("id"), row["name"])
+                    if identity in equipped:
+                        continue
+                    equipped.add(identity)
+                facts = self.items.by_name(row["name"])
+                item = {k: v for k, v in row.items() if k in {
+                    "name", "location", "qty", "durability", "max_durability", "effects", "type"}}
+                if "max_durability" not in item and facts.get("max_durability", 0) > 0:
+                    item["max_durability"] = facts["max_durability"]
+                item.update(_freshness(row, facts))
+                if row["name"] == WATER_CONTAINER and not live:
+                    item.update(qty=1, water_sips=row["qty"])
+                rows.append(item)
+            rows.sort(key=lambda r: (r.get("estimated_days_left", float("inf")), r["name"]))
+            result["inventory"] = {"total": len(rows), "offset": offset,
+                "next_offset": offset + limit if offset + limit < len(rows) else None,
+                "expiry_basis": "estimated in-game days at base decay; preservation modifiers not included",
+                "items": rows[offset:offset + limit]}
+        if "world" in sections:
+            world = self.world(ref)
+            world["visited_areas"] = [self._place(scene)[0] for scene in world["visited_areas"]]
+            result["world"] = {**world, "source": "save", "quest_deadlines": "not derived from save events"}
+        if "nearby" in sections:
+            result["nearby"] = self.nearby_enemies() if live else {"available": False,
+                "reason": "Requires fresh live data for the selected character/latest snapshot"}
+        return result
+
+    def live_state(self, sections: list[str] | None = None) -> dict:
+        live = self.live.read()
+        if not live:
+            return {"error": "No live data. Start the game with the OutwardDataExport mod."}
+        if sections is None:
+            return live
+        result = {k: v for k, v in live.items() if k not in ("items", "nearby")}
+        result.update(source="live", stale=live.get("age_seconds", 1e9) > LIVE_FRESH_S,
+                      area=self._place(live.get("area", ""))[0], item_entries=len(live.get("items", [])))
+        if "items" in (sections or []):
+            result["items"] = without_ids(live.get("items", []))
+        if "nearby" in (sections or []):
+            result["nearby"] = self.nearby_enemies().get("enemies", [])
+        return result
 
     # --- raw save access ---
 
@@ -171,9 +246,10 @@ class OutwardService:
 
     def merchants(self, area: str | None = None, ref: SaveRef = SaveRef()) -> list[dict]:
         snap = self._snap(ref)
+        scene = self._resolve_area(area) if area else None
         found = []
         for area_file in self.saves.areas(snap):
-            if area and area.lower() not in area_file.stem.lower():
+            if scene and scene.casefold() != area_file.stem.casefold():
                 continue
             found += self._area_merchants(area_file.stem, sync_items(self.saves.read(snap, area_file.name)))
         return found
@@ -186,7 +262,17 @@ class OutwardService:
                 continue
             path = tag(raw, "Hierarchy") or ""
             who = re.search(r"_Merchants/([^/]+)", path) or re.search(r"/([^/]+)/MerchantTemplate", path)
-            pouches[uid] = {"area": area, "merchant": who.group(1) if who else path,
+            merchant = who.group(1) if who else path
+            role = merchant.removeprefix("HumanSNPC_")
+            if role != merchant:
+                merchant = re.sub(r"(?<=[a-z])(?=[A-Z])", " ", role)
+            elif "MerchantSlaveVendavel" in merchant:
+                merchant = "Vendavel prison merchant"
+            elif merchant == "UNPC_WatcherFourthA":
+                merchant = "Fourth Watcher"
+            else:
+                merchant = re.sub(r"^(?:UNPC|HumanSNPC)_", "", merchant).replace("_", " ")
+            pouches[uid] = {"area": area, "merchant": merchant,
                             "silver": _number(r"MerchantPouchContainedSilver/(\d+)", raw), "stock": Counter()}
         for raw in items:
             if (parent := container_uid(raw)) in pouches:
@@ -202,7 +288,8 @@ class OutwardService:
 
     def area_loot(self, area: str, ref: SaveRef = SaveRef()) -> dict:
         snap = self._snap(ref)
-        area_file = next((f for f in self.saves.areas(snap) if area.lower() in f.stem.lower()), None)
+        scene = self._resolve_area(area)
+        area_file = next((f for f in self.saves.areas(snap) if scene.casefold() == f.stem.casefold()), None)
         if not area_file:
             return {"error": f"area {area!r} not visited"}
         items = sync_items(self.saves.read(snap, area_file.name))
@@ -220,6 +307,120 @@ class OutwardService:
                 "chests_with_loot": [c for c in chests.values() if c["items"] or c["silver"]],
                 "ground_items": sorted(ground)}
 
+    def _resolve_area(self, area: str) -> str:
+        locations = self.wiki.data("locations")
+        exact = [row["scenename"] for name, row in locations.items()
+                 if tokens(name) == tokens(area) and row.get("scenename")]
+        if exact:
+            return exact[0]
+        scene = next((row["scenename"] for row in locations.values()
+                      if row.get("scenename", "").casefold() == area.casefold()), None)
+        if scene:
+            return scene
+        matches = {row["scenename"] for name, row in locations.items()
+                   if area.casefold() in name.casefold() and row.get("scenename")}
+        if len(matches) == 1:
+            return matches.pop()
+        raise ValueError(f"Unknown or ambiguous area {area!r}; search locations by name first")
+
+    def search(self, query: str, kind: str = "all", limit: int = 10, offset: int = 0,
+               details: bool = False, include_stash: bool = False, area: str | None = None,
+               ref: SaveRef = SaveRef()) -> dict:
+        metadata = {}
+        if area and kind == "inventory":
+            raise ValueError("area filters wiki locations or merchants, not item storage; omit area for inventory")
+        if kind == "inventory":
+            inv = self.inventory(ref)
+            live = self._live() if str(ref.snapshot) == "0" else None
+            live = live if live and live.get("character", "").casefold() == inv["character"].casefold() else None
+            metadata = {"character": inv["character"], "snapshot": Path(inv["save"]).name,
+                        "source": "live" if live else "save", "silver": (live or inv)["silver"],
+                        "stashed_silver": inv["stashed_silver"]}
+            metadata["expiry_basis"] = "estimated in-game days at base decay; preservation modifiers not included"
+            if live:
+                metadata["age_seconds"] = live["age_seconds"]
+                metadata["stashed_silver_source"] = "save"
+            groups, equipped = {}, set()
+            for row in (live or inv)["items"]:
+                location = row["location"]
+                if location not in LOCATIONS or location == "skill" or (location == "stash" and not include_stash):
+                    continue
+                item_facts = self.items.by_name(row["name"])
+                freshness = _freshness(row, item_facts)
+                key = (row["name"], location, row.get("durability") if freshness else None)
+                if location == "equipped":
+                    identity = (row.get("id"), row["name"])
+                    if identity in equipped:
+                        continue
+                    equipped.add(identity)
+                facts = groups.setdefault(key, {"location": location, "qty": 0,
+                                               **{k: v for k, v in self.items.by_name(row["name"]).items()
+                                                  if k in ("type", "effects", "sell", "weight", "perish_depletion_rate")}})
+                facts.update(freshness)
+                if row["name"] == WATER_CONTAINER and not live:
+                    facts["qty"] += 1
+                    facts["water_sips"] = facts.get("water_sips", 0) + row["qty"]
+                else:
+                    facts["qty"] += row["qty"]
+                if isinstance(row.get("durability"), (int, float)):
+                    facts["lowest_durability"] = min(facts.get("lowest_durability", float("inf")), row["durability"])
+            documents = [{"kind": kind, "name": name, "facts": facts}
+                         for (name, location, durability), facts in groups.items()]
+            index = SearchIndex(documents)
+        elif kind == "merchants":
+            documents = []
+            for merchant in self.merchants(area, ref):
+                for stock in merchant["stock"]:
+                    documents.append({"kind": kind, "name": stock["name"],
+                                      "facts": {**stock, "merchant": merchant["merchant"],
+                                                "area": self._place(merchant["area"])[0]}})
+            metadata = {"source": "save", "stock_as_of": "last visit"}
+            index = SearchIndex(documents)
+        else:
+            items, recipes = self.items.all(), self.recipes.recipes
+            sources = (items, recipes)
+            if self._search_index is None or any(a is not b for a, b in zip(sources, self._search_sources)):
+                documents = [{"kind": "items", "name": row["name"], "facts": without_ids(row)}
+                             for row in items.values() if row.get("name") and row.get("type") != "Quest"]
+                documents += [{"kind": "recipes", "name": row["result"], "facts": row}
+                              for row in recipes if self._valid_recipe(row)]
+                documents += [{"kind": category, "name": name, "facts": without_ids(row)}
+                              for category in self.wiki.KINDS for name, row in self.wiki.data(category).items()]
+                self._search_index = SearchIndex(documents)
+                self._search_sources = sources
+            index = self._search_index
+        eligible = None
+        if area and kind != "merchants":
+            scene = self._resolve_area(area)
+            place, _ = self._place(scene)
+            aliases = [place]
+            eligible = {n for n, doc in enumerate(index.documents)
+                        if any(name.casefold() in words(doc).casefold() for name in aliases or [place])}
+        matches, total = index.search(query, kind, limit, offset, eligible)
+        results = []
+        for doc, score in matches:
+            facts = without_ids(doc["facts"])
+            if doc["kind"] == "enemies":
+                facts["weakness"] = _weakness(facts)
+            if doc["kind"] == "quests":
+                if "quest_status" not in metadata:
+                    metadata["quest_status"] = self._quest_status(ref)
+                facts["status"] = metadata["quest_status"].get(doc["name"], "not started")
+            if not details:
+                facts = {k: v for k, v in facts.items() if k in {
+                    "summary", "description", "type", "effects", "station", "ingredients", "count",
+                    "source", "buy", "sell", "weight", "health", "locations", "location", "region",
+                    "requires", "items", "questgiver", "reward", "trainer", "cost", "damage",
+                    "damage_resistance", "qty", "water_sips", "lowest_durability",
+                    "perish_depletion_rate", "merchant", "area", "weakness", "status",
+                    "freshness_percent", "estimated_days_left"}}
+                facts = {k: v[:400] if isinstance(v, str) else v for k, v in facts.items()}
+            results.append({"kind": doc["kind"], "name": doc["name"], "score": score, "facts": facts})
+        metadata.pop("quest_status", None)
+        return {"query": query, "kind": kind, **metadata, "total": total, "offset": offset,
+                "next_offset": offset + limit if offset + limit < total else None, "results": results}
+
+
     # --- items & crafting ---
 
     def item(self, query: str, limit: int = 10) -> dict:
@@ -234,15 +435,33 @@ class OutwardService:
             stock["Water" if row["name"] == WATER_CONTAINER else row["name"]] += row["qty"]
         craftable = []
         for recipe in self.recipes.recipes:
+            if not self._valid_recipe(recipe):
+                continue
             times = self._times_craftable(recipe["ingredients"], stock)
             if times:
                 craftable.append({"result": recipe["result"], "times": times, "makes": recipe["count"],
                                   "station": recipe["station"],
                                   "station_status": self._station_status(recipe["station"], stock),
-                                  "ingredients": recipe["ingredients"]})
+                                  "ingredients": self._ingredients(recipe["ingredients"], stock),
+                                  "operation": "repair/refill" if recipe["result"] in recipe["ingredients"] else
+                                               "dismantle" if any(i.startswith("Decraft") for i in recipe["ingredients"]) else "craft"})
         craftable.sort(key=lambda r: (r["station_status"] != "ok", r["station"], r["result"]))
-        return {"save": inv["save"], "scope": "carried+stash" if include_stash else "carried",
+        return {"save": inv["save"], "snapshot": Path(inv["save"]).name, "character": inv["character"], "source": "save",
+                "scope": "carried+stash" if include_stash else "carried",
                 "recipes_known": len(self.recipes.recipes), "craftable": craftable}
+
+    def _valid_recipe(self, recipe: dict) -> bool:
+        return all(self.items.by_name(i) or self.recipes.groups.get(i) for i in recipe["ingredients"])
+
+    def _ingredients(self, ingredients: list[str], stock: Counter) -> list[str]:
+        left, resolved = Counter(stock), []
+        for ingredient in sorted(ingredients, key=lambda i: i in self.recipes.groups):
+            members = self.recipes.groups.get(ingredient, ())
+            pick = next((name for name in (ingredient, *members) if left[name] > 0), None)
+            resolved.append(pick or ("Any " + ingredient if members else ingredient))
+            if pick:
+                left[pick] -= 1
+        return resolved
 
     def _times_craftable(self, ingredients: list[str], stock: Counter) -> int:
         groups = self.recipes.groups
@@ -283,9 +502,13 @@ class OutwardService:
     def _quest_status(self, ref: SaveRef) -> dict[str, str]:
         return {q["name"]: q["status"] for q in self.world(ref)["quests"]}
 
-    def area_guide(self, area: str | None = None, ref: SaveRef = SaveRef()) -> dict:
+    def area_guide(self, area: str | None = None, ref: SaveRef = SaveRef(), details: bool = False) -> dict:
         live = self._live()
-        scene = area or (live or {}).get("area") or tag(self.saves.read(self._snap(ref), CHAR_FILE), "AreaName")
+        if live and (str(ref.snapshot) != "0" or
+                     live.get("character", "").casefold() != self.saves.character_name(self._snap(ref)).casefold()):
+            live = None
+        scene = self._resolve_area(area) if area else (live or {}).get("area") or tag(
+            self.saves.read(self._snap(ref), CHAR_FILE), "AreaName")
         place, region = self._place(scene)
         locs = self.wiki.data("locations")
         nearby_places = sorted(t for t, l in locs.items() if region and l.get("region") == region)
@@ -306,14 +529,20 @@ class OutwardService:
         gathering = [{"node": t, **_pick(g, "items", "requires")} for t, g in self.wiki.data("gathering").items()
                      if here(g.get("regions")) or g.get("regions") == "All"]
         try:
-            loot = self.area_loot(scene, ref).get("chests_with_loot", [])
+            loot = self.area_loot(scene, ref)
         except (FileNotFoundError, IndexError):
-            loot = []
-        return {"scene": scene, "location": place, "region": region,
+            loot = {"error": "No saved loot data for this area"}
+        result = {"scene": scene, "location": place, "region": region,
                 "about": locs.get(place, {}).get("summary"), "places_in_region": nearby_places,
                 "quests": sorted(quests, key=lambda q: (q["status"] == "done", q["quest"])),
                 "enemies": enemies, "npcs": npcs, "gathering": gathering,
-                "merchants": [m["merchant"] for m in self.merchants(scene, ref)], "chests_with_loot": loot}
+                "merchants": [m["merchant"] for m in self.merchants(scene, ref)],
+                "chests_with_loot": without_ids(loot.get("chests_with_loot", []))}
+        if details:
+            result["loot"] = {**without_ids(loot), "source": "save"}
+            result["merchant_stock"] = {"source": "save", "stock_as_of": "last visit",
+                                        "merchants": self.merchants(scene, ref)}
+        return result
 
     def nearby_enemies(self) -> dict:
         live = self.live.read()
@@ -349,22 +578,33 @@ class OutwardService:
         worn = {r.get("equip_slot"): r for r in inv["items"] if r["location"] == "equipped"}
         rows = []
         for recipe in self.recipes.recipes:
+            if (not self._valid_recipe(recipe) or recipe["result"] in recipe["ingredients"]
+                    or any(i.startswith("Decraft") for i in recipe["ingredients"])):
+                continue
             missing = self._missing(recipe["ingredients"], stock)
             if len(missing) > 1 or len(missing) == len(recipe["ingredients"]):  # need at least one in hand
                 continue
             facts = self.items.by_name(recipe["result"])
+            ingredients = self._ingredients(recipe["ingredients"], stock)
+            if recipe["result"] in ingredients:
+                continue
             gain = _num(facts.get("value")) * int(recipe["count"]) - sum(self._value(i) for i in recipe["ingredients"])
             row = {"result": recipe["result"], "makes": int(recipe["count"]), "station": recipe["station"],
                    "station_status": self._station_status(recipe["station"], stock),
-                   "ingredients": recipe["ingredients"], "value_gain": round(gain, 1)}
+                   "ingredients": ingredients, "value_gain": round(gain, 1)}
             if missing:
-                row["missing"] = missing[0]
-            if upgrade := _upgrade(facts, worn.get(facts.get("equip_slot"))):
+                ingredient = missing[0]
+                row["missing"] = "Any " + ingredient if ingredient in self.recipes.groups else ingredient
+            blocked_offhand = facts.get("equip_slot") == "LeftHand" and worn.get("RightHand", {}).get("two_handed")
+            if not blocked_offhand and (upgrade := _upgrade(facts, worn.get(facts.get("equip_slot")))):
                 row["upgrade"] = upgrade
+            if blocked_offhand:
+                row["requires_equipment_change"] = "Unequip two-handed weapon to use off-hand equipment"
             row.update(_pick(facts, "effects", "type"))
             rows.append(row)
         rows.sort(key=lambda r: ("missing" in r, "upgrade" not in r, -r["value_gain"]))
-        return {"recipes_source": self.recipes.source, "scope": "carried+stash" if include_stash else "carried",
+        return {"source": "save", "snapshot": Path(inv["save"]).name, "character": inv["character"],
+                "recipes_source": self.recipes.source, "scope": "carried+stash" if include_stash else "carried",
                 "can_craft": [r for r in rows if "missing" not in r],
                 "one_ingredient_short": [r for r in rows if "missing" in r][:30]}
 
@@ -386,6 +626,8 @@ class OutwardService:
     def guide(self, ref: SaveRef = SaveRef()) -> dict:
         """One call: warnings, what to do here, threats, best crafts."""
         live, inv = self._live(), self.inventory(ref)
+        if live and (str(ref.snapshot) != "0" or live.get("character", "").casefold() != inv["character"].casefold()):
+            live = None
         warnings = []
         vitals = (live or {}).get("vitals") or {}
         for stat in ("health", "stamina"):
@@ -398,9 +640,9 @@ class OutwardService:
         threats = self.nearby_enemies().get("enemies", []) if live else []
         craft = self.craft_advice(ref=ref)
         return {"character": inv["character"], "live": bool(live), "warnings": warnings,
+                "sources": {"vitals": "live" if live else "save", "quests": "save", "craft": "save", "loot": "save"},
                 "where": {k: area[k] for k in ("location", "region", "about")},
-                "active_quests": [q for q in area["quests"] if q["status"] == "active"] or
-                                 [{"quest": n, "status": s} for n, s in self._quest_status(ref).items() if s == "active"],
+                "active_quests": [{"quest": n, "status": s} for n, s in self._quest_status(ref).items() if s == "active"],
                 "quests_to_start_here": [q["quest"] for q in area["quests"] if q["status"] == "not started"],
                 "nearby_enemies": threats[:5],
                 "best_crafts": craft["can_craft"][:5], "almost_craftable": craft["one_ingredient_short"][:5],
@@ -409,6 +651,21 @@ class OutwardService:
 
 RESISTS = {"physresist": "Physical", "ethresist": "Ethereal", "decayresist": "Decay",
            "lightresist": "Lightning", "frostresist": "Frost", "fireresist": "Fire"}
+
+
+def _freshness(row: dict, facts: dict) -> dict:
+    rate = facts.get("perish_depletion_rate")
+    durability = row.get("durability")
+    maximum = row.get("max_durability", facts.get("max_durability"))
+    if facts.get("type") != "Food" and not {"Food", "Drink"}.intersection(facts.get("tags", [])):
+        return {}
+    if not isinstance(rate, (int, float)) or rate <= 0 or not isinstance(durability, (int, float)):
+        return {}
+    # ponytail: base-decay days only (matches wiki Bread/Meat Stew); export preservation modifiers for effective expiry.
+    result = {"estimated_days_left": round(max(0, durability) / rate / 24, 3)}
+    if isinstance(maximum, (int, float)) and maximum > 0:
+        result["freshness_percent"] = round(max(0, min(100, durability / maximum * 100)), 1)
+    return result
 
 
 def _num(v) -> float:
