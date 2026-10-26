@@ -119,7 +119,7 @@ class OutwardService:
 
     def live_state(self) -> dict:
         return self.live.read() or {
-            "error": "No live data. Install the OutwardDataExport mod (mod/build.py) and start the game.",
+            "error": "No live data. Install the OutwardDataExport mod (python mod/build.py) and start the game.",
             "expected_file": str(self.live.path)}
 
     # --- raw save access ---

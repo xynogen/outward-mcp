@@ -1,5 +1,9 @@
-"""Smoke test against the real install, with networking disabled: python selftest.py"""
+"""Smoke test against the real install, with networking disabled: python mcp/selftest.py"""
 import socket
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))  # run from any folder
 
 
 class _NoNetwork(socket.socket):

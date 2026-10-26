@@ -1,5 +1,5 @@
-"""Snapshot non-item wiki data (quests, places, enemies, NPCs...) into data/wiki_*.json. Run by hand:
-python data/fetch_wiki.py. Item ids, stats, recipes and statuses come from the game mod instead.
+"""Snapshot non-item wiki data (quests, places, enemies, NPCs...) into mcp/data/wiki_*.json. Run by hand:
+python mcp/data/fetch_wiki.py. Item ids, stats, recipes and statuses come from the game mod instead.
 The MCP server never uses the network; it only reads these files."""
 import json
 import re

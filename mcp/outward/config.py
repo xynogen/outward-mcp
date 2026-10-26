@@ -51,14 +51,6 @@ class Paths:
         return self.game / "SaveGames"
 
     @property
-    def bepinex(self) -> Path:
-        return self.game / "BepInEx"
-
-    @property
     def mod_export(self) -> Path:
-        """Folder the OutwardDataExport mod writes items.json / live.json to."""
-        return self.bepinex / "outward-mcp"
-
-    @property
-    def managed(self) -> Path:
-        return next(self.game.glob("*_Data/Managed"))
+        """Folder the OutwardDataExport mod (../mod) writes its JSON to: the only link to the mod."""
+        return self.game / "BepInEx" / "outward-mcp"

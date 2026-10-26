@@ -2,5 +2,6 @@ __pycache__/
 *.pyc
 # build output of mod/build.py
 mod/*.dll
+mod/*.pdb
 # local agent settings and plans
 .pi/
