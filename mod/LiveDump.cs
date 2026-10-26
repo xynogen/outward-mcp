@@ -21,9 +21,9 @@ static class LiveDump
         {
             var s = c.PlayerStats;
             j.Obj("vitals");
-            j.Field("health", s.CurrentHealth); j.Field("burnt_health", s.BurntHealth); j.Field("max_health", s.MaxHealth);
-            j.Field("stamina", s.CurrentStamina); j.Field("burnt_stamina", s.BurntStamina); j.Field("max_stamina", s.MaxStamina);
-            j.Field("mana", s.CurrentMana); j.Field("burnt_mana", s.BurntMana); j.Field("max_mana", s.MaxMana);
+            j.Field("health", R(s.CurrentHealth)); j.Field("burnt_health", R(s.BurntHealth)); j.Field("max_health", R(s.MaxHealth));
+            j.Field("stamina", R(s.CurrentStamina)); j.Field("burnt_stamina", R(s.BurntStamina)); j.Field("max_stamina", R(s.MaxStamina));
+            j.Field("mana", R(s.CurrentMana)); j.Field("burnt_mana", R(s.BurntMana)); j.Field("max_mana", R(s.MaxMana));
             j.Close('}');
         });
         j.Key("items"); j.Open('[');
@@ -67,6 +67,8 @@ static class LiveDump
         j.Close(']');
     }
 
+    static float R(float v) { return (float)Math.Round(v, 1); }
+
     static int Box(Json j, string where, Func<ItemContainer> get)
     {
         ItemContainer box;
@@ -83,7 +85,7 @@ static class LiveDump
         j.Open('{');
         j.Field("location", where); j.Field("id", it.ItemID); j.Field("name", it.Name);
         j.Field("qty", it.IsStackable ? it.RemainingAmount : 1);
-        j.Safe("durability", () => it.MaxDurability > 0 ? (object)it.CurrentDurability : null);
+        j.Safe("durability", () => it.MaxDurability > 0 ? (object)R(it.CurrentDurability) : null);
         j.Safe("max_durability", () => it.MaxDurability > 0 ? (object)it.MaxDurability : null);
         j.Close('}');
     }

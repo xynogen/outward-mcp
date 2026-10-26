@@ -1,0 +1,53 @@
+// Self-check for the game-independent parts (Json.cs, Placeholders.cs). Run: python mod/build.py --check
+using System;
+
+static class ModCheck
+{
+    static int Main()
+    {
+        var j = new Json();
+        j.Open('[');
+        j.Try(() => { j.Open('{'); j.Field("a", 1); j.Close('}'); });
+        j.Try(() => { j.Open('{'); j.Field("b", 2); throw new Exception("half-written row"); });
+        j.Try(() => { j.Open('{'); j.Field("c", "x\"y\n"); j.Field("nan", float.NaN); j.Close('}'); });
+        j.Close(']');
+        Expect(j.ToString(), "[{\"a\":1},{\"c\":\"x\\\"y\\u000a\",\"nan\":null}]");
+        Expect(j.Skipped.ToString(), "1");
+
+        var k = new Json();  // a failed first row must not leave a leading comma
+        k.Open('{');
+        k.Try(() => { k.Field("x", 1); throw new Exception(); });
+        k.Field("y", 2.5f);
+        k.Safe("z", () => { throw new Exception(); });
+        k.Safe("w", () => true);
+        k.Close('}');
+        Expect(k.ToString(), "{\"y\":2.5,\"w\":true}");
+
+        Func<int, int, string> data = (e, v) => e == 1 && v == 1 ? "20" : e == 2 && v == 2 ? "5" : null;
+        Expect(Placeholders.Fill("Ethereal +[E1V1]%.", data), "Ethereal +20%.");
+        Expect(Placeholders.Fill("[E1V1] and [E2V2], [E3V1]", data), "20 and 5, [E3V1]");  // unknown slot kept
+        Expect(Placeholders.Fill("no slots", data), "no slots");
+        Expect(Placeholders.Fill(null, data) ?? "null", "null");
+        Func<int, int, string> raw = (e, v) => e == 1 ? "2:Fire" : e == 2 ? "-.5" : "0.556";
+        Expect(Placeholders.Fill("[E1V1] fire, [E2V1]%, [E3V1]", raw), "2 fire, -0.5%, 0.56");
+
+        var z = new Json();  // empty values are left out
+        z.Open('{');
+        z.Safe("empty", () => "");
+        z.NonZero("zero", () => 0f);
+        z.NonZero("set", () => 3);
+        z.Damage("none", new float[] { 0f, 0f });
+        z.Damage("res", new float[] { 0f, 13.6126947f });
+        z.Strings("no_tags", new string[0]);
+        z.Strings("tags", new[] { "Meat", "Food" });
+        z.Close('}');
+        Expect(z.ToString(), "{\"set\":3,\"res\":{\"Ethereal\":13.6127},\"tags\":[\"Meat\",\"Food\"]}");
+        Console.WriteLine("ModCheck ok");
+        return 0;
+    }
+
+    static void Expect(string got, string want)
+    {
+        if (got != want) throw new Exception("got  " + got + "\nwant " + want);
+    }
+}

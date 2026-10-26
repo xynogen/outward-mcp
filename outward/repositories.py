@@ -196,7 +196,7 @@ class RecipeRepository:
         for facts in self._items.all().values():
             if facts.get("is_skill"):
                 continue
-            for t in filter(None, (facts.get("tags") or "").split(";")):
+            for t in facts.get("tags") or ():
                 by_tag.setdefault(t, set()).add(facts["name"])
         recipes, used = [], set()
         for r in raw:

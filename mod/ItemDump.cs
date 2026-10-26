@@ -37,11 +37,11 @@ static class ItemDump
         j.Safe("type", () => it.TypeDisplay);
         j.Field("is_skill", it is Skill);
         j.Field("stackable", it.IsStackable);
-        j.Safe("tags", () =>
+        j.Try(() =>
         {
-            var names = new System.Collections.Generic.List<string>();
-            foreach (var t in it.Tags) if (t != null) names.Add(t.TagName);
-            return string.Join(";", names.ToArray());  // ingredient tags such as "Meat" match recipe tags
+            var names = new List<string>();
+            foreach (var t in it.Tags) if (t != null && !string.IsNullOrEmpty(t.TagName)) names.Add(t.TagName);
+            j.Strings("tags", names);  // ingredient tags such as "Meat" match recipe tags
         });
         if (it.Stats != null)
         {
@@ -69,26 +69,25 @@ static class ItemDump
     {
         var s = eq.Stats;
         j.Field("equip_slot", eq.EquipSlot.ToString());
-        j.Safe("two_handed", () => eq.TwoHanded);
+        if (eq.TwoHanded) j.Field("two_handed", true);
         j.Damage("damage_protection", Get<float[]>(s, "m_damageProtection"));
         j.Damage("damage_resistance", Get<float[]>(s, "m_damageResistance"));
         j.Damage("damage_bonus", Get<float[]>(s, "m_damageAttack"));
-        j.Safe("barrier", () => s.BarrierProtection);
-        j.Safe("impact_resistance", () => s.ImpactResistance);
-        j.Safe("heat_protection", () => s.HeatProtection);
-        j.Safe("cold_protection", () => s.ColdProtection);
-        j.Safe("corruption_resistance", () => s.CorruptionResistance);
-        j.Safe("movement_penalty", () => s.MovementPenalty);
-        j.Safe("stamina_use_penalty", () => s.StaminaUsePenalty);
-        j.Safe("stamina_cost_reduction", () => s.StaminaCostReduction);
-        j.Safe("mana_use_modifier", () => s.ManaUseModifier);
-        j.Safe("pouch_capacity_bonus", () => s.PouchCapacityBonus);
-        j.Safe("max_health_bonus", () => s.MaxHealthBonus);
+        j.NonZero("barrier", () => s.BarrierProtection);
+        j.NonZero("impact_resistance", () => s.ImpactResistance);
+        j.NonZero("heat_protection", () => s.HeatProtection);
+        j.NonZero("cold_protection", () => s.ColdProtection);
+        j.NonZero("corruption_resistance", () => s.CorruptionResistance);
+        j.NonZero("movement_penalty", () => s.MovementPenalty);
+        j.NonZero("stamina_use_penalty", () => s.StaminaUsePenalty);
+        j.NonZero("stamina_cost_reduction", () => s.StaminaCostReduction);
+        j.NonZero("mana_use_modifier", () => s.ManaUseModifier);
+        j.NonZero("pouch_capacity_bonus", () => s.PouchCapacityBonus);
+        j.NonZero("max_health_bonus", () => s.MaxHealthBonus);
     }
 
     static void Weapon(Json j, Weapon w)
     {
-        j.Field("weapon_type", w.Type.ToString());
         var ws = w.Stats;
         if (ws == null) return;
         j.Field("impact", ws.Impact); j.Field("attack_speed", ws.AttackSpeed);

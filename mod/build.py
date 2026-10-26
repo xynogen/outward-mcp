@@ -1,5 +1,5 @@
 """Compile the BepInEx plugin against the installed game and install it: python mod/build.py
---check: compile and run the Json self-check (no game needed) instead of installing."""
+--check: compile and run the self-check of the game-independent code (no game needed) instead of installing."""
 import os
 import shutil
 import subprocess
@@ -26,10 +26,10 @@ def compile_(out: Path, sources: list[Path], *flags: str, refs: tuple[str, ...] 
 
 def check() -> None:
     with tempfile.TemporaryDirectory() as tmp:
-        exe = Path(tmp) / "JsonCheck.exe"
-        check_src = Path(tmp) / "JsonCheck.cs"
-        shutil.copy(HERE / "JsonCheck.cs.txt", check_src)  # .txt: keeps it out of the plugin build
-        compile_(exe, [HERE / "Json.cs", check_src], "-target:exe")
+        exe = Path(tmp) / "ModCheck.exe"
+        check_src = Path(tmp) / "ModCheck.cs"
+        shutil.copy(HERE / "ModCheck.cs.txt", check_src)  # .txt: keeps it out of the plugin build
+        compile_(exe, [HERE / "Json.cs", HERE / "Placeholders.cs", check_src], "-target:exe")
         subprocess.run([str(exe)], check=True)
 
 

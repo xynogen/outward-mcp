@@ -8,10 +8,10 @@ using BepInEx;
 using BepInEx.Configuration;
 using UnityEngine;
 
-[BepInPlugin("xynogen.outward.dataexport", "Outward Data Export", "1.1.0")]
+[BepInPlugin("xynogen.outward.dataexport", "Outward Data Export", "1.3.0")]
 public class OutwardDataExport : BaseUnityPlugin
 {
-    const int Schema = 2;  // bump when a JSON shape changes
+    const int Schema = 3;  // bump when a JSON shape changes
     const float StaticRetrySeconds = 10f;
     const int StaticMaxTries = 5;
 
