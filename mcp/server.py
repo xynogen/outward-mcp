@@ -22,7 +22,7 @@ SAVE = {  # shared by every tool that reads a save
 }
 PAGING = {"offset": {"type": "integer", "default": 0, "minimum": 0},
           "limit": {"type": "integer", "default": 100, "minimum": 1}}
-PUBLIC_TOOLS = {"search", "get_state", "read_save", "get_guide", "get_area_guide", "get_craft_advice"}
+PUBLIC_TOOLS = {"search", "get_state", "get_item", "read_save", "get_guide", "get_craft_advice"}
 
 
 def save_ref(args: dict) -> SaveRef:
@@ -103,13 +103,15 @@ def build_tools(svc: OutwardService) -> dict[str, Tool]:
     return {
         "get_state": Tool(
             "Character state by name: auto uses fresh matching live data, else save. Default vitals only. "
-            "sections: inventory (paged per item with expiry), world (save quests/day/season), skills (learned, save), nearby (live enemies). "
+            "sections: inventory (paged id/name), world (save quests/day/season), skills (id/name, save), nearby (live enemies). "
+            "Use get_item(query=id) for item/skill facts; details=true adds owned quantities, durability and expiry. "
             "Historical snapshots never mix with live. Expiry is a base-decay estimate, not a guaranteed timer.",
             lambda a: svc.state(save_ref(a), a.get("sections", ["vitals"]), a.get("source", "auto"),
-                                a.get("include_stash", False), a.get("offset", 0), a.get("limit", 20)),
+                                a.get("include_stash", False), a.get("offset", 0), a.get("limit", 20), a.get("details", False)),
             {**SAVE, "sections": {"type": "array", "items": {"enum": ["vitals", "inventory", "world", "skills", "nearby"]}},
              "source": {"type": "string", "enum": ["auto", "live", "save"], "default": "auto"},
              "include_stash": {"type": "boolean", "default": False},
+             "details": {"type": "boolean", "default": False},
              "offset": {"type": "integer", "minimum": 0, "default": 0},
              "limit": {"type": "integer", "minimum": 1, "maximum": 100, "default": 20}}),
         "read_save": Tool(
@@ -185,14 +187,12 @@ def build_tools(svc: OutwardService) -> dict[str, Tool]:
             {**SAVE, "include_stash": {"type": "boolean", "default": False}}),
         "get_guide": Tool(
             "START HERE for 'what should I do?'. One summary: warnings (low health/food/drink/sleep), current place, "
-            "active quests, quests to start here, nearby enemies with weakness, best crafts, loot and merchants.",
-            lambda a: svc.guide(save_ref(a)), SAVE),
-        "get_area_guide": Tool(
-            "Everything about an area (default: where you are now): region, places, quests with your status, "
-            "enemies with weakness, NPCs/trainers, gathering nodes, merchants, chests with loot. "
-            "details=true adds complete saved ground/chest loot and merchant stock (last visit).",
-            lambda a: svc.area_guide(a.get("area"), save_ref(a), a.get("details", False)),
-            {**SAVE, "area": {"type": "string", "minLength": 1, "description": "Location name. Default: current."},
+            "active quests, quests to start here, nearby enemies with weakness, best crafts, loot and merchants. "
+            "Pass area for an area guide: places, quests, enemies, NPCs/trainers, gathering and loot. "
+            "details=true adds complete saved loot and merchant stock; without area it shows the current area's guide.",
+            lambda a: svc.area_guide(a.get("area"), save_ref(a), a.get("details", False))
+                      if "area" in a or a.get("details", False) else svc.guide(save_ref(a)),
+            {**SAVE, "area": {"type": "string", "minLength": 1, "description": "Location name, e.g. Cierzo or Chersonese."},
              "details": {"type": "boolean", "default": False}}),
         "get_nearby_enemies": Tool(
             "Enemies around you from the mod's scan (name, distance, compass direction, health, in combat), "
@@ -216,8 +216,9 @@ def build_tools(svc: OutwardService) -> dict[str, Tool]:
             "Item database by object id (e.g. 2020020) or name. Game data from the mod when available, "
             "else the bundled wiki snapshot: damage, impact, protection, resistances, weight, price, effects.",
             lambda a: svc.item(a["query"], a.get("limit", 10)),
-            {"query": {"type": "string", "description": "Object id or (partial) item name"},
-             "limit": {**PAGING["limit"], "default": 10}}, ("query",)),
+            {"query": {"type": "string", "minLength": 1, "maxLength": 500,
+                       "description": "Object id from get_state, or (partial) item/skill name"},
+             "limit": {"type": "integer", "minimum": 1, "maximum": 50, "default": 10}}, ("query",)),
     }
 
 

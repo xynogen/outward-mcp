@@ -121,7 +121,7 @@ class OutwardService:
         return {**facts, **row}  # save values (qty, durability) win over item facts
 
     def state(self, ref: SaveRef = SaveRef(), sections: list[str] | None = None, source: str = "auto",
-              include_stash: bool = False, offset: int = 0, limit: int = 20) -> dict:
+              include_stash: bool = False, offset: int = 0, limit: int = 20, details: bool = False) -> dict:
         sections = ["vitals"] if sections is None else sections
         inv = self.inventory(ref, include_skills="skills" in sections)
         live = self._live() if source != "save" and str(ref.snapshot) == "0" else None
@@ -145,8 +145,9 @@ class OutwardService:
                                                           if k in ("Food", "Drink", "Sleep", "Corruption")}}
             result["needs_scale"] = NEED_MAX
         if "skills" in sections:
-            result["skills"] = {"source": "save", "items": [without_ids(r) for r in inv["items"]
-                                                           if r["location"] == "skill"]}
+            result["skills"] = {"source": "save", "items": [
+                without_ids(r) if details else {"id": str(r["id"]), "name": r["name"]}
+                for r in inv["items"] if r["location"] == "skill"]}
         if "inventory" in sections:
             rows, equipped = [], set()
             for row in current["items"]:
@@ -162,6 +163,7 @@ class OutwardService:
                 facts = self.items.by_name(row["name"])
                 item = {k: v for k, v in row.items() if k in {
                     "name", "location", "qty", "durability", "max_durability", "effects", "type"}}
+                item["id"] = str(row["id"])
                 if "max_durability" not in item and facts.get("max_durability", 0) > 0:
                     item["max_durability"] = facts["max_durability"]
                 item.update(_freshness(row, facts))
@@ -172,7 +174,8 @@ class OutwardService:
             result["inventory"] = {"total": len(rows), "offset": offset,
                 "next_offset": offset + limit if offset + limit < len(rows) else None,
                 "expiry_basis": "estimated in-game days at base decay; preservation modifiers not included",
-                "items": rows[offset:offset + limit]}
+                "items": [r if details else {"id": r["id"], "name": r["name"]}
+                          for r in rows[offset:offset + limit]]}
         if "world" in sections:
             world = self.world(ref)
             world["visited_areas"] = [self._place(scene)[0] for scene in world["visited_areas"]]

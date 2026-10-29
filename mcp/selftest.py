@@ -77,8 +77,9 @@ assert "error" in svc.lookup("enemies", "zzz-no-such-enemy")
 tools = build_tools(svc)
 listed = handle({"method": "tools/list"}, tools)["tools"]
 assert {t["name"] for t in listed} == {
-    "search", "get_state", "read_save", "get_guide", "get_area_guide", "get_craft_advice"}
-assert len(listed) == 6 and len(tools) == 19
+    "search", "get_state", "get_item", "read_save", "get_guide", "get_craft_advice"}
+assert len(listed) == 6 and len(tools) == 18
+assert "get_area_guide" not in tools
 assert all(t == tools[t["name"]].schema(t["name"]) for t in listed)
 reply = handle({"method": "tools/call", "params": {"name": "get_world", "arguments": {}}}, tools)
 assert not reply.get("isError"), reply
@@ -175,15 +176,45 @@ state = call("get_state", character=first["name"], source="save",
 assert state["source"] == "save" and state["world"]["day"] >= 1
 assert state["status"]["source"] == "save" and state["nearby"]["available"] is False
 assert len(state["inventory"]["items"]) == 2 and state["inventory"]["next_offset"] == 2
+assert all(set(r) == {"id", "name"} for r in state["inventory"]["items"])
+for row in state["inventory"]["items"]:
+    assert call("get_item", query=row["id"])[row["id"]]["name"] == row["name"]
+skills = call("get_state", source="save", sections=["skills"])["skills"]["items"]
+assert skills and all(set(r) == {"id", "name"} for r in skills)
+assert all(call("get_item", query=r["id"])[r["id"]]["name"] == r["name"] for r in skills)
+detailed = call("get_state", source="save", sections=["inventory"], details=True, limit=2)
+assert all("qty" in r and "location" in r for r in detailed["inventory"]["items"])
+assert call("get_item", query="2020020")["2020020"]["name"] == "Brutal Club"
+assert "error" in call("get_item", query="no-such-item-id")
 assert "burnt_stamina" in state["vitals"] and "BurntStamina" not in state["vitals"]
 assert call("get_state", source="save", sections=["skills"])["skills"]["source"] == "save"
 assert call("get_craft_advice", mode="all", include_stash=True)["craftable"]
-assert "ground_items" in call("get_area_guide", area="Cierzo", details=True)["loot"]
+assert "ground_items" in call("get_guide", area="Cierzo", details=True)["loot"]
+assert call("get_guide")["character"] == first["name"]
+assert call("get_guide", area="Chersonese")["scene"] == "ChersoneseNewTerrain"
+with patch.object(svc, "guide", return_value={"mode": "player"}) as player_guide, \
+        patch.object(svc, "area_guide", return_value={"mode": "area"}) as area_guide:
+    assert call("get_guide", character=first["name"], snapshot=snaps[0]["id"])["mode"] == "player"
+    player_guide.assert_called_once_with(SaveRef(first["name"], snaps[0]["id"]))
+    area_guide.assert_not_called()
+    assert call("get_guide", details=True)["mode"] == "area"
+    area_guide.assert_called_once_with(None, SaveRef(), True)
+    call("get_guide", area="Cierzo", character=first["name"], snapshot=snaps[0]["id"])
+    area_guide.assert_called_with("Cierzo", SaveRef(first["name"], snaps[0]["id"]), False)
 assert "status" in call("search", query="Castaway", kind="quests")["results"][0]["facts"]
 for name, arguments in [("read_save", {"mode": "file"}),
                         ("read_save", {"mode": "characters", "file": "World.defedc"}),
                         ("get_state", {"sections": ["invalid"]}),
                         ("get_state", {"limit": 101}),
+                        ("get_state", {"details": "yes"}),
+                        ("get_item", {"query": " "}),
+                        ("get_item", {"query": 2020020}),
+                        ("get_item", {"query": "x", "limit": 0}),
+                        ("get_guide", {"area": " "}),
+                        ("get_guide", {"area": 1}),
+                        ("get_guide", {"area": "Conflux"}),
+                        ("get_guide", {"details": "yes"}),
+                        ("get_area_guide", {}),
                         ("get_state", {"source": "live", "snapshot": "old"})]:
     assert handle({"method": "tools/call", "params": {"name": name, "arguments": arguments}}, tools).get("isError")
 
@@ -202,15 +233,18 @@ for name, hours in (("Meat Stew", 238), ("Bread", 144)):
         assert abs(estimate - hours) < 2, (name, estimate)
 fake_inv.update(area="CierzoNewTerrain", vitals={}, status=[])
 fake_live.update(character="Test", area="CierzoNewTerrain", vitals={}, nearby=[])
-fake_live["items"] += [{"name": "Meat Stew", "location": "stash", "qty": 1,
+fake_live["items"] += [{"id": next(iter(svc.item("Meat Stew"))), "name": "Meat Stew", "location": "stash", "qty": 1,
                         "durability": d, "max_durability": 100} for d in (10, 10, 90)]
 with patch.object(svc, "inventory", return_value=fake_inv), patch.object(svc, "_live", return_value=fake_live):
     foods = svc.search("Meat Stew", kind="inventory", include_stash=True)["results"]
     assert len(foods) == 2 and sum(r["facts"]["qty"] for r in foods) == 3
     assert {r["facts"]["freshness_percent"] for r in foods} == {10, 90}
     current = svc.state(sections=["inventory"], include_stash=True, limit=1)
+    assert set(current["inventory"]["items"][0]) == {"id", "name"}
+    assert current["source"] == "live"
+    current = svc.state(sections=["inventory"], include_stash=True, limit=1, details=True)
     assert current["inventory"]["items"][0]["freshness_percent"] == 10
-    assert current["source"] == "live" and "id" not in current["inventory"]["items"][0]
+    assert current["inventory"]["items"][0]["id"] == next(iter(svc.item("Meat Stew")))
     assert svc.state(ref=SaveRef(0, "old"))["source"] == "save"
     fake_live["character"] = "Other"
     assert svc.state()["source"] == "save"
