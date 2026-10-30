@@ -123,9 +123,8 @@ class OutwardService:
     def state(self, ref: SaveRef = SaveRef(), sections: list[str] | None = None, source: str = "auto",
               include_stash: bool = False, offset: int = 0, limit: int = 20, details: bool = False) -> dict:
         sections = ["vitals"] if sections is None else sections
-        inv = self.inventory(ref, include_skills="skills" in sections)
-        live = self._live() if source != "save" and str(ref.snapshot) == "0" else None
-        if live and live.get("character", "").casefold() != inv["character"].casefold():
+        inv, live = self._current(ref, include_skills="skills" in sections)
+        if source == "save":
             live = None
         if source == "live" and not live:
             raise ValueError("No fresh live data matching this character/latest snapshot; use source=save or auto")
@@ -328,14 +327,14 @@ class OutwardService:
 
     def search(self, query: str, kind: str = "all", limit: int = 10, offset: int = 0,
                details: bool = False, include_stash: bool = False, area: str | None = None,
-               ref: SaveRef = SaveRef()) -> dict:
+               ref: SaveRef = SaveRef(), exact: bool = False) -> dict:
         metadata = {}
         if area and kind == "inventory":
             raise ValueError("area filters wiki locations or merchants, not item storage; omit area for inventory")
+        if exact and not tokens(query):
+            raise ValueError("exact=true needs a name in query")
         if kind == "inventory":
-            inv = self.inventory(ref)
-            live = self._live() if str(ref.snapshot) == "0" else None
-            live = live if live and live.get("character", "").casefold() == inv["character"].casefold() else None
+            inv, live = self._current(ref)
             metadata = {"character": inv["character"], "snapshot": Path(inv["save"]).name,
                         "source": "live" if live else "save", "silver": (live or inv)["silver"],
                         "stashed_silver": inv["stashed_silver"]}
@@ -399,6 +398,9 @@ class OutwardService:
             aliases = [place]
             eligible = {n for n, doc in enumerate(index.documents)
                         if any(name.casefold() in words(doc).casefold() for name in aliases or [place])}
+        if exact:
+            named = {n for n, doc in enumerate(index.documents) if tokens(doc["name"]) == tokens(query)}
+            eligible = named if eligible is None else eligible & named
         matches, total = index.search(query, kind, limit, offset, eligible)
         results = []
         for doc, score in matches:
@@ -429,13 +431,41 @@ class OutwardService:
     def item(self, query: str, limit: int = 10) -> dict:
         return self.items.search(query, limit) or {"error": f"no item matching {query!r}", "items_in_db": len(self.items)}
 
-    def craftable(self, include_stash: bool = False, ref: SaveRef = SaveRef()) -> dict:
-        inv = self.inventory(ref)
-        stock = Counter()
-        for row in inv["items"]:
-            if row["location"] == "stash" and not include_stash:
+    def _current(self, ref: SaveRef, include_skills: bool = False) -> tuple[dict, dict | None]:
+        """Save inventory, plus fresh live data only when it is the same character at the latest snapshot."""
+        inv = self.inventory(ref, include_skills=include_skills)
+        live = self._live() if str(ref.snapshot) == "0" else None
+        if live and live.get("character", "").casefold() != inv["character"].casefold():
+            live = None
+        return inv, live
+
+    def _stock(self, ref: SaveRef, include_stash: bool) -> tuple[dict, list[dict], Counter]:
+        """Crafting inputs from live items when fresh, else the save. Rows carry item facts (equip_slot...)."""
+        inv, live = self._current(ref)
+        meta = {"source": "live" if live else "save", "snapshot": Path(inv["save"]).name,
+                "character": inv["character"], "scope": "carried+stash" if include_stash else "carried"}
+        rows, equipped = [], set()
+        for row in (live or inv)["items"]:
+            if row["location"] == "skill" or (row["location"] == "stash" and not include_stash):
                 continue
-            stock["Water" if row["name"] == WATER_CONTAINER else row["name"]] += row["qty"]
+            if live and row["location"] == "equipped":  # live lists a two-handed weapon once per hand
+                if (row.get("id"), row["name"]) in equipped:
+                    continue
+                equipped.add((row.get("id"), row["name"]))
+            rows.append({**self.items.get(row["id"]), **row} if live else row)
+        stock = Counter()
+        for row in rows:
+            if row["name"] != WATER_CONTAINER:
+                stock[row["name"]] += row["qty"]
+        # Save Quantity of a Waterskin is its sips; live exports 1 per skin, so water always comes from the save.
+        stock["Water"] = sum(r["qty"] for r in inv["items"] if r["name"] == WATER_CONTAINER
+                             and (r["location"] != "stash" or include_stash))
+        if live:
+            meta.update(age_seconds=live["age_seconds"], water_source="save")
+        return meta, rows, stock
+
+    def craftable(self, include_stash: bool = False, ref: SaveRef = SaveRef()) -> dict:
+        meta, _, stock = self._stock(ref, include_stash)
         craftable = []
         for recipe in self.recipes.recipes:
             if not self._valid_recipe(recipe):
@@ -449,9 +479,7 @@ class OutwardService:
                                   "operation": "repair/refill" if recipe["result"] in recipe["ingredients"] else
                                                "dismantle" if any(i.startswith("Decraft") for i in recipe["ingredients"]) else "craft"})
         craftable.sort(key=lambda r: (r["station_status"] != "ok", r["station"], r["result"]))
-        return {"save": inv["save"], "snapshot": Path(inv["save"]).name, "character": inv["character"], "source": "save",
-                "scope": "carried+stash" if include_stash else "carried",
-                "recipes_known": len(self.recipes.recipes), "craftable": craftable}
+        return {**meta, "recipes_known": len(self.recipes.recipes), "craftable": craftable}
 
     def _valid_recipe(self, recipe: dict) -> bool:
         return all(self.items.by_name(i) or self.recipes.groups.get(i) for i in recipe["ingredients"])
@@ -572,13 +600,9 @@ class OutwardService:
         return hits
 
     def craft_advice(self, include_stash: bool = False, ref: SaveRef = SaveRef()) -> dict:
-        """Craftable and 1-ingredient-short recipes, upgrades over your gear first, then by value gained."""
-        inv = self.inventory(ref)
-        stock = Counter()
-        for row in inv["items"]:
-            if row["location"] != "stash" or include_stash:
-                stock["Water" if row["name"] == WATER_CONTAINER else row["name"]] += row["qty"]
-        worn = {r.get("equip_slot"): r for r in inv["items"] if r["location"] == "equipped"}
+        """Craftable and 1-ingredient-short recipes; equippable results carry a stat comparison with the worn item."""
+        meta, owned, stock = self._stock(ref, include_stash)
+        worn = {r.get("equip_slot"): r for r in owned if r["location"] == "equipped"}
         rows = []
         for recipe in self.recipes.recipes:
             if (not self._valid_recipe(recipe) or recipe["result"] in recipe["ingredients"]
@@ -599,15 +623,15 @@ class OutwardService:
                 ingredient = missing[0]
                 row["missing"] = "Any " + ingredient if ingredient in self.recipes.groups else ingredient
             blocked_offhand = facts.get("equip_slot") == "LeftHand" and worn.get("RightHand", {}).get("two_handed")
-            if not blocked_offhand and (upgrade := _upgrade(facts, worn.get(facts.get("equip_slot")))):
-                row["upgrade"] = upgrade
+            if not blocked_offhand and (comparison := _compare(facts, worn)):
+                row["stat_comparison"] = comparison
             if blocked_offhand:
                 row["requires_equipment_change"] = "Unequip two-handed weapon to use off-hand equipment"
             row.update(_pick(facts, "effects", "type"))
             rows.append(row)
-        rows.sort(key=lambda r: ("missing" in r, "upgrade" not in r, -r["value_gain"]))
-        return {"source": "save", "snapshot": Path(inv["save"]).name, "character": inv["character"],
-                "recipes_source": self.recipes.source, "scope": "carried+stash" if include_stash else "carried",
+        rows.sort(key=lambda r: ("missing" in r, -r["value_gain"]))
+        return {**meta, "recipes_source": self.recipes.source,
+                "comparison_basis": "raw stat differences vs the worn item; not a verdict on build or playstyle",
                 "can_craft": [r for r in rows if "missing" not in r],
                 "one_ingredient_short": [r for r in rows if "missing" in r][:30]}
 
@@ -628,9 +652,7 @@ class OutwardService:
 
     def guide(self, ref: SaveRef = SaveRef()) -> dict:
         """One call: warnings, what to do here, threats, best crafts."""
-        live, inv = self._live(), self.inventory(ref)
-        if live and (str(ref.snapshot) != "0" or live.get("character", "").casefold() != inv["character"].casefold()):
-            live = None
+        inv, live = self._current(ref)
         warnings = []
         vitals = (live or {}).get("vitals") or {}
         for stat in ("health", "stamina"):
@@ -643,7 +665,7 @@ class OutwardService:
         threats = self.nearby_enemies().get("enemies", []) if live else []
         craft = self.craft_advice(ref=ref)
         return {"character": inv["character"], "live": bool(live), "warnings": warnings,
-                "sources": {"vitals": "live" if live else "save", "quests": "save", "craft": "save", "loot": "save"},
+                "sources": {"vitals": "live" if live else "save", "quests": "save", "craft": craft["source"], "loot": "save"},
                 "where": {k: area[k] for k in ("location", "region", "about")},
                 "active_quests": [{"quest": n, "status": s} for n, s in self._quest_status(ref).items() if s == "active"],
                 "quests_to_start_here": [q["quest"] for q in area["quests"] if q["status"] == "not started"],
@@ -689,14 +711,27 @@ def _weakness(enemy: dict) -> str | None:
     return ", ".join(f"{n} ({v:g}%)" for n, v in resists.items() if v == low)
 
 
-def _upgrade(new: dict, worn: dict | None) -> str | None:
-    """'+8 damage, +3 resistance vs Machete' when the crafted gear beats what that slot holds."""
-    if not new.get("equip_slot"):
+COMPARED = ("impact", "impact_resistance", "weight", "stamina_use_penalty", "mana_use_modifier", "movement_penalty")
+
+
+def _compare(new: dict, worn: dict) -> dict | None:
+    """Per-type stat differences against the item in the same slot, plus hand-usage changes. No single score:
+    which resistance or penalty matters depends on the build and the enemy."""
+    slot = new.get("equip_slot")
+    if not slot:
         return None
-    worn = worn or {"name": "empty slot"}
-    gains = []
-    for key, label in (("damage", "damage"), ("damage_resistance", "resistance"), ("damage_protection", "protection")):
-        diff = sum((new.get(key) or {}).values()) - sum((worn.get(key) or {}).values())
-        if diff > 0:
-            gains.append(f"+{diff:g} {label}")
-    return f"{', '.join(gains)} vs {worn['name']}" if gains else None
+    old = worn.get(slot) or {"name": "empty slot"}
+    diff = {}
+    for key in ("damage", "damage_resistance", "damage_protection"):
+        a, b = new.get(key) or {}, old.get(key) or {}
+        per_type = {t: round(_num(a.get(t)) - _num(b.get(t)), 2) for t in sorted(a.keys() | b.keys())}
+        if per_type := {t: d for t, d in per_type.items() if d}:
+            diff[key] = per_type
+    for key in COMPARED:
+        if d := round(_num(new.get(key)) - _num(old.get(key)), 2):
+            diff[key] = d
+    if new.get("two_handed") and not old.get("two_handed") and worn.get("LeftHand"):
+        diff["hands"] = f"two-handed: unequips off-hand {worn['LeftHand']['name']}"
+    elif new.get("two_handed") != old.get("two_handed") and slot == "RightHand":
+        diff["hands"] = "two-handed: no off-hand" if new.get("two_handed") else "one-handed: frees the off-hand"
+    return {"vs": old["name"], **diff} if diff else None

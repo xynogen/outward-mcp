@@ -110,7 +110,7 @@ The server works without the mod, but with less: item facts and recipes then com
 | `get_guide` | Start here. Warnings (low health, food, drink, sleep), where you are, active quests, quests to start here, nearby enemies, best crafts |
 | `get_area_guide` | An area (default: the current one): places, quests with your status, enemies with their weakness, NPCs, gathering nodes, merchants, chests with loot |
 | `get_nearby_enemies` | Enemies around you: distance, compass direction, health, resistances, weakness |
-| `get_craft_advice` | What is worth crafting: upgrades over your gear first, then by value gained, plus recipes you are one ingredient short of |
+| `get_craft_advice` | What is worth crafting from live inventory (save fallback): by value gained, per-type stat comparison vs worn gear, plus recipes you are one ingredient short of |
 | `get_craftable` | Every recipe you can craft now with what you carry |
 | `lookup` | Wiki facts by name: quests, enemies, NPCs, skills, locations, gathering, effects, traps, spells, buildings |
 | `get_item` | Item facts by id or name |

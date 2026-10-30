@@ -129,10 +129,12 @@ def build_tools(svc: OutwardService) -> dict[str, Tool]:
             "English game keywords work best (e.g. 'burnt mana', 'rag', 'Scaled Leather', 'Conflux'). "
             "Use kind=inventory for owned items (empty query lists them), kind=merchants for shopping, "
             "kind=recipes for recipes using or making an item. Inventory uses fresh matching live data, else saves. "
+            "exact=true keeps only results whose whole name equals query (e.g. ingredient lookups). "
             "all searches the static catalog; inventory and merchant stock require their explicit kind. "
             "Quest hits include saved player status. Use get_state sections=world for all active quests.",
             lambda a: svc.search(a["query"], a.get("kind", "all"), a.get("limit", 10), a.get("offset", 0),
-                                 a.get("details", False), a.get("include_stash", False), a.get("area"), save_ref(a)),
+                                 a.get("details", False), a.get("include_stash", False), a.get("area"), save_ref(a),
+                                 a.get("exact", False)),
             {**SAVE,
              "query": {"type": "string", "maxLength": 500,
                        "description": "Name or English keywords. Empty string browses a category."},
@@ -141,6 +143,8 @@ def build_tools(svc: OutwardService) -> dict[str, Tool]:
              "limit": {"type": "integer", "minimum": 1, "maximum": 50, "default": 10},
              "offset": {"type": "integer", "minimum": 0, "default": 0},
              "details": {"type": "boolean", "default": False},
+             "exact": {"type": "boolean", "default": False,
+                       "description": "Only whole-name matches (case/apostrophe-insensitive), no partial hits."},
              "include_stash": {"type": "boolean", "default": False,
                                "description": "Include stored items when kind=inventory."},
              "area": {"type": "string", "minLength": 1,
@@ -199,9 +203,11 @@ def build_tools(svc: OutwardService) -> dict[str, Tool]:
             "with wiki resistances, damage, inflicted effects and weakness.",
             lambda a: svc.nearby_enemies()),
         "get_craft_advice": Tool(
-            "What is worth crafting: upgrades over your equipped gear first, then by value gained "
-            "(result value minus ingredient value). Also recipes you are one ingredient short of. "
-            "mode=all lists all craftable recipes including repair/refill and dismantling; source is save, not live.",
+            "What is worth crafting: recipes you can make now by value gained (result value minus ingredient value), "
+            "plus recipes one ingredient short. Equippable results get stat_comparison vs the worn item. "
+            "stat_comparison lists per-type differences and hand changes; it is not a verdict that the item is better. "
+            "Uses fresh matching live inventory, else the save (see source). "
+            "mode=all lists all craftable recipes including repair/refill and dismantling.",
             lambda a: without_ids(svc.craftable(a.get("include_stash", False), save_ref(a))) if a.get("mode") == "all"
                       else svc.craft_advice(a.get("include_stash", False), save_ref(a)),
             {**SAVE, "include_stash": {"type": "boolean", "default": False},
@@ -245,6 +251,7 @@ def handle(msg: dict, tools: dict[str, Tool]):
 
 def main() -> None:
     tools = build_tools(build_service())
+    sys.stdin.reconfigure(encoding="utf-8")  # Windows default (cp1252) turns ’ into â€™
     for line in sys.stdin:
         if not line.strip():
             continue

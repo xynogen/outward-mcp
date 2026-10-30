@@ -68,7 +68,7 @@ area = svc.area_guide("ChersoneseNewTerrain")
 assert area["region"] == "Chersonese" and any(q["quest"] == "Call to Adventure" for q in area["quests"]), area
 assert any(e["enemy"] == "Bandit" and e["weakness"] for e in area["enemies"])
 advice = svc.craft_advice(include_stash=True)
-ranked = [("upgrade" not in r, -r["value_gain"]) for r in advice["can_craft"]]
+ranked = [-r["value_gain"] for r in advice["can_craft"]]
 assert ranked == sorted(ranked), "craft advice not sorted"
 assert all(len(r["ingredients"]) > 1 for r in advice["one_ingredient_short"])
 assert svc.lookup("quests", "Castaway")["Castaway"]["next"] == "Call to Adventure"
@@ -160,7 +160,7 @@ reply = handle({"method": "tools/call", "params": {"name": "search",
 assert not reply.get("isError"), reply
 # Public tools retain state, exhaustive crafts, detailed loot, and raw save navigation.
 import json  # noqa: E402
-from outward.services import _freshness  # noqa: E402
+from outward.services import _compare, _freshness  # noqa: E402
 
 def call(name, **arguments):
     reply = handle({"method": "tools/call", "params": {"name": name, "arguments": arguments}}, tools)
@@ -262,7 +262,7 @@ fake_inv["items"] = [
 with patch.object(svc, "inventory", return_value=fake_inv):
     rows = svc.craft_advice()["can_craft"]
     dagger = next(r for r in rows if r["result"] == "Shiv Dagger")
-    assert "upgrade" not in dagger and dagger["requires_equipment_change"]
+    assert "stat_comparison" not in dagger and dagger["requires_equipment_change"]
     advice = svc.craft_advice()
     for row in advice["can_craft"] + advice["one_ingredient_short"]:
         assert row["result"] not in row["ingredients"]
@@ -278,6 +278,48 @@ with patch.object(svc, "inventory", return_value=fake_inv):
     fake_inv["items"].append({"name": "Makeshift Leather Attire", "qty": 1, "location": "pouch"})
     assert all(r["result"] not in r["ingredients"] for r in svc.craft_advice()["can_craft"])
 assert all("HumanSNPC_" not in m["merchant"] and "/" not in m["merchant"] for m in svc.merchants())
+
+# Craft advice follows fresh live items (save only for waterskin sips); comparisons are per type, not a verdict.
+def item_id(name):
+    return next(i for i, f in svc.items.all().items() if f.get("name") == name)
+
+craft_live = {"character": "Test", "age_seconds": 1, "silver": 0, "items": [
+    {"id": item_id(n), "name": n, "location": loc, "qty": q} for n, loc, q in (
+        ("Horror Axe", "equipped", 1), ("Iron Scrap", "pouch", 5), ("Linen Cloth", "pouch", 5),
+        ("Waterskin", "pouch", 1))]}
+craft_save = {"character": "Test", "save": "saves/snapshot", "items": [
+    {"name": "Gravel Beetle", "qty": 9, "location": "pouch"},
+    {"name": "Waterskin", "qty": 3, "location": "pouch"}]}
+with patch.object(svc, "inventory", return_value=craft_save), patch.object(svc, "_live", return_value=craft_live):
+    advice = svc.craft_advice()
+    assert advice["source"] == "live" and advice["water_source"] == "save"
+    used = {i for r in advice["can_craft"] for i in r["ingredients"]}
+    assert "Gravel Beetle" not in used and "Iron Scrap" in used, used
+    assert svc._stock(SaveRef(), False)[2]["Water"] == 3
+    assert svc.craftable()["source"] == "live"
+    assert svc.craft_advice(ref=SaveRef(0, "older"))["source"] == "save"
+    craft_live["character"] = "Other"
+    assert svc.craft_advice()["source"] == "save"
+worn = {"RightHand": svc.items.by_name("Horror Axe"), "LeftHand": {"name": "Shiv Dagger"}}
+halberd = _compare(svc.items.by_name("Horror Halberd"), worn)
+assert halberd["vs"] == "Horror Axe" and "Shiv Dagger" in halberd["hands"], halberd
+assert set(halberd["damage"]) == {"Physical", "Decay"}
+helm = _compare(svc.items.by_name("Ammolite Helm"), {})
+assert helm["damage_resistance"] == {"Frost": 15, "Physical": 9} and helm["stamina_use_penalty"] == 2
+assert _compare({"name": "Ring"}, {}) is None
+
+# exact=true drops partial matches; curly and straight apostrophes are the same name.
+assert {r["name"] for r in svc.search("Mineral Tea", kind="items", exact=True, limit=50)["results"]} == {"Mineral Tea"}
+assert svc.search("Mefino's Trade Backpack", kind="items", exact=True)["total"] == 1
+
+# stdin is read as UTF-8, not the Windows code page (Mefino’s became Mefinoâ€™s).
+import os, subprocess  # noqa: E402,E401
+probe = json.dumps({"jsonrpc": "2.0", "id": 1, "method": "tools/call", "params": {"name": "search",
+                   "arguments": {"query": "Mefino’s Trade Backpack", "kind": "items", "exact": True}}},
+                  ensure_ascii=False)
+out = subprocess.run([sys.executable, str(Path(__file__).with_name("server.py"))], input=probe.encode(),
+                     capture_output=True, env={**os.environ, "PYTHONIOENCODING": "", "PYTHONUTF8": "0"})
+assert '"total": 1' in json.loads(out.stdout)["result"]["content"][0]["text"], out
 print("ok: compact public surface, state/save access, food expiry, craft repairs and off-hand compatibility")
 
 print("ok: BM25 search, pagination, names, inventory, merchants and parameter validation")
