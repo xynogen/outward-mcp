@@ -81,6 +81,10 @@ assert {t["name"] for t in listed} == {
 assert len(listed) == 6 and len(tools) == 18
 assert "get_area_guide" not in tools
 assert all(t == tools[t["name"]].schema(t["name"]) for t in listed)
+readme = (Path(__file__).resolve().parent.parent / "README.md").read_text(encoding="utf-8")
+tool_docs = readme.split("### Tools", 1)[1].split("### Where the data comes from", 1)[0]
+documented = {line.split("`")[1] for line in tool_docs.splitlines() if line.startswith("| `")}
+assert documented == {t["name"] for t in listed}, documented
 reply = handle({"method": "tools/call", "params": {"name": "get_world", "arguments": {}}}, tools)
 assert not reply.get("isError"), reply
 

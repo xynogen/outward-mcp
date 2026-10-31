@@ -122,30 +122,38 @@ Check the server against your install:
 python mcp/selftest.py
 ```
 
-It runs every tool against your real saves with networking blocked, and prints one `ok:` line.
+It exercises the server against your real saves with networking blocked and prints `ok:` summaries.
 
-The server works without the mod, but with less: item facts and recipes then come from the wiki snapshot, and `get_live`, `get_nearby_enemies` and the live parts of `get_guide` have no data.
+Without the mod, item facts and recipes fall back to the bundled wiki snapshot. Save-based state still works, but live vitals, inventory updates and nearby enemies are unavailable.
 
 ### Tools
 
-| Tool | Answers |
-|---|---|
-| `get_guide` | Start here. Warnings (low health, food, drink, sleep), where you are, active quests, quests to start here, nearby enemies, best crafts |
-| `get_area_guide` | An area (default: the current one): places, quests with your status, enemies with their weakness, NPCs, gathering nodes, merchants, chests with loot |
-| `get_nearby_enemies` | Enemies around you: distance, compass direction, health, resistances, weakness |
-| `get_craft_advice` | What is worth crafting from live inventory (save fallback): by value gained, per-type stat comparison vs worn gear, plus recipes you are one ingredient short of |
-| `get_craftable` | Every recipe you can craft now with what you carry |
-| `lookup` | Wiki facts by name: quests, enemies, NPCs, skills, locations, gathering, effects, traps, spells, buildings |
-| `get_item` | Item facts by id or name |
-| `get_live` | Raw `live.json` |
-| `get_inventory` | Items, vitals, status effects and silver from a save |
-| `get_world` | Day, time, season, quests, visited areas |
-| `get_merchants` | Merchant stock and prices, as of your last visit |
-| `get_area_loot` | Chests with loot and items on the ground in a visited area |
-| `list_characters`, `list_snapshots` | Your characters and their saves |
-| `list_save_files`, `read_save_file` | Raw save files as JSON |
+The server advertises **6 tools** through `tools/list`:
 
-Save tools accept `character` (number, name or id) and `snapshot` (0 = latest save).
+| Tool | Use |
+|---|---|
+| `search` | Search items, recipes, quests, enemies, locations and other wiki facts. Use `kind="inventory"` for owned items or `kind="merchants"` for saved merchant stock. |
+| `get_state` | Character state. Defaults to vitals; choose `sections` from `vitals`, `inventory`, `world`, `skills` and `nearby`. |
+| `get_item` | Item or skill facts by object ID or name: damage, resistances, weight, price and effects. |
+| `get_guide` | What to do next: warnings, quests, nearby enemies and crafting suggestions. Pass `area` for an area guide; `details=true` adds saved loot and merchant stock. |
+| `get_craft_advice` | Crafts ranked by value gained, recipes one ingredient short and equipment stat differences. Use `mode="all"` for all craftable recipes, including repair/refill and dismantling. |
+| `read_save` | Read-only save navigation with `mode="characters"`, `"snapshots"`, `"files"` or `"file"`. |
+
+Examples of tool arguments:
+
+- Search a recipe: `search({"query":"Ice Rag","kind":"recipes"})`
+- List carried items: `get_state({"sections":["inventory"]})`
+- Include quantities and stash: `get_state({"sections":["inventory"],"details":true,"include_stash":true})`
+- Read active quests: `get_state({"sections":["world"],"source":"save"})`
+- Check nearby enemies: `get_state({"sections":["nearby"],"source":"live"})`
+- Inspect an area and its saved loot: `get_guide({"area":"Cierzo","details":true})`
+- List characters: `read_save({"mode":"characters"})`
+
+Inventory and search results are paginated with `limit` and `offset`; follow `next_offset` when present. `get_state` returns compact item/skill IDs and names by default; use `get_item` for their facts.
+
+`get_state` uses fresh matching live data when available, otherwise saves (`source="auto"`). World and skills come from saves; nearby enemies require live data. Historical snapshots never mix with live state.
+
+All tools except `get_item` accept `character` (number, name or slot UID) and `snapshot` (0 = latest save, 1 = previous, or a snapshot ID from `read_save`).
 
 ### Where the data comes from
 
