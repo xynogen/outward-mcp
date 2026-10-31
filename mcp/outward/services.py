@@ -263,8 +263,11 @@ class OutwardService:
             if not uid.startswith("MerchantPouch_"):
                 continue
             path = tag(raw, "Hierarchy") or ""
-            who = re.search(r"_Merchants/([^/]+)", path) or re.search(r"/([^/]+)/MerchantTemplate", path)
+            who = re.search(r"_Merchants/([^/]+)", path) or re.search(r"/([^/]+)/(?:MerchantTemplate|Dialogue_)", path)
             merchant = who.group(1) if who else path
+            object_name = re.sub(r" \(\d+\)$", "", merchant)
+            merchant = next((name for name, npc in self.wiki.data("npcs").items()
+                             if npc.get("object_name") == object_name), merchant)
             role = merchant.removeprefix("HumanSNPC_")
             if role != merchant:
                 merchant = re.sub(r"(?<=[a-z])(?=[A-Z])", " ", role)

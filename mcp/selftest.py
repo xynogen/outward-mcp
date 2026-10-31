@@ -277,6 +277,12 @@ with patch.object(svc, "inventory", return_value=fake_inv):
                for r in svc.craftable()["craftable"])
     fake_inv["items"].append({"name": "Makeshift Leather Attire", "qty": 1, "location": "pouch"})
     assert all(r["result"] not in r["ingredients"] for r in svc.craft_advice()["can_craft"])
+for path in ("5/_SNPC/_UNPC/UNPC_MathiasA (1)/Dialogue_Mathias/NPC/MerchantSettings",
+             "5/_SNPC/_UNPC/BlueChamberMeeting/UNPC_MathiasA (2)/Dialogue_Mathias/NPC/MerchantSettings"):
+    merchant = svc._area_merchants("Berg", [
+        f"<UID>MerchantPouch_test</UID><Hierarchy>{path}</Hierarchy>"
+        "<MerchantPouchContainedSilver>MerchantPouchContainedSilver/1</MerchantPouchContainedSilver>"])
+    assert len(merchant) == 1 and merchant[0]["merchant"] == "Mathias", merchant
 assert all("HumanSNPC_" not in m["merchant"] and "/" not in m["merchant"] for m in svc.merchants())
 
 # Craft advice follows fresh live items (save only for waterskin sips); comparisons are per type, not a verdict.
