@@ -9,19 +9,13 @@ An offline, read-only helper for **Outward Definitive Edition**. It has two part
 
 The two parts share no code. Their only link is the folder `BepInEx/outward-mcp/`: the mod writes JSON there and the server reads it.
 
-```
-Outward + mod
-  │ writes
-  ▼
-BepInEx/outward-mcp/*.json ──┐
-SaveGames/ ─────────────────┤
-mcp/data/wiki_*.json ────────┤
-                           │ read by
-                           ▼
-                     mcp/server.py
-                           │ stdio
-                           ▼
-                      MCP client
+```mermaid
+flowchart TD
+    game["Outward + mod"] -->|writes| exports["BepInEx/outward-mcp/*.json"]
+    exports -->|read by| server["mcp/server.py"]
+    saves["SaveGames/"] -->|read by| server
+    wiki["mcp/data/wiki_*.json"] -->|read by| server
+    server <-->|stdio| client["MCP client"]
 ```
 
 Nothing writes to your saves. The server never uses the network.
