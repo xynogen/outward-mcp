@@ -10,9 +10,18 @@ An offline, read-only helper for **Outward Definitive Edition**. It has two part
 The two parts share no code. Their only link is the folder `BepInEx/outward-mcp/`: the mod writes JSON there and the server reads it.
 
 ```
-Outward + mod  ──writes──>  BepInEx/outward-mcp/*.json  ──read by──>  mcp/server.py  <──stdio──>  your MCP client
-                            SaveGames/  ─────────────────read by──────────^
-                            mcp/data/wiki_*.json  ───────read by──────────^
+Outward + mod
+  │ writes
+  ▼
+BepInEx/outward-mcp/*.json ──┐
+SaveGames/ ─────────────────┤
+mcp/data/wiki_*.json ────────┤
+                           │ read by
+                           ▼
+                     mcp/server.py
+                           │ stdio
+                           ▼
+                      MCP client
 ```
 
 Nothing writes to your saves. The server never uses the network.
@@ -21,26 +30,46 @@ Nothing writes to your saves. The server never uses the network.
 
 - Windows. The mod build uses the C# compiler that ships with Windows (.NET Framework 4, `csc.exe`).
 - Outward Definitive Edition (Steam).
-- [BepInEx 5](https://github.com/BepInEx/BepInEx/releases) (x64) installed in the game folder. Tested with 5.4.23.
+- [BepInEx 5.4.23.5, Windows x64](https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.5/BepInEx_win_x64_5.4.23.5.zip), the version used by the tested install.
 - Python 3.9 or newer. Tested with 3.13. No packages to install.
-- Optional: [BepInEx Configuration Manager](https://github.com/BepInEx/BepInEx.ConfigurationManager), to change the mod settings in game with F1.
+- Optional: [Configuration Manager 19.0 for BepInEx 5](https://github.com/BepInEx/BepInEx.ConfigurationManager/releases/download/v19.0/BepInEx.ConfigurationManager_BepInEx5_v19.0.zip), to change the mod settings in game with F1.
 
 The game folder is found through Steam. If that fails, set `OUTWARD_DIR` to the `Outward_Defed` folder, for example:
 
 ```
-set OUTWARD_DIR=D:\SteamLibrary\steamapps\common\Outward\Outward_Defed
+$env:OUTWARD_DIR = 'D:\SteamLibrary\steamapps\common\Outward\Outward_Defed'
 ```
 
 ## 1. Install the mod
 
-1. Install BepInEx 5 into the game folder and start the game once, so BepInEx creates its folders. Then close the game.
-2. Build and install the plugin:
+### A. Install BepInEx
+
+1. Close the game. In Steam, use **Manage → Browse local files**, then open `Outward_Defed`. This is the folder containing `Outward Definitive Edition.exe`, not the parent `Outward` folder.
+2. Download [BepInEx 5.4.23.5 for Windows x64](https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.5/BepInEx_win_x64_5.4.23.5.zip). Use BepInEx **5**, not 6, x86 or IL2CPP.
+3. Extract the ZIP contents directly into `Outward_Defed`. `BepInEx/`, `winhttp.dll` and `doorstop_config.ini` must sit beside the game executable.
+4. Start **Outward Definitive Edition** once, then close it. Check that `BepInEx/LogOutput.log` exists.
+
+If BepInEx 5 is already working, skip this step. Do not overwrite an existing mod setup just to reinstall it.
+
+### B. Install Configuration Manager (optional)
+
+1. Download [Configuration Manager 19.0 for BepInEx 5](https://github.com/BepInEx/BepInEx.ConfigurationManager/releases/download/v19.0/BepInEx.ConfigurationManager_BepInEx5_v19.0.zip). Do not use the IL2CPP archive.
+2. Extract its contents into `Outward_Defed`, merging the `BepInEx` folders. The DLL should end up at `BepInEx/plugins/ConfigurationManager/ConfigurationManager.dll`.
+3. Press **F1** in game to open its settings window. Without it, edit the plugin's `.cfg` file while the game is closed.
+
+### C. Install Outward Data Export (this mod)
+
+There is no prebuilt DLL download in this repository yet. Build it locally; no extra Python packages or Visual Studio installation are needed.
+
+1. [Download this repository as a ZIP](https://github.com/xynogen/outward-mcp/archive/refs/heads/main.zip) and extract it, or clone it with Git. Open PowerShell in the extracted repository folder (the one containing `mod/` and `mcp/`).
+2. With the game closed, build and install the plugin:
 
    ```
    python mod/build.py
    ```
 
    This compiles `mod/*.cs` against your game and copies `OutwardDataExport.dll` to `BepInEx/plugins/OutwardDataExport/`.
+   This plugin does not require SideLoader, RaidMode or UtilityPack. Configuration Manager is optional.
 3. Start the game and load a character.
 4. Check `BepInEx/outward-mcp/status.json`. Each file shows `ok <count>` or an error:
 
