@@ -190,3 +190,11 @@ python mcp/data/fetch_wiki.py
 - Mod: C# 5 only (the Windows compiler supports nothing newer). `python mod/build.py --check` runs `mod/ModCheck.cs.txt`.
 - When a JSON shape changes, bump `Schema` in `mod/OutwardDataExport.cs` and update the readers in `mcp/outward/repositories.py`.
 - Server: `python mcp/selftest.py` after every change.
+
+## License
+
+The code is released under the [MIT License](LICENSE).
+
+The wiki snapshot in `mcp/data/wiki_*.json` comes from [outward.wiki.gg](https://outward.wiki.gg) and is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/), not MIT.
+
+Outward is a trademark of Nine Dots Studio. This project is not affiliated with or endorsed by Nine Dots Studio or Deep Silver.
